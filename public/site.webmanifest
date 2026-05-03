@@ -1,6 +1,6 @@
 {
-  "name": "Kian Locks",
-  "short_name": "Kian Locks",
+  "name": "kianlocks",
+  "short_name": "kianlocks",
   "description": "ABS-only locksmith. North & Central London.",
   "start_url": "/",
   "display": "standalone",

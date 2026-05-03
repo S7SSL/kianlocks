@@ -11,59 +11,245 @@ const schema = [
     { name: 'Contact', url: `${SITE.url}/contact` },
   ]),
 ];
+
+/**
+ * The form below uses Formsubmit.co — a free, no-account form-to-email service
+ * that works on static sites. The form posts to formsubmit.co/<your-email>,
+ * which sends each submission to hi@kianlocks.com. First submission shows
+ * a captcha that must be confirmed once — after that it works without account.
+ *
+ * Alternative: swap to Formspree (free 50/mo at formspree.io) by changing
+ * the action URL to https://formspree.io/f/YOUR_FORM_ID.
+ */
+const formAction = `https://formsubmit.co/${SITE.email}`;
 ---
 <BaseLayout
-  title="Contact Kian Locks"
-  description="Call Kian Locks for an Avocet ABS lock change in North & Central London. Same-day callout, fixed-quote, fully insured."
+  title="Contact kianlocks"
+  description={`Email kianlocks for an Avocet ABS lock change quote. ${SITE.price} flat fee — cylinder, fitting, three keys included. North & Central London.`}
   schema={schema}
 >
   <section class="page-hero">
     <div class="container">
       <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Contact' }]} />
-      <h1>Call us. We&rsquo;ll quote on the door.</h1>
+      <h1>Email us. We'll come back within 2 hours.</h1>
       <p class="lead">
-        Most jobs are quoted on the phone in under two minutes. We need
-        the postcode, the door material, and ideally the cylinder
-        length — that&rsquo;s it.
+        Email is how we book. Tell us the postcode, the door type
+        and why you&rsquo;re changing the lock — we reply with a slot
+        and confirm the {SITE.price} flat price.
       </p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="grid-2" style="align-items:start; gap:3rem;">
+      <div class="contact-grid">
+        <!-- ============= FORM ============= -->
         <div>
-          <h2 style="font-size:1.5rem;">By phone</h2>
-          <p class="muted">Fastest. We answer 7am–10pm and run a 24/7 line for confirmed emergency lockouts.</p>
-          <a href={SITE.phoneHref} class="btn btn-primary mt-2" style="font-size:1.05rem;padding:1.05rem 2rem;">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-            {SITE.phone}
-          </a>
+          <form
+            class="quote-form"
+            action={formAction}
+            method="POST"
+            aria-label="Request a lock change quote"
+          >
+            <!-- formsubmit.co configuration (these inputs are not displayed) -->
+            <input type="hidden" name="_subject" value="ABS lock change quote — kianlocks.com" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={`${SITE.url}/contact?sent=1`} />
+            <!-- honeypot for bots -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-          <h2 style="font-size:1.5rem;margin-top:2.5rem;">By email</h2>
-          <p class="muted">Best for quotes you want in writing, landlord and freeholder enquiries, and bulk work.</p>
-          <p class="mt-2"><a href={`mailto:${SITE.email}`} class="btn btn-outline">{SITE.email}</a></p>
+            <div class="field">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
 
-          <h2 style="font-size:1.5rem;margin-top:2.5rem;">Hours</h2>
-          <p>{SITE.hours}</p>
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+            </div>
 
-          <h2 style="font-size:1.5rem;margin-top:2.5rem;">Service area</h2>
-          <p class="muted">North &amp; Central London — the boroughs of Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, the City of London, and Kensington &amp; Chelsea. <a href="/areas">See the full coverage map.</a></p>
+            <div class="field-row">
+              <div class="field">
+                <label for="postcode">Postcode <span class="req">*</span></label>
+                <input id="postcode" name="postcode" type="text" required placeholder="e.g. NW1 7AA" autocomplete="postal-code" />
+              </div>
+              <div class="field">
+                <label for="door">Door material <span class="req">*</span></label>
+                <select id="door" name="door" required>
+                  <option value="">Choose…</option>
+                  <option>uPVC</option>
+                  <option>Composite</option>
+                  <option>Hardwood / timber</option>
+                  <option>Other / not sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reason">Why are you changing the lock? <span class="req">*</span></label>
+              <select id="reason" name="reason" required>
+                <option value="">Choose…</option>
+                <option>Landlord — tenancy change</option>
+                <option>Tenant — just moved in</option>
+                <option>Homeowner — security upgrade</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="notes">Anything else we should know? (optional)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Preferred days/times, building access notes, photos can be attached after first reply…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Request a quote</button>
+            <p class="form-note">
+              We reply within 2 hours during office hours
+              (Mon–Sat 9am–6pm). All quotes confirmed by email — no
+              call-back unless you ask for one.
+            </p>
+          </form>
         </div>
 
-        <aside class="card" style="background:var(--cream);">
-          <h3 style="font-size:1.3rem;margin-bottom:0.85rem;">Before you call, jot down:</h3>
-          <ol style="padding-left:1.25rem; color:var(--grey-1);">
-            <li><strong>Your postcode.</strong> So we can give an accurate response time.</li>
-            <li><strong>The door material.</strong> uPVC, composite, hardwood, etc.</li>
-            <li><strong>Cylinder length if visible.</strong> Look for digits etched on the cylinder face — e.g. &lsquo;35/45&rsquo;.</li>
-            <li><strong>Why you&rsquo;re changing it.</strong> Moved in, lost key, post-burglary, insurance audit — affects what we bring.</li>
-          </ol>
-          <p class="muted mt-3" style="font-size:var(--t-sm);">
-            Don&rsquo;t worry if you can&rsquo;t see any of this — we&rsquo;ll quote a sensible range and confirm exactly on arrival.
-          </p>
+        <!-- ============= ALT CONTACT METHODS ============= -->
+        <aside class="contact-side">
+          <div class="card">
+            <h3 style="font-size:1.25rem; margin-bottom:0.85rem;">Prefer email direct?</h3>
+            <p class="muted">
+              Send us a note with your postcode and door type:
+            </p>
+            <p class="mt-2">
+              <a href={SITE.emailHref} class="btn btn-outline" style="font-size:0.85rem;">
+                {SITE.email}
+              </a>
+            </p>
+          </div>
+
+          <div class="card mt-3">
+            <h3 style="font-size:1.25rem; margin-bottom:0.85rem;">Phone</h3>
+            <p class="muted">
+              We answer phones {SITE.hours.toLowerCase()}, but email
+              is faster — most quotes are sent within 2 hours.
+            </p>
+            <p class="mt-2">
+              <a href={SITE.phoneHref} class="btn btn-outline" style="font-size:0.85rem;">
+                {SITE.phone}
+              </a>
+            </p>
+          </div>
+
+          <div class="card mt-3" style="background: var(--surface);">
+            <h3 style="font-size:1.15rem; margin-bottom:0.85rem;">Before you contact us — a quick check</h3>
+            <p style="font-size:0.9rem; color:var(--on-surface-variant); margin-bottom:0.75rem;">
+              We only do <strong>planned ABS lock changes</strong>:
+            </p>
+            <ul style="font-size:0.9rem; color:var(--on-surface-variant); padding-left:1.25rem;">
+              <li>Tenancy change (landlord)</li>
+              <li>New tenancy (tenant)</li>
+              <li>3-star security upgrade (homeowner)</li>
+            </ul>
+            <p style="font-size:0.85rem; color:var(--on-surface-variant); margin-top:0.85rem;">
+              We are <strong>not</strong> a 24/7 emergency service. If
+              you&rsquo;re locked out right now, call a local
+              emergency locksmith — then come to us for the proper
+              ABS upgrade.
+            </p>
+          </div>
         </aside>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style is:global>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.85fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 920px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  .quote-form { display: grid; gap: 1.25rem; }
+  .quote-form .field { display: grid; gap: 0.4rem; }
+  .quote-form .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 600px) { .quote-form .field-row { grid-template-columns: 1fr; } }
+  .quote-form label {
+    font-family: var(--font-sans);
+    font-size: var(--t-label);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .quote-form .req { color: var(--gold); }
+  .quote-form input,
+  .quote-form select,
+  .quote-form textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: inherit;
+    font-size: var(--t-body);
+    color: var(--on-surface);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    transition: border-color 180ms ease;
+  }
+  .quote-form input:focus,
+  .quote-form select:focus,
+  .quote-form textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+    border-width: 1.5px;
+  }
+  .quote-form textarea { resize: vertical; min-height: 90px; }
+  .quote-form button[type="submit"] {
+    justify-self: start;
+    margin-top: 0.5rem;
+    padding: 1.1rem 2.25rem;
+  }
+  .form-note {
+    font-size: var(--t-caption);
+    color: var(--on-surface-variant);
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+  .contact-side { display: grid; gap: 1rem; }
+</style>
+
+<!-- Show success message on return after form submit -->
+<script>
+  if (new URLSearchParams(location.search).has('sent')) {
+    const main = document.getElementById('main');
+    if (main) {
+      const banner = document.createElement('div');
+      banner.className = 'sent-banner';
+      banner.setAttribute('role', 'status');
+      banner.innerHTML = '<strong>Got it.</strong> We&rsquo;ll be in touch within 2 hours during office hours. Check your email (and spam folder).';
+      main.prepend(banner);
+    }
+  }
+</script>
+
+<style is:global>
+  .sent-banner {
+    background: #d4edda;
+    color: #0f5132;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #b5dfc1;
+    text-align: center;
+    font-size: var(--t-body);
+  }
+</style>

@@ -14,8 +14,8 @@ const schema = [
 ];
 ---
 <BaseLayout
-  title="About Kian Locks"
-  description="Kian Locks Ltd is a North & Central London locksmith fitting Avocet ABS 3-star high-security cylinders only. Independent, insured, accountable."
+  title="About kianlocks"
+  description="kianlocks Ltd is a North & Central London locksmith fitting Avocet ABS 3-star high-security cylinders only. Independent, insured, accountable."
   schema={schema}
 >
   <section class="page-hero">
@@ -23,7 +23,7 @@ const schema = [
       <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About' }]} />
       <h1>Built for one job. Done well.</h1>
       <p class="lead">
-        Kian Locks Ltd is a London locksmith with a deliberately narrow
+        kianlocks Ltd is a London locksmith with a deliberately narrow
         offering: the lock change. Done with one cylinder, fitted by
         one team, to a single uncompromising standard.
       </p>
@@ -35,17 +35,28 @@ const schema = [
       <article class="prose">
         <h2>What we do</h2>
         <p>
-          We replace the euro-profile cylinder on residential and small
-          commercial doors across North &amp; Central London with the
-          Avocet ABS 3-star Kitemarked cylinder. That is the entire
-          service.
+          We replace the euro-profile cylinder on residential doors
+          across North &amp; Central London with the Avocet ABS
+          3-star Kitemarked cylinder. {SITE.price} flat —
+          {SITE.priceIncludes} included. That is the entire service.
         </p>
         <p>
-          We don&rsquo;t fit smart locks unless they accept ABS. We
-          don&rsquo;t open safes. We don&rsquo;t cut keys for vehicles. We
-          do one thing, and we&rsquo;ve made it our business to do it
-          better than the locksmith who tries to do twenty.
+          We don&rsquo;t do emergency lockouts. We don&rsquo;t cut
+          car keys. We don&rsquo;t open safes. We don&rsquo;t fit
+          smart locks. We don&rsquo;t carry alternate brands. We do
+          one thing, properly, and refer you elsewhere if your job
+          isn&rsquo;t that one thing.
         </p>
+
+        <h2>Who we work with</h2>
+        <p>
+          Three customer types make up almost all our work:
+        </p>
+        <ul>
+          <li><strong>Landlords</strong> changing locks between tenancies — old keys made worthless, insurance-grade cylinder fitted, itemised invoice for the property file.</li>
+          <li><strong>Tenants</strong> who&rsquo;ve just moved into a new flat or house and want the previous occupant&rsquo;s keys to no longer open their door.</li>
+          <li><strong>Homeowners</strong> upgrading a generic euro cylinder to a 3-star ABS — usually because the door looks vulnerable, the insurer asked, or you&rsquo;ve read about lock-snap attacks.</li>
+        </ul>
 
         <h2>Why this approach</h2>
         <p>
@@ -65,17 +76,18 @@ const schema = [
 
         <h2>Who we are</h2>
         <p>
-          Kian Locks Ltd is registered in England and Wales. Our work is
+          kianlocks Ltd is registered in England and Wales. Our work is
           covered by full public liability insurance. We have been
           fitting locks across London since 2020.
         </p>
 
         <h2>What we promise</h2>
         <ul>
-          <li>The price quoted is the price paid. No hourly add-ons.</li>
-          <li>The cylinder fitted is Avocet ABS 3-star Kitemarked. We do not fit anything else.</li>
-          <li>Same-day across our service area. Pre-booked weekend slots available.</li>
-          <li>Written documentation of every fitting — for your records and your insurer.</li>
+          <li><strong>{SITE.price} flat.</strong> No callout fee, no per-minute labour, no upsell ladder.</li>
+          <li><strong>One product.</strong> Avocet ABS 3-star Kitemarked cylinder, every job. We do not fit anything else.</li>
+          <li><strong>Email-led booking.</strong> Reply within 2 hours during office hours. Quote in writing before you book.</li>
+          <li><strong>Written documentation</strong> of every fitting — for your insurer, landlord file, or freeholder.</li>
+          <li><strong>Honest scope.</strong> If your job isn&rsquo;t a planned ABS lock change, we&rsquo;ll tell you and recommend someone better suited.</li>
         </ul>
       </article>
     </div>

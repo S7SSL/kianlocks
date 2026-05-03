@@ -14,17 +14,18 @@ const schema = [
 ];
 ---
 <BaseLayout
-  title="How a Kian Locks lock change works"
-  description="From phone call to fitted ABS cylinder in under an hour. The exact process — what you book, what we measure, what you receive."
+  title="How a kianlocks lock change works"
+  description={`Email today, fitted this week. ${SITE.price} flat fee — cylinder, fitting, three keys included. The exact process from quote to handover.`}
   schema={schema}
 >
   <section class="page-hero">
     <div class="container">
       <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Process' }]} />
-      <h1>One call. One visit. One cylinder.</h1>
+      <h1>Email today. Fitted this week. {SITE.price} flat.</h1>
       <p class="lead">
-        We&rsquo;ve stripped the locksmith experience to four predictable
-        steps. Quote in advance, no callout traps, fitted same day.
+        We&rsquo;ve stripped the lock change to four predictable steps
+        — quoted in writing, booked by email, fitted in 30–45
+        minutes, no upsell on the doorstep.
       </p>
     </div>
   </section>
@@ -33,48 +34,52 @@ const schema = [
     <div class="container">
       <div class="steps">
         <div class="step">
-          <h3>1. Tell us about the door</h3>
+          <span class="step__phase">Phase one</span>
+          <h3>Email us</h3>
           <p>
-            Call and tell us your postcode, the door material (uPVC,
-            composite, timber) and roughly the cylinder length if you
-            can see it. We quote on that information — fixed price,
-            confirmed in writing if you&rsquo;d like.
+            Tell us your postcode, the door material (uPVC, composite,
+            timber), and the reason for the change (tenancy change,
+            new tenant, security upgrade). Use the form on the
+            contact page or email <a href={SITE.emailHref} style="color:inherit;text-decoration:underline;">{SITE.email}</a>.
           </p>
         </div>
         <div class="step">
-          <h3>2. We attend</h3>
+          <span class="step__phase">Phase two</span>
+          <h3>We confirm in writing</h3>
           <p>
-            Typical response is 15–45 minutes in Camden, Islington,
-            Westminster and the EC postcodes; 30–60 minutes in Barnet
-            and Enfield. Confirmed emergencies prioritised.
+            Reply within 2 hours during office hours. {SITE.price}
+            flat — cylinder, fitting, three keys, written invoice.
+            We propose a slot; you confirm.
           </p>
         </div>
         <div class="step">
-          <h3>3. Measure &amp; swap</h3>
+          <span class="step__phase">Phase three</span>
+          <h3>Measure &amp; fit</h3>
           <p>
-            We remove the existing cylinder, measure both sides of the
-            door precisely, and fit an Avocet ABS sized to sit flush
-            against the handle escutcheon. No protruding cylinder for a
-            snap attack to grip.
+            We attend at the agreed time, measure the existing
+            cylinder, and fit an Avocet ABS sized to sit flush against
+            the handle escutcheon. Typical visit: 30–45 minutes.
           </p>
         </div>
         <div class="step">
-          <h3>4. Test, hand over, document</h3>
+          <span class="step__phase">Phase four</span>
+          <h3>Test, hand over, document</h3>
           <p>
-            Three keys cut and tested with you. Itemised invoice naming
-            the product, rating, and serial number — keep it for your
-            insurer or freeholder.
+            Three keys cut and tested with you. Itemised invoice
+            naming the product, rating, and serial number — keep it
+            for your insurer, landlord file, or freeholder.
           </p>
         </div>
       </div>
 
-      <article class="prose mt-4">
+      <article class="prose mt-4" style="margin-top:3rem;">
         <h2>What you do not need to do</h2>
         <ul>
-          <li><strong>Stay in.</strong> We can collect a key from a neighbour, agent, or building concierge if you arrange it.</li>
+          <li><strong>Stay in.</strong> We can collect a key from a neighbour, agent, or building concierge if you arrange it in advance.</li>
           <li><strong>Replace the door.</strong> ABS sizes exist for almost every standard door — the cylinder is the only thing that changes.</li>
-          <li><strong>Buy parts in advance.</strong> Everything is on the van — cylinders, the right tools, fixings, replacement keys.</li>
-          <li><strong>Pay before you see the work.</strong> Payment after the job is signed off, by card or bank transfer.</li>
+          <li><strong>Buy parts in advance.</strong> Everything is on the van — cylinders, the right tools, fixings, three keys cut to match.</li>
+          <li><strong>Call to chase.</strong> We reply by email within 2 hours, with the slot, the price and what to expect.</li>
+          <li><strong>Pay before you see the work.</strong> Payment after the job is signed off — card or bank transfer.</li>
         </ul>
 
         <h2>What we won&rsquo;t do</h2>
@@ -82,7 +87,8 @@ const schema = [
           <li>Try to upsell you a smart lock you didn&rsquo;t ask for.</li>
           <li>Quote a callout fee then add hourly labour on top.</li>
           <li>Fit a 1-star cylinder &lsquo;to save money&rsquo; — that&rsquo;s the entire problem we exist to solve.</li>
-          <li>Leave the door without testing the cylinder cycles smoothly with all keys.</li>
+          <li>Take on emergency lockouts (we&rsquo;re a planned-work specialist; for emergencies, call a 24-hour locksmith and book us for the upgrade afterwards).</li>
+          <li>Leave the door without testing the cylinder cycles smoothly with all three keys.</li>
         </ul>
       </article>
     </div>

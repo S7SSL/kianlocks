@@ -46,9 +46,10 @@ const year = new Date().getFullYear();
       <div>
         <h4>Contact</h4>
         <ul>
+          <li><a href={SITE.emailHref}>{SITE.email}</a></li>
           <li><a href={SITE.phoneHref}>{SITE.phone}</a></li>
-          <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
           <li>{SITE.hours}</li>
+          <li><strong style="color:#fff;">{SITE.price}</strong> flat fee</li>
         </ul>
       </div>
     </div>

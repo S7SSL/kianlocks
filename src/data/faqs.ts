@@ -9,6 +9,10 @@ export interface FAQ {
 
 export const FAQS: FAQ[] = [
   {
+    q: 'How much does it cost?',
+    a: '£149 flat. That covers an Avocet ABS cylinder, fitting, three keys cut to the new cylinder, and a written invoice. No callout fee. No per-minute labour. No upsell ladder. The price you read here is the price you pay on the day.',
+  },
+  {
     q: 'What is an ABS lock and why do you only fit them?',
     a: 'ABS is a high-security euro-profile cylinder made by Avocet. It carries the British Standard TS007 3-star rating — the only rating that certifies a cylinder against all four real-world attack methods: snapping, bumping, picking and drilling. We fit ABS exclusively because anything less means leaving one of those four attacks open. There is no advantage to mixing brands when one product covers everything.',
   },
@@ -17,12 +21,16 @@ export const FAQS: FAQ[] = [
     a: 'Most off-the-shelf doors and many new-builds ship with a 1-star cylinder, which relies on a 2-star handle to make up the rating. If the handle is replaced, the rating collapses. A 3-star cylinder — like the Avocet ABS — is rated independently and meets the British Standard on its own. It is the only safe assumption.',
   },
   {
-    q: 'Do you cover all of London?',
-    a: 'We cover North & Central London — the boroughs of Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, the City of London, and Kensington & Chelsea. If you are in or close to those areas we can almost certainly attend.',
+    q: 'Are you the right locksmith for me?',
+    a: 'We fit ABS lock changes for landlords (tenancy change), tenants (wanting their own keys after moving in), and homeowners (upgrading to a 3-star cylinder). If you are locked out, need a key copy, want a smart lock, need a safe opened, or anything other than a planned ABS cylinder change — we are not the right locksmith. We will tell you that and recommend someone else.',
   },
   {
-    q: 'How quickly can you attend?',
-    a: 'Same-day across our service area. Typical response is 15–45 minutes in central boroughs and 30–60 minutes in outer ones. For confirmed emergencies we prioritise.',
+    q: 'How do I book?',
+    a: 'Email hi@kianlocks.com with your postcode, door type (uPVC, composite, timber), and the reason for the change. We reply within 2 hours with a slot and confirm the £149 price. No phone calls required, but you can call 07707 071984 if you prefer.',
+  },
+  {
+    q: 'Do you cover all of London?',
+    a: 'We cover North & Central London — the boroughs of Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, the City of London, and Kensington & Chelsea. If you are in or close to those areas we can almost certainly attend.',
   },
   {
     q: 'Will an ABS cylinder fit my existing door?',
@@ -33,11 +41,11 @@ export const FAQS: FAQ[] = [
     a: 'Yes — every UK home insurer accepts a TS007 3-star Kitemarked cylinder as meeting the security clause of standard policies. We provide an itemised written invoice that names the product and its rating, which you can pass directly to your insurer if requested.',
   },
   {
-    q: 'How much does a lock change cost?',
-    a: 'A standard ABS cylinder change starts from a fixed call-out plus parts — quoted in advance, in writing, before any work begins. There are no hidden surprises and no per-minute charges. Call for a price specific to your door.',
+    q: 'How quickly can you attend?',
+    a: 'We typically book within 2–5 working days of the email. We are not an emergency or 24-hour service — if you need a locksmith right now (e.g. you are locked out), call a 24/7 emergency locksmith and ask them to fit an Avocet ABS, or contact us once the immediate problem is solved and we will book the proper upgrade.',
   },
   {
     q: 'Are you insured?',
-    a: 'Yes. Kian Locks Ltd carries full public liability insurance. Documentation available on request.',
+    a: 'Yes. kianlocks Ltd carries full public liability insurance. Documentation available on request.',
   },
 ];
