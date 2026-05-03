@@ -10,7 +10,7 @@ export interface FAQ {
 export const FAQS: FAQ[] = [
   {
     q: 'How much does it cost?',
-    a: '£149 flat. That covers an Avocet ABS cylinder, fitting, three keys cut to the new cylinder, and a written invoice. No callout fee. No per-minute labour. No upsell ladder. The price you read here is the price you pay on the day.',
+    a: '£149 flat for a planned booking during standard hours (Mon–Sat 9am–6pm). That covers an Avocet ABS cylinder, fitting, three keys cut to the new cylinder, and a written invoice. No callout fee. No per-minute labour. No upsell ladder. Out-of-hours and 24/7 emergency callouts are available but quoted separately — email or call us with the details and we will price it on the spot.',
   },
   {
     q: 'What is an ABS lock and why do you only fit them?',
@@ -42,7 +42,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'How quickly can you attend?',
-    a: 'We typically book within 2–5 working days of the email. We are not an emergency or 24-hour service — if you need a locksmith right now (e.g. you are locked out), call a 24/7 emergency locksmith and ask them to fit an Avocet ABS, or contact us once the immediate problem is solved and we will book the proper upgrade.',
+    a: 'Planned bookings are typically slotted within 2–5 working days of the email — that is the £149 flat-fee path. We also offer a 24/7 emergency callout for genuine urgencies (locked out, attempted snap attack, urgent tenancy access) — that is quoted per job because the price depends on the time of day, your location and what we find on arrival. Call 07707 071984 or email hi@kianlocks.com with EMERGENCY in the subject line and we will respond.',
   },
   {
     q: 'Are you insured?',

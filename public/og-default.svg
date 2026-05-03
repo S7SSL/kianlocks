@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- ============= BACKGROUND ============= -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1A3A"/>
+      <stop offset="100%" stop-color="#070D24"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="85%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#goldGlow)"/>
+
+  <!-- ============= LOGO MARK (top-left) ============= -->
+  <g transform="translate(80, 70)">
+    <!-- House roof outline -->
+    <path d="M 0 36 L 36 4 L 72 36" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Gold key inside roof -->
+    <circle cx="28" cy="50" r="7" fill="none" stroke="#D4AF37" stroke-width="3.5"/>
+    <rect x="33" y="48" width="22" height="4" rx="1.5" fill="#D4AF37"/>
+    <rect x="45" y="52" width="3.5" height="5" rx="1" fill="#D4AF37"/>
+    <rect x="50.5" y="52" width="3.5" height="4" rx="1" fill="#D4AF37"/>
+  </g>
+  <text x="170" y="120" font-family="'Newsreader', 'Source Serif Pro', serif" font-size="36" font-weight="600" fill="#FFFFFF">kianlocks</text>
+  <text x="170" y="146" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="600" fill="#D4AF37" letter-spacing="3">ABS LOCKSMITH · LONDON</text>
+
+  <!-- ============= MAIN HEADLINE ============= -->
+  <text x="80" y="295" font-family="'Newsreader', 'Source Serif Pro', serif" font-size="92" font-weight="600" fill="#FFFFFF" letter-spacing="-2">One lock change.</text>
+  <text x="80" y="395" font-family="'Newsreader', 'Source Serif Pro', serif" font-size="92" font-weight="600" fill="#D4AF37" letter-spacing="-2">£149 flat.</text>
+
+  <!-- ============= SUBHEAD ============= -->
+  <text x="80" y="455" font-family="'Inter', system-ui, sans-serif" font-size="26" font-weight="400" fill="rgba(255,255,255,0.78)">Avocet ABS 3-star anti-snap cylinders.</text>
+  <text x="80" y="490" font-family="'Inter', system-ui, sans-serif" font-size="26" font-weight="400" fill="rgba(255,255,255,0.78)">North &amp; Central London.</text>
+
+  <!-- ============= GOLD ACCENT RULE ============= -->
+  <rect x="80" y="525" width="80" height="3" fill="#D4AF37"/>
+
+  <!-- ============= URL FOOTER ============= -->
+  <text x="80" y="582" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="600" fill="#FFFFFF" letter-spacing="0.5">kianlocks.com</text>
+  <text x="1120" y="582" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="600" fill="rgba(212, 175, 55, 0.85)" letter-spacing="3" text-anchor="end">TS007 · 3-STAR · KITEMARKED</text>
+
+  <!-- ============= DECORATIVE GOLD KEY (right side, large faded) ============= -->
+  <g transform="translate(870, 250) rotate(20)" opacity="0.18">
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#D4AF37" stroke-width="14"/>
+    <circle cx="0" cy="0" r="20" fill="#0E1A3A"/>
+    <rect x="65" y="-12" width="180" height="24" rx="4" fill="#D4AF37"/>
+    <rect x="180" y="12" width="18" height="32" rx="3" fill="#D4AF37"/>
+    <rect x="210" y="12" width="18" height="24" rx="3" fill="#D4AF37"/>
+  </g>
+</svg>

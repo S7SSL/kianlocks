@@ -11,11 +11,13 @@
 
 The strategic question raised in Section 3 has been answered:
 
-- **Path A — ABS-only specialist.** No emergency, no 24-hour, no service expansion.
+- **Path A — ABS-only specialist.** Single product, single service. No service expansion (no key cutting, no smart locks, no safes).
 - **Audience:** landlords (tenancy change), tenants (just moved in), homeowners (security upgrade).
 - **Primary CTA: email** `hi@kianlocks.com` (or contact form on `/contact`). Phone is secondary.
-- **Price:** £149 flat (cylinder + fitting + three keys included).
-- **Hours:** Mon–Sat 9am–6pm (NOT 24/7).
+- **Pricing — two pathways:**
+  - **£149 flat** for planned bookings during standard hours (Mon–Sat 9am–6pm). Cylinder + fitting + three keys.
+  - **24/7 emergency callout — quoted per job.** Available but priced separately so the £149 headline stays clean.
+- **Hours:** Standard Mon–Sat 9am–6pm. 24/7 emergency available subject to quote.
 
 **Sections that reference emergency / 24-hour / service expansion (Paths B & C) below are reference only — DO NOT implement.** Same goes for the 24-hour content in the GBP setup, the emergency page templates, and the lockout-related blog topics. Those would dilute the brand and put you in scope you've explicitly chosen not to play in.
 

@@ -31,11 +31,11 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
   <section class="page-hero">
     <div class="container">
       <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Contact' }]} />
-      <h1>Email us. We'll come back within 2 hours.</h1>
+      <h1>Book a fitting. {SITE.price} flat.</h1>
       <p class="lead">
-        Email is how we book. Tell us the postcode, the door type
-        and why you&rsquo;re changing the lock — we reply with a slot
-        and confirm the {SITE.price} flat price.
+        Send us the postcode, the door type and why you&rsquo;re
+        changing the lock. We reply within 2 hours with a slot.
+        One service, one price — no quote needed.
       </p>
     </div>
   </section>
@@ -52,7 +52,7 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
             aria-label="Request a lock change quote"
           >
             <!-- formsubmit.co configuration (these inputs are not displayed) -->
-            <input type="hidden" name="_subject" value="ABS lock change quote — kianlocks.com" />
+            <input type="hidden" name="_subject" value="ABS lock change booking — kianlocks.com" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value={`${SITE.url}/contact?sent=1`} />
@@ -96,9 +96,10 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
               <label for="reason">Why are you changing the lock? <span class="req">*</span></label>
               <select id="reason" name="reason" required>
                 <option value="">Choose…</option>
-                <option>Landlord — tenancy change</option>
-                <option>Tenant — just moved in</option>
-                <option>Homeowner — security upgrade</option>
+                <option>Landlord — tenancy change (£149 flat)</option>
+                <option>Tenant — just moved in (£149 flat)</option>
+                <option>Homeowner — security upgrade (£149 flat)</option>
+                <option>EMERGENCY / 24-hour callout (quoted per job)</option>
                 <option>Other</option>
               </select>
             </div>
@@ -108,11 +109,12 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
               <textarea id="notes" name="notes" rows="3" placeholder="Preferred days/times, building access notes, photos can be attached after first reply…"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Request a quote</button>
+            <button type="submit" class="btn btn-primary">Send booking request</button>
             <p class="form-note">
               We reply within 2 hours during office hours
-              (Mon–Sat 9am–6pm). All quotes confirmed by email — no
-              call-back unless you ask for one.
+              (Mon–Sat 9am–6pm) with a fitting slot. {SITE.price}
+              flat, confirmed by email. No call-back unless you
+              ask for one.
             </p>
           </form>
         </div>
@@ -120,9 +122,9 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
         <!-- ============= ALT CONTACT METHODS ============= -->
         <aside class="contact-side">
           <div class="card">
-            <h3 style="font-size:1.25rem; margin-bottom:0.85rem;">Prefer email direct?</h3>
+            <h3 style="font-size:1.25rem; margin-bottom:0.85rem;">Prefer to email direct?</h3>
             <p class="muted">
-              Send us a note with your postcode and door type:
+              Skip the form. Send us a note with your postcode and door type:
             </p>
             <p class="mt-2">
               <a href={SITE.emailHref} class="btn btn-outline" style="font-size:0.85rem;">
@@ -135,7 +137,7 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
             <h3 style="font-size:1.25rem; margin-bottom:0.85rem;">Phone</h3>
             <p class="muted">
               We answer phones {SITE.hours.toLowerCase()}, but email
-              is faster — most quotes are sent within 2 hours.
+              is faster — most bookings are confirmed within 2 hours.
             </p>
             <p class="mt-2">
               <a href={SITE.phoneHref} class="btn btn-outline" style="font-size:0.85rem;">
@@ -145,20 +147,17 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
           </div>
 
           <div class="card mt-3" style="background: var(--surface);">
-            <h3 style="font-size:1.15rem; margin-bottom:0.85rem;">Before you contact us — a quick check</h3>
-            <p style="font-size:0.9rem; color:var(--on-surface-variant); margin-bottom:0.75rem;">
-              We only do <strong>planned ABS lock changes</strong>:
+            <h3 style="font-size:1.15rem; margin-bottom:0.85rem;">Two service paths</h3>
+            <p style="font-size:0.9rem; color:var(--on-surface-variant); margin-bottom:0.85rem;">
+              <strong>Planned booking — £149 flat.</strong>
+              Mon–Sat 9am–6pm. Email this form with your postcode and
+              door type. We confirm a slot and price within 2 hours.
             </p>
-            <ul style="font-size:0.9rem; color:var(--on-surface-variant); padding-left:1.25rem;">
-              <li>Tenancy change (landlord)</li>
-              <li>New tenancy (tenant)</li>
-              <li>3-star security upgrade (homeowner)</li>
-            </ul>
-            <p style="font-size:0.85rem; color:var(--on-surface-variant); margin-top:0.85rem;">
-              We are <strong>not</strong> a 24/7 emergency service. If
-              you&rsquo;re locked out right now, call a local
-              emergency locksmith — then come to us for the proper
-              ABS upgrade.
+            <p style="font-size:0.9rem; color:var(--on-surface-variant); margin:0;">
+              <strong>24/7 emergency — quoted per job.</strong>
+              For genuine emergencies (locked out, attempted snap, urgent
+              tenancy access). Use the form with EMERGENCY selected, or
+              call <a href={SITE.phoneHref} style="color:inherit;text-decoration:underline;">{SITE.phone}</a>.
             </p>
           </div>
         </aside>

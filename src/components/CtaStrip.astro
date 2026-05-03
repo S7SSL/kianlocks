@@ -5,8 +5,8 @@ interface Props {
   body?: string;
 }
 const {
-  heading = 'Get a quote in two minutes.',
-  body = `Email us with your postcode and door type and we'll come back within two hours with the slot and the ${SITE.price} fixed price. No callout fees, no upsells.`,
+  heading = 'Book a fitting in two minutes.',
+  body = `${SITE.price} flat — cylinder, fitting and three keys. Email us your postcode and door type; we come back within two hours with the slot. No callout fees, no upsells, no negotiation.`,
 } = Astro.props;
 ---
 <section class="cta-strip">
@@ -16,7 +16,7 @@ const {
       <p>{body}</p>
     </div>
     <div class="cta-strip__buttons">
-      <a href={SITE.emailHref} class="btn btn-primary">Email {SITE.email}</a>
+      <a href={SITE.emailHref} class="btn btn-primary">Book a fitting</a>
       <a href={SITE.phoneHref} class="btn btn-outline-light">Or call {SITE.phone}</a>
     </div>
   </div>
