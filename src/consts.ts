@@ -8,9 +8,9 @@ export const SITE = {
   legalName: 'kianlocks Ltd',
   domain: 'kianlocks.com',
   url: 'https://kianlocks.com',
-  tagline: 'ABS lock changes. North & Central London. £149 flat.',
+  tagline: 'ABS lock change · £149 flat · North London',
   description:
-    'North & Central London ABS lock change specialists. Avocet ABS 3-star anti-snap cylinders fitted for landlords, tenants and homeowners. £149 flat for planned work, 24/7 emergency available (subject to quote). Email hi@kianlocks.com to book.',
+    'North & Central London ABS lock specialists. £149 flat for planned bookings, 24/7 emergency by quote. Email hi@kianlocks.com to book.',
 
   /** Primary contact: email */
   email: 'hi@kianlocks.com',
