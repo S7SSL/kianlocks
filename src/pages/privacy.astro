@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema } from '../lib/schema';
+
+const schema = breadcrumbSchema([
+  { name: 'Home', url: SITE.url },
+  { name: 'Privacy', url: `${SITE.url}/privacy` },
+]);
+---
+<BaseLayout
+  title="Privacy policy"
+  description="How Kian Locks Ltd handles your personal information when you contact us or book a lock change."
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Privacy' }]} />
+      <h1>Privacy policy</h1>
+      <p class="lead">A short, plain-English summary of what we do with your information.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <article class="prose">
+        <p><em>Last updated: {new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}.</em></p>
+
+        <h2>Who we are</h2>
+        <p>
+          Kian Locks Ltd is a company registered in England and Wales,
+          operating the website at <a href={SITE.url}>{SITE.domain}</a>.
+          We are the data controller for any personal information you
+          provide to us.
+        </p>
+
+        <h2>What we collect</h2>
+        <p>
+          When you call or email us to book a job we collect: your name,
+          contact number or email, the address where work is to be carried
+          out, and a description of the work needed. After the job we hold
+          a copy of the invoice for accounting purposes.
+        </p>
+
+        <h2>Why we collect it</h2>
+        <p>
+          To quote, schedule and carry out the work you have asked us to
+          do, and to comply with our legal obligations to retain financial
+          records.
+        </p>
+
+        <h2>Who we share it with</h2>
+        <p>
+          We do not sell or rent your information. We share it only with:
+          our accountant for tax purposes; HMRC if legally required; and a
+          payment processor if you pay by card.
+        </p>
+
+        <h2>How long we keep it</h2>
+        <p>
+          Job records are retained for six years to meet UK accounting
+          requirements, then deleted.
+        </p>
+
+        <h2>Your rights</h2>
+        <p>
+          Under UK GDPR you have the right to see what we hold about you,
+          ask us to correct it, ask us to delete it (subject to our legal
+          retention obligations), and complain to the ICO at
+          <a href="https://ico.org.uk"> ico.org.uk</a>.
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+          This website uses no tracking cookies. We use only the technical
+          cookies required to serve the page — none of which identify you.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For any privacy question email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          or call <a href={SITE.phoneHref}>{SITE.phone}</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

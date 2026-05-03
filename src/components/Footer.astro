@@ -1,0 +1,61 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../consts';
+import { BOROUGHS } from '../data/boroughs';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" aria-label={`${SITE.name} — home`}>
+          <Logo width={36} monoColor="#fff" />
+          <span>
+            <span class="brand__name" style="color:#fff">{SITE.name}</span>
+            <span class="brand__sub" style="color:rgba(255,255,255,0.6)">ABS Locksmith</span>
+          </span>
+        </a>
+        <p>
+          North &amp; Central London locksmith. We fit Avocet ABS 3-star
+          high-security cylinders only — anti-snap, anti-bump, anti-pick,
+          anti-drill. Same-day callout, fully insured.
+        </p>
+      </div>
+
+      <div>
+        <h4>Areas</h4>
+        <ul>
+          {BOROUGHS.slice(0, 6).map((b) => (
+            <li><a href={`/locksmith/${b.slug}`}>{b.name}</a></li>
+          ))}
+          <li><a href="/areas">All areas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/why-abs">Why ABS</a></li>
+          <li><a href="/process">How it works</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href={SITE.phoneHref}>{SITE.phone}</a></li>
+          <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          <li>{SITE.hours}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <span>&copy; {year} {SITE.legalName}. All rights reserved.</span>
+      <span>Built in London. ABS Kitemarked. TS007 3-star.</span>
+    </div>
+  </div>
+</footer>

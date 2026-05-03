@@ -1,0 +1,38 @@
+---
+/**
+ * Inline SVG logo — house roof + KIAN LOCKS wordmark inspired by the original 2020 brand.
+ * Renders crisply at any size and ships as part of the document, so no extra HTTP request.
+ */
+interface Props {
+  /** Total width in px. */
+  width?: number;
+  /** Single-color override. Default uses brand colors. */
+  monoColor?: string;
+}
+const { width = 36, monoColor } = Astro.props;
+const fill = monoColor ?? 'currentColor';
+const goldFill = monoColor ?? '#D4A93A';
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  width={width}
+  height={width}
+  aria-hidden="true"
+  focusable="false"
+>
+  <!-- House roof outline -->
+  <path
+    d="M6 32 L32 10 L58 32"
+    fill="none"
+    stroke={fill}
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Key body inside the roof -->
+  <circle cx="26" cy="42" r="5.5" fill="none" stroke={goldFill} stroke-width="3" />
+  <rect x="30" y="40.5" width="18" height="3" rx="1.5" fill={goldFill} />
+  <rect x="42" y="43.5" width="3" height="4" rx="1" fill={goldFill} />
+  <rect x="38" y="43.5" width="3" height="4" rx="1" fill={goldFill} />
+</svg>

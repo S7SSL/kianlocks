@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema, localBusinessSchema } from '../lib/schema';
+
+const schema = [
+  localBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE.url },
+    { name: 'Why ABS', url: `${SITE.url}/why-abs` },
+  ]),
+];
+---
+<BaseLayout
+  title="Why we only fit Avocet ABS cylinders"
+  description="A plain-English explanation of why Avocet ABS 3-star is the only euro cylinder we fit — and why mixing brands undermines the lock you actually want."
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Why ABS' }]} />
+      <h1>The case for fitting one cylinder, properly.</h1>
+      <p class="lead">
+        Most lock changes go wrong before the locksmith arrives — at the
+        point of brand selection. Here&rsquo;s why we made a deliberate choice
+        to carry one cylinder and only one.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <article class="prose">
+        <h2>The euro cylinder is the door</h2>
+        <p>
+          On the vast majority of London front doors — uPVC, composite,
+          and most timber — the entire security of the door rests on the
+          euro-profile cylinder. The handle is cosmetic. The multipoint
+          mechanism is robust but only as strong as the cylinder it
+          accepts. If the cylinder fails, the door is open.
+        </p>
+        <p>
+          Cylinders fail in four ways under attack: snapping, bumping,
+          picking and drilling. A &lsquo;snap attack&rsquo; — where the
+          cylinder is gripped with mole grips and twisted until it shears
+          — became the dominant break-in method in London a decade ago
+          and remains so today.
+        </p>
+
+        <h2>What 3-star actually means</h2>
+        <p>
+          The British Standard for euro cylinders is TS007. It awards
+          stars: 1, 2 or 3. To get 3 stars, a cylinder must independently
+          defeat all four attack methods in standardised testing. To get
+          1 star, it only has to defeat some of them — and in real-world
+          installations, a 1-star cylinder is meant to be paired with a
+          2-star handle to make up the rating.
+        </p>
+        <p>
+          That works on paper. In practice, handles get changed. Doors
+          get refurbished. The 2-star handle is replaced by something
+          off Amazon and the door silently drops back to 1-star without
+          anyone noticing.
+        </p>
+        <p>
+          A 3-star cylinder doesn&rsquo;t have that problem. It is
+          independently rated. The handle can be anything. The cylinder
+          alone meets the standard.
+        </p>
+
+        <h2>Why Avocet ABS specifically</h2>
+        <p>
+          There are several 3-star cylinders on the UK market. We chose
+          Avocet ABS because:
+        </p>
+        <ul>
+          <li>It carries the Sold Secure Diamond rating in addition to TS007 3-star — the toughest independent test in the UK.</li>
+          <li>It is approved under Secured by Design — the police-preferred standard for new-build housing.</li>
+          <li>The product range is complete: euro, oval, thumbturn, sizes from 60mm to 110mm in 5mm increments. We can fit any door without compromise.</li>
+          <li>Avocet&rsquo;s cylinder design includes a sacrificial section: even under sustained snap attack, the inner mechanism remains in place and the door stays locked.</li>
+        </ul>
+
+        <h2>Why we don&rsquo;t carry alternatives</h2>
+        <p>
+          If we stocked five brands of cylinder, we would fit five
+          brands of cylinder — and the cheapest ones, when the customer
+          chose price over rating, would underperform. The honest
+          version of this trade is to carry the best product and quote
+          its real cost. That&rsquo;s what we do.
+        </p>
+        <p>
+          We are not the cheapest locksmith in London. We are not trying
+          to be. We are trying to be the locksmith you call when you
+          want the cylinder problem solved once and never thought about
+          again.
+        </p>
+
+        <h2>What you get</h2>
+        <ul>
+          <li>Avocet ABS cylinder, sized to your door, fitted same day.</li>
+          <li>Three keys cut to your new cylinder.</li>
+          <li>An itemised written invoice naming the product, the rating, and the cylinder serial — for your insurer or freeholder if needed.</li>
+          <li>A guarantee on the work and the product itself.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <CtaStrip
+    heading="Ready to upgrade?"
+    body="One cylinder, one visit, one fixed price. Call us — we'll quote on the door type and postcode."
+  />
+</BaseLayout>

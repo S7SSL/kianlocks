@@ -1,0 +1,18 @@
+---
+import { SITE } from '../consts';
+interface Props {
+  heading?: string;
+  body?: string;
+}
+const {
+  heading = 'Lock change today.',
+  body = 'Same-day Avocet ABS fitting across North & Central London. Fixed quote, no callout surprises.',
+} = Astro.props;
+---
+<section class="cta-strip">
+  <div class="container">
+    <h2>{heading}</h2>
+    <p>{body}</p>
+    <a href={SITE.phoneHref} class="btn btn-primary">Call {SITE.phone}</a>
+  </div>
+</section>

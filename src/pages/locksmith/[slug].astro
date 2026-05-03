@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaStrip from '../../components/CtaStrip.astro';
+import { SITE } from '../../consts';
+import { BOROUGHS } from '../../data/boroughs';
+import { FAQS } from '../../data/faqs';
+import {
+  localBusinessSchema,
+  boroughServiceSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from '../../lib/schema';
+
+export function getStaticPaths() {
+  return BOROUGHS.map((b) => ({ params: { slug: b.slug }, props: { borough: b } }));
+}
+
+const { borough } = Astro.props;
+const url = `${SITE.url}/locksmith/${borough.slug}`;
+
+const schema = [
+  localBusinessSchema(),
+  boroughServiceSchema(borough),
+  faqSchema(FAQS.slice(0, 5)),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE.url },
+    { name: 'Areas', url: `${SITE.url}/areas` },
+    { name: borough.name, url },
+  ]),
+];
+---
+<BaseLayout
+  title={`Locksmith in ${borough.name} — ABS only`}
+  description={borough.metaDescription}
+  schema={schema}
+  canonical={url}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[
+        { name: 'Home', href: '/' },
+        { name: 'Areas', href: '/areas' },
+        { name: borough.name },
+      ]} />
+      <h1>{borough.h1}</h1>
+      <p class="lead">{borough.lead}</p>
+
+      <dl class="borough-meta">
+        <div>
+          <dt>Postcodes covered</dt>
+          <dd>{borough.postcodes.join(' · ')}</dd>
+        </div>
+        <div>
+          <dt>Typical response</dt>
+          <dd>{borough.responseTime}</dd>
+        </div>
+        <div>
+          <dt>Region</dt>
+          <dd>{borough.region}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <article class="prose">
+        <h2>What we do in {borough.name}</h2>
+        <p>{borough.bodyParagraphs[0]}</p>
+        <p>{borough.bodyParagraphs[1]}</p>
+
+        <h2>A common {borough.name} job</h2>
+        <p>{borough.commonIssue}</p>
+
+        <h2>Areas covered within {borough.name}</h2>
+        <div class="pills">
+          {borough.landmarks.map((l) => <span class="pill">{l}</span>)}
+        </div>
+
+        <h2>Why ABS — even more relevant in {borough.name}</h2>
+        <p>
+          The London snap-attack method does not discriminate by
+          borough — but the housing stock does affect which doors are
+          most exposed. Whether you have a Victorian timber front door,
+          a uPVC back door, or a composite door on a new-build flat, the
+          euro cylinder is what holds it shut. We replace it with the
+          only cylinder rated 3-star against snap, bump, pick and drill
+          attack independently:
+          <a href="/why-abs"> Avocet ABS</a>.
+        </p>
+
+        <h2>What it costs</h2>
+        <p>
+          Pricing is fixed and quoted in advance — based on the
+          cylinder size and door type. Call us with the postcode and
+          door type and we&rsquo;ll give you a price on the phone.
+        </p>
+      </article>
+
+      <div class="text-center mt-4" style="margin-top:2.5rem;">
+        <a href={SITE.phoneHref} class="btn btn-primary">Call {SITE.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip
+    heading={`${borough.name} lock change today.`}
+    body={`Same-day Avocet ABS fitting across ${borough.postcodes.slice(0, 3).join(', ')} and the wider ${borough.name} area. Fixed quote, no callout surprises.`}
+  />
+</BaseLayout>

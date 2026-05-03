@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { SITE } from '../consts';
+import { NORTH_LONDON, CENTRAL_LONDON } from '../data/boroughs';
+import { breadcrumbSchema, localBusinessSchema } from '../lib/schema';
+
+const schema = [
+  localBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE.url },
+    { name: 'Areas', url: `${SITE.url}/areas` },
+  ]),
+];
+---
+<BaseLayout
+  title="Locksmith service area — North & Central London"
+  description="Avocet ABS lock changes across nine North & Central London boroughs. Pick your area for response times and per-borough information."
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Areas' }]} />
+      <h1>Where we work.</h1>
+      <p class="lead">
+        We serve nine North &amp; Central London boroughs from a North
+        London base — same-day response in every postcode listed below.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 style="font-size:1.75rem;margin-bottom:1.5rem;">North London</h2>
+      <div class="grid-3">
+        {NORTH_LONDON.map((b) => (
+          <a href={`/locksmith/${b.slug}`} class="card borough-card">
+            <div class="meta">{b.region}</div>
+            <h3>{b.name}</h3>
+            <p>{b.lead.split('.')[0]}.</p>
+            <p class="postcodes">{b.postcodes.join(' · ')}</p>
+          </a>
+        ))}
+      </div>
+
+      <h2 style="font-size:1.75rem;margin-top:3rem;margin-bottom:1.5rem;">Central London</h2>
+      <div class="grid-3">
+        {CENTRAL_LONDON.map((b) => (
+          <a href={`/locksmith/${b.slug}`} class="card borough-card">
+            <div class="meta">{b.region}</div>
+            <h3>{b.name}</h3>
+            <p>{b.lead.split('.')[0]}.</p>
+            <p class="postcodes">{b.postcodes.join(' · ')}</p>
+          </a>
+        ))}
+      </div>
+
+      <article class="prose mt-4" style="margin-top:3rem;">
+        <h2>Just outside the map?</h2>
+        <p>
+          We sometimes attend immediately-adjacent postcodes (Hampstead,
+          Tufnell Park, Stoke Newington edges) on the same terms.
+          Call us — if we can&rsquo;t cover it ourselves we&rsquo;ll point
+          you to a locksmith we trust.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <CtaStrip />
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema, localBusinessSchema } from '../lib/schema';
+
+const schema = [
+  localBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE.url },
+    { name: 'Contact', url: `${SITE.url}/contact` },
+  ]),
+];
+---
+<BaseLayout
+  title="Contact Kian Locks"
+  description="Call Kian Locks for an Avocet ABS lock change in North & Central London. Same-day callout, fixed-quote, fully insured."
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Contact' }]} />
+      <h1>Call us. We&rsquo;ll quote on the door.</h1>
+      <p class="lead">
+        Most jobs are quoted on the phone in under two minutes. We need
+        the postcode, the door material, and ideally the cylinder
+        length — that&rsquo;s it.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid-2" style="align-items:start; gap:3rem;">
+        <div>
+          <h2 style="font-size:1.5rem;">By phone</h2>
+          <p class="muted">Fastest. We answer 7am–10pm and run a 24/7 line for confirmed emergency lockouts.</p>
+          <a href={SITE.phoneHref} class="btn btn-primary mt-2" style="font-size:1.05rem;padding:1.05rem 2rem;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            {SITE.phone}
+          </a>
+
+          <h2 style="font-size:1.5rem;margin-top:2.5rem;">By email</h2>
+          <p class="muted">Best for quotes you want in writing, landlord and freeholder enquiries, and bulk work.</p>
+          <p class="mt-2"><a href={`mailto:${SITE.email}`} class="btn btn-outline">{SITE.email}</a></p>
+
+          <h2 style="font-size:1.5rem;margin-top:2.5rem;">Hours</h2>
+          <p>{SITE.hours}</p>
+
+          <h2 style="font-size:1.5rem;margin-top:2.5rem;">Service area</h2>
+          <p class="muted">North &amp; Central London — the boroughs of Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, the City of London, and Kensington &amp; Chelsea. <a href="/areas">See the full coverage map.</a></p>
+        </div>
+
+        <aside class="card" style="background:var(--cream);">
+          <h3 style="font-size:1.3rem;margin-bottom:0.85rem;">Before you call, jot down:</h3>
+          <ol style="padding-left:1.25rem; color:var(--grey-1);">
+            <li><strong>Your postcode.</strong> So we can give an accurate response time.</li>
+            <li><strong>The door material.</strong> uPVC, composite, hardwood, etc.</li>
+            <li><strong>Cylinder length if visible.</strong> Look for digits etched on the cylinder face — e.g. &lsquo;35/45&rsquo;.</li>
+            <li><strong>Why you&rsquo;re changing it.</strong> Moved in, lost key, post-burglary, insurance audit — affects what we bring.</li>
+          </ol>
+          <p class="muted mt-3" style="font-size:var(--t-sm);">
+            Don&rsquo;t worry if you can&rsquo;t see any of this — we&rsquo;ll quote a sensible range and confirm exactly on arrival.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

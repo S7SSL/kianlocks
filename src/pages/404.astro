@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+---
+<BaseLayout
+  title="Page not found"
+  description="That page doesn't exist on kianlocks.com. Try the homepage, the areas list, or call us."
+  noindex={true}
+>
+  <section class="page-hero">
+    <div class="container text-center">
+      <h1>404. Page not found.</h1>
+      <p class="lead" style="margin-inline:auto;">
+        The page you&rsquo;re looking for has moved or never existed. Try
+        one of the links below — or just call us.
+      </p>
+      <div class="hero__ctas" style="justify-content:center;margin-top:2rem;">
+        <a href="/" class="btn btn-secondary">Back to home</a>
+        <a href="/areas" class="btn btn-outline">See all areas</a>
+        <a href={SITE.phoneHref} class="btn btn-primary">Call {SITE.phone}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

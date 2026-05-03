@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema, localBusinessSchema } from '../lib/schema';
+
+const schema = [
+  localBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE.url },
+    { name: 'About', url: `${SITE.url}/about` },
+  ]),
+];
+---
+<BaseLayout
+  title="About Kian Locks"
+  description="Kian Locks Ltd is a North & Central London locksmith fitting Avocet ABS 3-star high-security cylinders only. Independent, insured, accountable."
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About' }]} />
+      <h1>Built for one job. Done well.</h1>
+      <p class="lead">
+        Kian Locks Ltd is a London locksmith with a deliberately narrow
+        offering: the lock change. Done with one cylinder, fitted by
+        one team, to a single uncompromising standard.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <article class="prose">
+        <h2>What we do</h2>
+        <p>
+          We replace the euro-profile cylinder on residential and small
+          commercial doors across North &amp; Central London with the
+          Avocet ABS 3-star Kitemarked cylinder. That is the entire
+          service.
+        </p>
+        <p>
+          We don&rsquo;t fit smart locks unless they accept ABS. We
+          don&rsquo;t open safes. We don&rsquo;t cut keys for vehicles. We
+          do one thing, and we&rsquo;ve made it our business to do it
+          better than the locksmith who tries to do twenty.
+        </p>
+
+        <h2>Why this approach</h2>
+        <p>
+          The lock-change market in London is broken in a specific way.
+          Most callouts arrive unquoted, fit a 1-star cylinder, charge
+          for &lsquo;labour by the hour&rsquo;, and leave. Six months
+          later the cylinder snaps under attack — because it was always
+          going to.
+        </p>
+        <p>
+          The fix is not better marketing. It&rsquo;s a different product,
+          a different process, and a different kind of conversation. We
+          quote in advance, we fit the only cylinder that meets the
+          standard alone, and we tell you exactly what you&rsquo;ve
+          received in writing.
+        </p>
+
+        <h2>Who we are</h2>
+        <p>
+          Kian Locks Ltd is registered in England and Wales. Our work is
+          covered by full public liability insurance. We have been
+          fitting locks across London since 2020.
+        </p>
+
+        <h2>What we promise</h2>
+        <ul>
+          <li>The price quoted is the price paid. No hourly add-ons.</li>
+          <li>The cylinder fitted is Avocet ABS 3-star Kitemarked. We do not fit anything else.</li>
+          <li>Same-day across our service area. Pre-booked weekend slots available.</li>
+          <li>Written documentation of every fitting — for your records and your insurer.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <CtaStrip />
+</BaseLayout>

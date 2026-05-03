@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { SITE } from '../consts';
+import { BOROUGHS, NORTH_LONDON, CENTRAL_LONDON } from '../data/boroughs';
+import { FAQS } from '../data/faqs';
+import {
+  localBusinessSchema,
+  websiteSchema,
+  faqSchema,
+  breadcrumbSchema,
+} from '../lib/schema';
+
+const schema = [
+  websiteSchema(),
+  localBusinessSchema(),
+  faqSchema(FAQS),
+  breadcrumbSchema([{ name: 'Home', url: SITE.url }]),
+];
+---
+<BaseLayout
+  title={SITE.name}
+  description={SITE.description}
+  schema={schema}
+>
+  <!-- ============= HERO ============= -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <span class="eyebrow" style="color: var(--gold-bright)">North &amp; Central London Locksmith</span>
+        <h1>One lock. <span class="gold">Done properly.</span></h1>
+        <p class="lead">
+          We change locks using <strong style="color:#fff">Avocet ABS only</strong> —
+          the British Standard 3-star cylinder rated against
+          snapping, bumping, picking and drilling. No upsells,
+          no off-brand kit, no compromise.
+        </p>
+
+        <div class="hero__ctas">
+          <a href={SITE.phoneHref} class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Call {SITE.phone}
+          </a>
+          <a href="/why-abs" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color:#fff;">Why ABS only?</a>
+        </div>
+
+        <div class="hero__trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Same-day callout</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> TS007 3-star Kitemarked</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fully insured</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fixed quote, no surprises</span>
+        </div>
+      </div>
+
+      <aside class="hero__visual" aria-label="Avocet ABS specification">
+        <div class="spec-card">
+          <p class="spec-card__sub">Avocet ABS · TS007</p>
+          <h3 class="spec-card__title">3-star anti-everything cylinder</h3>
+          <ul class="spec-card__list">
+            <li><span class="star">★</span><span><strong style="color:#fff">Anti-snap</strong> — sacrificial sections defeat the &lsquo;London snap&rsquo; method</span></li>
+            <li><span class="star">★</span><span><strong style="color:#fff">Anti-bump</strong> — pin design eliminates bump-key attacks</span></li>
+            <li><span class="star">★</span><span><strong style="color:#fff">Anti-pick</strong> — patented sidebar resists manipulation</span></li>
+            <li><span class="star">★</span><span><strong style="color:#fff">Anti-drill</strong> — hardened steel inserts in critical locations</span></li>
+          </ul>
+          <div class="spec-card__rating">
+            <strong>3★</strong>
+            <span>British Standard TS007 Kitemarked</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============= WHY ABS-ONLY ============= -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The opinionated bit</span>
+        <h2>Why we only fit one cylinder</h2>
+        <p>
+          Most locksmiths carry six brands and pick whichever fits the price.
+          We don&rsquo;t. We carry one — because there is one product that
+          actually does the job, and stocking anything else would mean
+          fitting it sometimes.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>One product, fitted properly</h3>
+          <p>
+            Avocet ABS is the only TS007 3-star Kitemarked cylinder we
+            consider. It has independent ratings against all four real
+            attack methods — not a 1-star cylinder propped up by a 2-star
+            handle, like most off-the-shelf doors ship with.
+          </p>
+        </div>
+        <div class="card">
+          <h3>No upsell ladder</h3>
+          <p>
+            Other locksmiths carry a &lsquo;good, better, best&rsquo; range and
+            spend the visit talking you up. We carry the best, and quote
+            it in advance. The price you&rsquo;re told is the price you pay.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Insurance-grade, every time</h3>
+          <p>
+            Every UK home insurer accepts a TS007 3-star Kitemarked
+            cylinder under the security clause. You get an itemised
+            invoice naming the product and rating — pass it straight to
+            your insurer if asked.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/why-abs" class="btn-ghost">Read the full ABS rationale</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= PROCESS ============= -->
+  <section class="bg-cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2>From call to fitted in under an hour</h2>
+        <p>
+          One job, four steps, no surprises. Most lock changes are
+          completed inside the first 60 minutes from the call.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>Call &amp; quote</h3>
+          <p>
+            One phone call. Tell us the door type and postcode — we quote
+            in advance, in writing if you&rsquo;d like.
+          </p>
+        </div>
+        <div class="step">
+          <h3>Same-day attendance</h3>
+          <p>
+            Typical response 15–45 minutes in central boroughs, 30–60 in
+            outer. Confirmed emergencies prioritised.
+          </p>
+        </div>
+        <div class="step">
+          <h3>Measure &amp; fit</h3>
+          <p>
+            Existing cylinder out, ABS measured to size, fitted flush. No
+            damage to the door, all furniture preserved.
+          </p>
+        </div>
+        <div class="step">
+          <h3>Test &amp; document</h3>
+          <p>
+            We test the lock with you, hand over keys, and provide an
+            itemised invoice naming the cylinder for your insurer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= AREAS ============= -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Coverage</span>
+        <h2>Where we work</h2>
+        <p>
+          North &amp; Central London, every postcode in our service map.
+          Pick your area for response times and local notes.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
+        <div>
+          <h3 style="font-size:1.4rem; margin-bottom:1rem;">North London</h3>
+          <div class="grid-2" style="gap:0.85rem;">
+            {NORTH_LONDON.map((b) => (
+              <a href={`/locksmith/${b.slug}`} class="card borough-card" style="padding:1.1rem 1.25rem;">
+                <h3 style="font-size:1.2rem;margin:0;">{b.name}</h3>
+                <p class="postcodes" style="margin-top:0.4rem;">{b.postcodes.slice(0,4).join(' · ')}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Central London</h3>
+          <div class="grid-2" style="gap:0.85rem;">
+            {CENTRAL_LONDON.map((b) => (
+              <a href={`/locksmith/${b.slug}`} class="card borough-card" style="padding:1.1rem 1.25rem;">
+                <h3 style="font-size:1.2rem;margin:0;">{b.name}</h3>
+                <p class="postcodes" style="margin-top:0.4rem;">{b.postcodes.slice(0,4).join(' · ')}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= FAQ ============= -->
+  <section class="bg-cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Questions</span>
+        <h2>The things people ask</h2>
+        <p>If your question isn&rsquo;t here, call us — we&rsquo;ll talk you through it.</p>
+      </div>
+
+      <div class="faq-list">
+        {FAQS.map((f, i) => (
+          <details class="faq" open={i === 0}>
+            <summary>{f.q}</summary>
+            <div class="faq__body">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip />
+</BaseLayout>

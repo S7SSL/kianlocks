@@ -1,0 +1,12 @@
+{
+  "name": "Kian Locks",
+  "short_name": "Kian Locks",
+  "description": "ABS-only locksmith. North & Central London.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1A3A",
+  "theme_color": "#0E1A3A",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

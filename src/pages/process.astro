@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema, localBusinessSchema } from '../lib/schema';
+
+const schema = [
+  localBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: SITE.url },
+    { name: 'Process', url: `${SITE.url}/process` },
+  ]),
+];
+---
+<BaseLayout
+  title="How a Kian Locks lock change works"
+  description="From phone call to fitted ABS cylinder in under an hour. The exact process — what you book, what we measure, what you receive."
+  schema={schema}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Process' }]} />
+      <h1>One call. One visit. One cylinder.</h1>
+      <p class="lead">
+        We&rsquo;ve stripped the locksmith experience to four predictable
+        steps. Quote in advance, no callout traps, fitted same day.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="steps">
+        <div class="step">
+          <h3>1. Tell us about the door</h3>
+          <p>
+            Call and tell us your postcode, the door material (uPVC,
+            composite, timber) and roughly the cylinder length if you
+            can see it. We quote on that information — fixed price,
+            confirmed in writing if you&rsquo;d like.
+          </p>
+        </div>
+        <div class="step">
+          <h3>2. We attend</h3>
+          <p>
+            Typical response is 15–45 minutes in Camden, Islington,
+            Westminster and the EC postcodes; 30–60 minutes in Barnet
+            and Enfield. Confirmed emergencies prioritised.
+          </p>
+        </div>
+        <div class="step">
+          <h3>3. Measure &amp; swap</h3>
+          <p>
+            We remove the existing cylinder, measure both sides of the
+            door precisely, and fit an Avocet ABS sized to sit flush
+            against the handle escutcheon. No protruding cylinder for a
+            snap attack to grip.
+          </p>
+        </div>
+        <div class="step">
+          <h3>4. Test, hand over, document</h3>
+          <p>
+            Three keys cut and tested with you. Itemised invoice naming
+            the product, rating, and serial number — keep it for your
+            insurer or freeholder.
+          </p>
+        </div>
+      </div>
+
+      <article class="prose mt-4">
+        <h2>What you do not need to do</h2>
+        <ul>
+          <li><strong>Stay in.</strong> We can collect a key from a neighbour, agent, or building concierge if you arrange it.</li>
+          <li><strong>Replace the door.</strong> ABS sizes exist for almost every standard door — the cylinder is the only thing that changes.</li>
+          <li><strong>Buy parts in advance.</strong> Everything is on the van — cylinders, the right tools, fixings, replacement keys.</li>
+          <li><strong>Pay before you see the work.</strong> Payment after the job is signed off, by card or bank transfer.</li>
+        </ul>
+
+        <h2>What we won&rsquo;t do</h2>
+        <ul>
+          <li>Try to upsell you a smart lock you didn&rsquo;t ask for.</li>
+          <li>Quote a callout fee then add hourly labour on top.</li>
+          <li>Fit a 1-star cylinder &lsquo;to save money&rsquo; — that&rsquo;s the entire problem we exist to solve.</li>
+          <li>Leave the door without testing the cylinder cycles smoothly with all keys.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <CtaStrip />
+</BaseLayout>
