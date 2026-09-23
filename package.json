@@ -2,13 +2,15 @@
   "name": "kianlocks-website",
   "type": "module",
   "version": "1.0.0",
-  "description": "Kian Locks — ABS-only locksmith, North & Central London. Built with Astro, deployed to GitHub Pages.",
+  "description": "Kian Locks \u2014 ABS-only locksmith, North & Central London. Built with Astro, deployed to GitHub Pages.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:seo": "node scripts/seo-check.mjs",
+    "build:check": "astro build && node scripts/seo-check.mjs"
   },
   "dependencies": {
     "astro": "^4.16.18",

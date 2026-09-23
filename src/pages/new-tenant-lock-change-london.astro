@@ -1,0 +1,77 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { SITE } from '../consts';
+
+const path = '/new-tenant-lock-change-london';
+const faqs = [
+  {
+    q: 'Should I change the locks after moving in?',
+    a: 'It is worth doing. You rarely know how many keys to the old lock exist — previous occupants, their friends, cleaners, contractors or agents may have copies. Changing the euro cylinder means only the keys you are handed work.',
+  },
+  {
+    q: 'I rent — do I need my landlord’s permission?',
+    a: 'Check your tenancy agreement. Shelter says tenants can change locks if they feel unsafe provided the old locks are kept to refit at the end of the tenancy; landlord bodies say many agreements require permission. Asking in writing and offering your landlord a key avoids most disputes.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'The fitting itself is typically 30–45 minutes. Planned bookings are usually within 2–5 working days of your email.',
+  },
+  {
+    q: 'I just bought the property — anything else to check?',
+    a: 'Check every door with a euro cylinder, including back, side and garage doors, and look at the cylinder face for three stars. If you also have a mortice lock on a timber door, that is a separate lock we do not change.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="New flat or house? Until the cylinder is changed, every old key still works. We fit an Avocet ABS 3-star with three new keys — £149 flat."
+  audience="Tenants and new homeowners"
+  ctaHeading="Moved in? Make the old keys useless."
+  ctaBody={`${SITE.price} flat — Avocet ABS cylinder, fitting and three keys. Email your postcode and door type; we reply within 2 hours.`}
+>
+  <QuickAnswer>
+    <p>
+      After moving into a London flat or house, changing the euro cylinder is the quickest way to make every
+      previous key useless. kianlocks fits an Avocet ABS (TS007 3-star, Sold Secure Diamond) with three new keys for
+      <strong>{SITE.price} flat</strong>. Tenants should check their tenancy agreement first and keep the old cylinder to refit when they leave.
+    </p>
+  </QuickAnswer>
+
+  <h2>Who still has a key to your door?</h2>
+  <p>
+    Previous tenants or owners, their family and friends, cleaners, dog walkers, builders, letting agents and
+    the occasional neighbour “just in case”. You can’t collect them all back — but you can make them all stop working.
+  </p>
+
+  <h2>If you rent</h2>
+  <p>
+    Whether you can change the lock depends on your tenancy agreement. Ask your landlord in writing, keep the
+    original cylinder so it can go back at the end of the tenancy, and offer a key. Full detail in
+    <a href="/guides/can-tenants-change-locks/">can tenants change the locks?</a>
+  </p>
+
+  <h2>If you’ve just bought</h2>
+  <p>
+    Change every door locked by a euro cylinder — front, back, side and garage. While we’re there we’ll tell you
+    what rating each cylinder currently has, so you know where you stand. Each door is {SITE.price}.
+  </p>
+
+  <h2>What you get</h2>
+  <ul>
+    <li>Avocet ABS cylinder, sized to your door.</li>
+    <li>Three new keys.</li>
+    <li>An itemised invoice naming the product and ratings.</li>
+    <li>No callout fee, no hourly labour.</li>
+  </ul>
+
+  <FaqBlock faqs={faqs} heading="Moving-in questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/can-tenants-change-locks/', title: 'Can tenants change locks?', blurb: 'What the sources say.' },
+    { href: '/guides/ts007-3-star-explained/', title: 'Check your lock rating', blurb: 'A 30-second check.' },
+    { href: '/areas/', title: 'Areas we cover', blurb: 'Nine North & Central London boroughs.' },
+  ]} />
+</ContentLayout>

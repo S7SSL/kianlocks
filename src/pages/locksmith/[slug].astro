@@ -19,7 +19,7 @@ export function getStaticPaths() {
 }
 
 const { borough } = Astro.props;
-const url = `${SITE.url}/locksmith/${borough.slug}`;
+const url = `${SITE.url}/locksmith/${borough.slug}/`;
 const inName = borough.slug === 'city-of-london' ? 'the City of London' : borough.name;
 const nearby = borough.nearby.map(boroughBySlug).filter(Boolean);
 
@@ -47,7 +47,7 @@ const schema = [
   boroughServiceSchema(borough),
   breadcrumbSchema([
     { name: 'Home', url: SITE.url },
-    { name: 'Areas', url: `${SITE.url}/areas` },
+    { name: 'Areas', url: `${SITE.url}/areas/` },
     { name: borough.name, url },
   ]),
 ];
@@ -62,7 +62,7 @@ const schema = [
     <div class="container">
       <Breadcrumbs items={[
         { name: 'Home', href: '/' },
-        { name: 'Areas', href: '/areas' },
+        { name: 'Areas', href: '/areas/' },
         { name: borough.name },
       ]} />
       <h1>{borough.h1}</h1>
@@ -115,9 +115,9 @@ const schema = [
           decides which doors are exposed. Whether you have a Victorian timber
           door, a uPVC back door or a composite door on a new-build flat, the
           euro cylinder is what holds it shut. We replace it with an
-          <a href="/why-abs">Avocet ABS</a> — rated TS007 3-star on its own, so
+          <a href="/why-abs/">Avocet ABS</a> — rated TS007 3-star on its own, so
           the door meets the standard whatever handle is fitted. Not sure what
-          the stars mean? Read <a href="/guides/ts007-3-star-explained">TS007 3-star explained</a>.
+          the stars mean? Read <a href="/guides/ts007-3-star-explained/">TS007 3-star explained</a>.
         </p>
 
         <h2>What it costs</h2>
@@ -126,14 +126,14 @@ const schema = [
           fitting, three keys, written invoice — all included. No callout fee,
           no per-minute labour, no upsell on the doorstep. For how that compares
           with typical London prices, see our
-          <a href="/guides/lock-change-cost-london">lock change cost guide</a>.
+          <a href="/guides/lock-change-cost-london/">lock change cost guide</a>.
         </p>
 
         <h2>Who we work with in {borough.name}</h2>
         <ul>
-          <li><a href="/landlord-lock-change-london"><strong>Landlords</strong></a> changing locks between tenancies.</li>
-          <li><a href="/new-tenant-lock-change-london"><strong>Tenants</strong></a> who want their own keys after moving in.</li>
-          <li><a href="/3-star-lock-upgrade-london"><strong>Homeowners</strong></a> upgrading to a 3-star anti-snap cylinder.</li>
+          <li><a href="/landlord-lock-change-london/"><strong>Landlords</strong></a> changing locks between tenancies.</li>
+          <li><a href="/new-tenant-lock-change-london/"><strong>Tenants</strong></a> who want their own keys after moving in.</li>
+          <li><a href="/3-star-lock-upgrade-london/"><strong>Homeowners</strong></a> upgrading to a 3-star anti-snap cylinder.</li>
         </ul>
 
         <h2>How to book</h2>
@@ -148,14 +148,14 @@ const schema = [
           We reply within 2 hours during office hours and usually book within
           2–5 working days. Locked out or insecure after a break-in? Call
           <a href={SITE.phoneHref}>{SITE.phone}</a> — see our
-          <a href="/emergency-locksmith-london">24/7 emergency service</a>.
+          <a href="/emergency-locksmith-london/">24/7 emergency service</a>.
         </p>
 
         <FaqBlock faqs={faqs} heading={`${borough.name} lock change questions`} bare />
 
         <RelatedLinks
           heading={`Also covering near ${borough.name}`}
-          links={nearby.map((n) => ({ href: `/locksmith/${n!.slug}`, title: `Locksmith ${n!.name}`, blurb: n!.postcodes.slice(0, 4).join(' · ') }))}
+          links={nearby.map((n) => ({ href: `/locksmith/${n!.slug}/`, title: `Locksmith ${n!.name}`, blurb: n!.postcodes.slice(0, 4).join(' · ') }))}
         />
       </article>
 

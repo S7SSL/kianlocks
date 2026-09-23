@@ -1,4 +1,57 @@
+# kianlocks.com — all crawlers welcome, including AI search and assistant crawlers.
+# Being citable by AI Overviews, ChatGPT, Perplexity, Copilot and Claude is a goal,
+# so these are allowed explicitly (an explicit Allow also survives any future
+# default-deny added by a CDN/bot-management layer).
+
 User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: DuckAssistBot
 Allow: /
 
 Sitemap: https://kianlocks.com/sitemap-index.xml

@@ -1,0 +1,75 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/how-to-choose-a-locksmith-london';
+const faqs = [
+  {
+    q: 'Are locksmiths licensed in the UK?',
+    a: 'No. There is no government licensing for locksmiths in the UK. The Master Locksmiths Association says anybody can trade as a locksmith irrespective of competence, background or motive, and in 2021 the government said it did not see a sufficient case to license them.',
+  },
+  {
+    q: 'What does MLA approved mean?',
+    a: 'MLA approval is a voluntary scheme for locksmith companies run by the Master Locksmiths Association. Approved companies are vetted (including DBS checks), inspected, and employ locksmiths who have passed the MLA exam. It applies to companies, not individuals.',
+  },
+  {
+    q: 'How do I avoid being overcharged by a locksmith?',
+    a: 'Get the total price in writing before anyone travels, including callout fee, labour and parts; ask which cylinder and rating will be fitted; and ask for an itemised invoice. Be wary of very low headline prices that turn into hourly charges on the doorstep.',
+  },
+  {
+    q: 'Is kianlocks MLA approved?',
+    a: 'We do not claim MLA approval. What we do publish: a fixed £149 price for planned work, the exact product we fit (Avocet ABS, TS007 3-star, Sold Secure Diamond), our Companies House details, and public liability insurance with the certificate available on request.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="Anyone can call themselves a locksmith in the UK. These seven checks separate a trustworthy one from an expensive mistake — and we apply them to ourselves."
+  sources={[
+    { label: 'Master Locksmiths Association — Are locksmiths licensed?', url: 'https://www.locksmiths.co.uk/faq/are-locksmiths-licensed/' },
+    { label: 'Hansard — Licensing of Master Locksmiths (22 Sep 2021)', url: 'https://hansard.parliament.uk/commons/2021-09-22/debates/CD79E37B-DFEC-4D07-B0B6-9BDCA9C40A74/LicensingOfMasterLocksmiths' },
+    { label: 'Checkatrade — Locksmith prices (May 2026)', url: 'https://www.checkatrade.com/blog/cost-guides/locksmith-prices/' },
+    { label: 'Companies House — KIANLOCKS LTD (11163189)', url: 'https://find-and-update.company-information.service.gov.uk/company/11163189' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Locksmiths are <strong>not licensed</strong> in the UK, so check for yourself: get the <strong>total price in
+      writing</strong> before anyone travels, ask <strong>which cylinder and rating</strong> they will fit, confirm
+      <strong>insurance</strong> and a real <strong>company registration</strong>, and insist on an itemised invoice.
+      MLA approval is a useful voluntary signal for companies that hold it.
+    </p>
+  </QuickAnswer>
+
+  <h2>Seven checks before you book</h2>
+  <ol>
+    <li><strong>A total price in writing.</strong> Callout, labour and parts — before anyone sets off. Emergency work especially.</li>
+    <li><strong>The exact product.</strong> Brand, model and rating of the cylinder (<a href="/guides/ts007-3-star-explained/">TS007 3-star</a> or Sold Secure Diamond).</li>
+    <li><strong>Insurance.</strong> Public liability cover, with a certificate if you ask.</li>
+    <li><strong>A real business.</strong> A company number you can look up on Companies House, not just a mobile number.</li>
+    <li><strong>Trade approval, if claimed.</strong> MLA approval can be checked on the MLA’s own site.</li>
+    <li><strong>Local, not a call centre.</strong> Some “local” listings route to national dispatchers who add their own fee.</li>
+    <li><strong>An itemised invoice.</strong> Naming what was fitted — you may need it for your insurer or landlord.</li>
+  </ol>
+
+  <h2>How kianlocks answers those checks</h2>
+  <ul>
+    <li><strong>Price:</strong> {SITE.price} flat for a planned lock change, published on every page; emergencies quoted per job before we travel.</li>
+    <li><strong>Product:</strong> Avocet ABS — TS007 3-star, Sold Secure SS312 Diamond, Secured by Design.</li>
+    <li><strong>Insurance:</strong> public liability; certificate on request.</li>
+    <li><strong>Company:</strong> KIANLOCKS LTD, company number <a href={SITE.companyHouseUrl} rel="noopener">{SITE.companyNumber}</a>.</li>
+    <li><strong>MLA:</strong> we do not claim MLA approval.</li>
+    <li><strong>Invoice:</strong> itemised, naming the cylinder and its ratings, on every job.</li>
+  </ul>
+
+  <FaqBlock faqs={faqs} heading="Choosing a locksmith: questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/lock-change-cost-london/', title: 'What a lock change costs', blurb: 'Typical London prices, dated.' },
+    { href: '/about/', title: 'About kianlocks', blurb: 'Who we are and what we fit.' },
+    { href: '/contact/', title: 'Book a fitting', blurb: `${SITE.price} flat.` },
+  ]} />
+</ContentLayout>

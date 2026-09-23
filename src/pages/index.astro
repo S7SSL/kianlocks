@@ -38,7 +38,7 @@ const schema = [
 
         <div class="hero__ctas">
           <a href={SITE.emailHref} class="btn btn-primary">Book a fitting</a>
-          <a href="/why-abs" class="btn btn-outline-light">Why ABS only?</a>
+          <a href="/why-abs/" class="btn btn-outline-light">Why ABS only?</a>
         </div>
 
         <div class="hero__trust">
@@ -104,7 +104,7 @@ const schema = [
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <h3><a href="/landlord-lock-change-london">Landlords</a></h3>
+          <h3><a href="/landlord-lock-change-london/">Landlords</a></h3>
           <p>
             Tenancy change. Old keys made worthless. Insurance-grade
             cylinder fitted before the new tenant moves in. Itemised
@@ -115,7 +115,7 @@ const schema = [
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <h3><a href="/new-tenant-lock-change-london">Tenants</a></h3>
+          <h3><a href="/new-tenant-lock-change-london/">Tenants</a></h3>
           <p>
             Just moved in and want your own keys, no one else&rsquo;s? We&rsquo;ll
             change the cylinder same week. Coordinate with your landlord
@@ -126,7 +126,7 @@ const schema = [
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
-          <h3><a href="/3-star-lock-upgrade-london">Homeowners</a></h3>
+          <h3><a href="/3-star-lock-upgrade-london/">Homeowners</a></h3>
           <p>
             Upgrading from a generic cylinder to a 3-star ABS — usually
             because the door looks vulnerable, the insurer asked, or
@@ -136,7 +136,7 @@ const schema = [
       </div>
 
       <div class="text-center mt-4">
-        <a href="/why-abs" class="btn-ghost">Read the full ABS rationale</a>
+        <a href="/why-abs/" class="btn-ghost">Read the full ABS rationale</a>
       </div>
     </div>
   </section>
@@ -208,7 +208,7 @@ const schema = [
           <h3>North London</h3>
           <div class="grid-2" style="gap:0.85rem;">
             {NORTH_LONDON.map((b) => (
-              <a href={`/locksmith/${b.slug}`} class="card borough-card" style="padding:1.1rem 1.25rem;">
+              <a href={`/locksmith/${b.slug}/`} class="card borough-card" style="padding:1.1rem 1.25rem;">
                 <h3 style="font-size:1.2rem;margin:0;">{b.name}</h3>
                 <p class="postcodes" style="margin-top:0.4rem;">{b.postcodes.slice(0,4).join(' · ')}</p>
               </a>
@@ -219,7 +219,7 @@ const schema = [
           <h3>Central London</h3>
           <div class="grid-2" style="gap:0.85rem;">
             {CENTRAL_LONDON.map((b) => (
-              <a href={`/locksmith/${b.slug}`} class="card borough-card" style="padding:1.1rem 1.25rem;">
+              <a href={`/locksmith/${b.slug}/`} class="card borough-card" style="padding:1.1rem 1.25rem;">
                 <h3 style="font-size:1.2rem;margin:0;">{b.name}</h3>
                 <p class="postcodes" style="margin-top:0.4rem;">{b.postcodes.slice(0,4).join(' · ')}</p>
               </a>
@@ -239,11 +239,11 @@ const schema = [
         <p>Plain-English guides, with sources, to the questions landlords, tenants and homeowners ask us most.</p>
       </div>
       <div class="grid-3">
-        <a class="card" href="/guides/lock-change-cost-london"><h3>What a lock change costs in London</h3><p>Typical prices, callout fees and what should be included.</p></a>
-        <a class="card" href="/guides/best-anti-snap-euro-cylinders-uk"><h3>Anti-snap cylinders compared</h3><p>The 3-star, Sold Secure Diamond cylinders on the UK market.</p></a>
-        <a class="card" href="/guides/ts007-3-star-explained"><h3>TS007 3-star explained</h3><p>What the stars mean, and why 1-star + 2-star is fragile.</p></a>
+        <a class="card" href="/guides/lock-change-cost-london/"><h3>What a lock change costs in London</h3><p>Typical prices, callout fees and what should be included.</p></a>
+        <a class="card" href="/guides/best-anti-snap-euro-cylinders-uk/"><h3>Anti-snap cylinders compared</h3><p>The 3-star, Sold Secure Diamond cylinders on the UK market.</p></a>
+        <a class="card" href="/guides/ts007-3-star-explained/"><h3>TS007 3-star explained</h3><p>What the stars mean, and why 1-star + 2-star is fragile.</p></a>
       </div>
-      <div class="text-center mt-4"><a href="/guides" class="btn-ghost">All guides</a></div>
+      <div class="text-center mt-4"><a href="/guides/" class="btn-ghost">All guides</a></div>
     </div>
   </section>
 

@@ -1,0 +1,88 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/can-tenants-change-locks';
+const faqs = [
+  {
+    q: 'Can I change the locks as a tenant in England?',
+    a: 'It depends on your tenancy agreement. Shelter says you can change the locks if you feel unsafe, as long as you keep the old locks to put back at the end of the tenancy. Landlord bodies point out many agreements require the landlord’s permission. The safest route is to ask in writing, keep the old cylinder and offer the landlord a key.',
+  },
+  {
+    q: 'Do I have to give my landlord a key if I change the lock?',
+    a: 'Many tenancy agreements require it, and it avoids disputes. Your landlord still cannot let themselves in without notice — for repairs and inspections the Landlord and Tenant Act 1985 requires 24 hours’ written notice where the statutory repairing covenant applies.',
+  },
+  {
+    q: 'Can I change the lock on my room in a shared house?',
+    a: 'Shelter says that if you only rent a room in a shared house, you can only change the lock on your own bedroom door — not the shared front door.',
+  },
+  {
+    q: 'Who pays if a tenant changes the locks?',
+    a: 'Usually the tenant who asked for it, unless the landlord agrees to pay. Keep the invoice. At the end of the tenancy you may need to refit the original cylinder or leave the new one with keys for the landlord, depending on what you agreed.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="The honest answer: it depends on your tenancy agreement — and the sources disagree at the edges. Here’s how to do it without starting a dispute."
+  audience="Tenants"
+  sources={[
+    { label: 'Shelter England — How to prevent an illegal eviction (changing locks)', url: 'https://england.shelter.org.uk/housing_advice/eviction/how_to_deal_with_illegal_eviction/how_to_prevent_an_illegal_eviction' },
+    { label: 'CIA Landlords — Can a renter change the locks?', url: 'https://www.cia-landlords.co.uk/advice/can-a-renter-change-the-locks/' },
+    { label: 'legislation.gov.uk — Landlord and Tenant Act 1985, s.11', url: 'https://www.legislation.gov.uk/ukpga/1985/70/section/11' },
+    { label: 'Shelter — Renters’ Rights Act changes for private renters', url: 'https://england.shelter.org.uk/housing_advice/private_renting/renters_rights_act_changes_for_private_renters' },
+  ]}
+  ctaHeading="Want your own keys? £149 flat."
+  ctaBody="We fit an Avocet ABS 3-star, cut three keys and can leave the original cylinder with you so it can go back at the end of your tenancy."
+>
+  <QuickAnswer>
+    <p>
+      In England, whether a tenant can change the locks <strong>depends on the tenancy agreement</strong>.
+      Shelter says you can if you feel unsafe, provided you keep the old lock to refit when you leave; landlord
+      bodies say many agreements need the landlord’s permission. The low-risk route: ask in writing, keep the
+      original cylinder, and give your landlord a key.
+    </p>
+  </QuickAnswer>
+
+  <h2>What the sources say</h2>
+  <ul>
+    <li><strong>Shelter</strong> (housing charity): “You can change the locks if you feel unsafe. Keep the old locks so you can put them back at the end of your tenancy.”</li>
+    <li><strong>CIA Landlords</strong> (landlord insurer): generally a renter cannot change the locks without the landlord’s permission, and doing so may breach the tenancy agreement.</li>
+    <li><strong>Room-only lets:</strong> Shelter says you can only change the lock on your own bedroom door.</li>
+  </ul>
+  <p>
+    Both can be true at once: the tenancy agreement is what decides it for you. Since 1 May 2026 most private
+    tenancies in England are periodic assured tenancies under the Renters’ Rights Act; we have not found anything
+    in the Act that changes the position on locks.
+  </p>
+
+  <h2>How to do it without a dispute</h2>
+  <ol>
+    <li><strong>Read your agreement</strong> for a clause about locks, keys or alterations.</li>
+    <li><strong>Ask in writing</strong> (email is fine) and explain why — new tenancy, lost keys, safety.</li>
+    <li><strong>Keep the original cylinder.</strong> A euro cylinder swap leaves the door untouched, so it can be refitted.</li>
+    <li><strong>Offer your landlord a key</strong>, and note that access still needs proper notice.</li>
+    <li><strong>Keep the invoice</strong> showing what was fitted and when.</li>
+  </ol>
+
+  <h2>Your landlord’s access</h2>
+  <p>
+    A landlord keeping a key does not mean they can let themselves in. Where the statutory repairing covenant
+    applies, the Landlord and Tenant Act 1985 allows entry to inspect condition and repair at reasonable times on
+    <strong>24 hours’ written notice</strong>. If someone is entering without notice or trying to lock you out, contact
+    Shelter or your council — that is a different problem from a lock change.
+  </p>
+
+  <p><a href="/new-tenant-lock-change-london/">See our lock change for tenants</a> — {SITE.price} flat, and we can leave the old cylinder with you.</p>
+
+  <FaqBlock faqs={faqs} heading="Tenant lock questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/new-tenant-lock-change-london/', title: 'Lock change after moving in', blurb: `${SITE.price} flat.` },
+    { href: '/guides/do-landlords-have-to-change-locks/', title: 'Do landlords have to change locks?', blurb: 'The landlord’s side.' },
+    { href: '/guides/how-to-choose-a-locksmith-london/', title: 'Choosing a locksmith', blurb: 'Seven checks before you book.' },
+  ]} />
+</ContentLayout>

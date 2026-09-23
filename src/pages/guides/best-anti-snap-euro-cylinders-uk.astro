@@ -1,0 +1,147 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/best-anti-snap-euro-cylinders-uk';
+const faqs = [
+  {
+    q: 'What is the best anti-snap lock in the UK?',
+    a: 'There is no single best. Look for a euro cylinder that is BSI Kitemarked to TS007 3-star and graded Sold Secure SS312 Diamond — the two top UK grades. Avocet ABS, Brisant Ultion, Yale Platinum Ultra, Mul-T-Lock Break-Secure and UAP Kinetica all hold both. After that, choose on fit for your door, key control, guarantee terms and price.',
+  },
+  {
+    q: 'Is Avocet ABS better than Ultion?',
+    a: 'Both are TS007 3-star, Sold Secure Diamond and Secured by Design accredited, so on the published ratings they are peers. The differences are in design and the manufacturer\'s offer: Ultion advertises a £5,000 security guarantee; Avocet advertises a £2,000 snap guarantee for ABS Master. We fit Avocet ABS so every door we do gets the same product and key system — not because Ultion is inadequate.',
+  },
+  {
+    q: 'Does 3-star mean the same as Sold Secure Diamond?',
+    a: 'They are separate tests run by different bodies — TS007 by BSI (Kitemark) and SS312 by Sold Secure, now run by the Master Locksmiths Association. The Master Locksmiths Association says SS312 Diamond is treated as equivalent to TS007 3-star for Building Regulations purposes. Cylinders holding both have passed both.',
+  },
+  {
+    q: 'What changed in 2024?',
+    a: 'Both standards were revised in 2024 to add attacks such as freezing and gluing — TS007-1:2024 and SS312 Diamond 2024 — and industry reporting says the new versions take full effect from January 2027. Some products are already listed against the 2024 versions (for example Avocet ABS Master and Yale Platinum Ultra); others still show the earlier versions. Check the listing for the year.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="The euro cylinders on the UK market that hold both top grades — TS007 3-star and Sold Secure SS312 Diamond — compared honestly, including the ones we don’t fit."
+  sources={[
+    { label: 'Avocet Group — ABS Master 3 Star cylinder (ratings, guarantee)', url: 'https://avocetgroup.co.uk/products/abs-master-3-star-cylinder' },
+    { label: 'Sold Secure — Avocet Master Diamond listing', url: 'https://soldsecure.com/product/avocet-master-diamond-rated-lock-cylinder' },
+    { label: 'Sold Secure — lock cylinder listings', url: 'https://soldsecure.com/category/lock-cylinders' },
+    { label: 'Sold Secure — Brisant Ultion WXM Diamond listing', url: 'https://soldsecure.com/product/brisant-ultion-wxm-ss312-diamond-lock-cylinder' },
+    { label: 'Ultion — product and guarantee', url: 'https://www.ultion-lock.co.uk/get-locks/product/' },
+    { label: 'Lockshop Warehouse — Ultion 3 Star Plus prices', url: 'https://www.lockshop-warehouse.co.uk/acatalog/Ultion-3-Star-TS7001-Euro-Cylinders.html' },
+    { label: 'Yale — Platinum Ultra 3 Star cylinder', url: 'https://yalehome.co.uk/platinum-ultra-3-star-keyed-cylinder/' },
+    { label: 'Lock & Key — Mul-T-Lock Break-Secure 3XP Pro', url: 'https://www.lockandkey.co.uk/product/multi-lock-xp-euro-cylinder-bs-ts007-3-star' },
+    { label: 'UPVC Store — UAP Kinetica listing', url: 'https://www.upvc-store.co.uk/products/45t-35-thumb-turn-uap-kinetica-ts007-3-star-ss312-diamond-standard-anti-snap-euro-cylinder' },
+    { label: 'UAP — TS007-1:2024 Kitemark announcement', url: 'https://uaplimited.com/bsi_kitemark_ts007-12024/' },
+    { label: 'ERA — Fortress 3-star cylinder', url: 'https://www.eraeverywhere.com/default/door-components/entrance-doors/cylinders/british-standard-3--euro-profile-cylinders/british-standard-fortress-3--6-pin-euro-profile-double-door-cylinder/' },
+    { label: 'Lock & Key — Avocet ABS Quantum thumbturn price', url: 'https://www.lockandkey.co.uk/product/avocet-abs-quantum-anti-snap-bs-ts007-3-star-euro-thumb-turn' },
+    { label: 'Master Locksmiths Association — SS312 Diamond explained', url: 'https://www.locksmiths.co.uk/faq/ss312-diamond-approved-standard/' },
+    { label: 'Door Industry Journal — evolving standards (Dec 2025)', url: 'https://blog.doorindustryjournal.co.uk/2025/12/evolving-standards-and-why-they-matter.html' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      The strongest euro cylinders sold in the UK hold <strong>both</strong> BSI Kitemark TS007 3-star and
+      Sold Secure SS312 Diamond. Avocet ABS, Brisant Ultion, Yale Platinum Ultra, Mul-T-Lock Break-Secure and
+      UAP Kinetica all do, and typically retail for about £32–£75 before fitting. On ratings they are peers;
+      choose on door fit, key control, guarantee terms and price.
+    </p>
+  </QuickAnswer>
+
+  <h2>The comparison</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Cylinder</th><th>TS007 3-star</th><th>Sold Secure SS312 Diamond</th><th>Also advertised</th><th>Retail price seen*</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Avocet ABS</strong> (Master / Quantum)</td>
+          <td>Yes — ABS Master listed to TS007-1:2024</td>
+          <td>Yes — Diamond (2024) listing for ABS Master</td>
+          <td>Secured by Design; key registration; £2,000 snap guarantee (ABS Master, Avocet’s terms)</td>
+          <td>£54.00 (Quantum thumbturn)</td>
+        </tr>
+        <tr>
+          <td><strong>Brisant Ultion</strong> 3 Star Plus</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Secured by Design; key-copy control; £5,000 security guarantee (Ultion’s terms)</td>
+          <td>£43.20 half · £54.00 double · £56.40 thumbturn</td>
+        </tr>
+        <tr>
+          <td><strong>Yale Platinum Ultra</strong> 3 Star</td>
+          <td>Yes — TS007-1:2024</td>
+          <td>Yes</td>
+          <td>Secured by Design; £3,000 snap guarantee (Yale’s terms)</td>
+          <td>From £39.98</td>
+        </tr>
+        <tr>
+          <td><strong>Mul-T-Lock Break-Secure 3XP Pro</strong></td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Registration card</td>
+          <td>£69.00–£73.80</td>
+        </tr>
+        <tr>
+          <td><strong>UAP Kinetica</strong></td>
+          <td>Yes (Kinetica Freezeguard listed to TS007-1:2024)</td>
+          <td>Yes, per retailer listing</td>
+          <td>—</td>
+          <td>£32.07 (45T/35)</td>
+        </tr>
+        <tr>
+          <td><strong>ERA Fortress</strong> 3-star</td>
+          <td>Yes</td>
+          <td>ERA says Diamond; the current Sold Secure Diamond 2024 listing we found is for ERA Invincible</td>
+          <td>—</td>
+          <td>Trade pricing only</td>
+        </tr>
+      </tbody>
+      <caption>
+        *Retail price of the cylinder alone at one UK retailer, checked {SITE.factsReviewed.split('-').reverse().join('/')}; sizes and finishes change the price, and some listings were out of stock.
+        Guarantees are the manufacturers’ own offers with their own terms. Ratings from manufacturer and Sold Secure listings (see sources).
+      </caption>
+    </table>
+  </div>
+
+  <h2>Why we fit Avocet ABS (and what that doesn’t mean)</h2>
+  <p>
+    We fit one product so that every door we touch gets the same tested cylinder, the same key-registration
+    card and the same guarantee — and so we can carry the full range of sizes on every visit. We chose Avocet
+    ABS for its Diamond and 3-star ratings, Secured by Design accreditation and the ABS Master’s listing against
+    the 2024 version of TS007. That is a <em>standardisation</em> choice. It does <strong>not</strong> mean the
+    other cylinders in this table are unsafe: on the published ratings, they are peers. Read our
+    <a href="/why-abs/">full reasoning</a>.
+  </p>
+
+  <h2>How to read a cylinder listing</h2>
+  <ul>
+    <li><strong>“3-star” must be on the cylinder itself.</strong> A 1-star cylinder is only 3-star when paired with a 2-star handle — see <a href="/guides/ts007-3-star-explained/">TS007 explained</a>.</li>
+    <li><strong>Look for the year.</strong> TS007-1:2024 and SS312 Diamond 2024 add freezing and gluing attacks; older listings show TS007:2014.</li>
+    <li><strong>Check the exact model.</strong> Brands sell several ranges; not every cylinder a brand makes carries Diamond.</li>
+    <li><strong>Size matters as much as rating.</strong> A cylinder that sticks out more than a few millimetres past the handle is easier to grip and snap.</li>
+    <li><strong>Read guarantee terms.</strong> Snap guarantees are manufacturer offers with conditions (registration, correct fitting, proof of purchase).</li>
+  </ul>
+
+  <h2>Having one fitted</h2>
+  <p>
+    We fit an Avocet ABS for <strong>{SITE.price} flat</strong> across North &amp; Central London —
+    cylinder, fitting, three keys and an itemised invoice naming the product and its ratings.
+    <a href="/3-star-lock-upgrade-london/">Upgrade to a 3-star lock</a>.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="Anti-snap cylinder questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/lock-snapping-explained/', title: 'Lock snapping explained', blurb: 'How the attack works and what stops it.' },
+    { href: '/guides/insurance-approved-locks/', title: 'Insurance-approved locks', blurb: 'BS 3621 vs TS007 3-star.' },
+    { href: '/guides/lock-change-cost-london/', title: 'Lock change costs', blurb: 'Typical London prices, dated.' },
+  ]} />
+</ContentLayout>

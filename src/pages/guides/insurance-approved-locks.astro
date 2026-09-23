@@ -1,0 +1,92 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/insurance-approved-locks';
+const faqs = [
+  {
+    q: 'What locks do home insurers require?',
+    a: 'It varies by policy, so read your own wording. A common pattern: wooden final exit doors need a 5-lever mortice deadlock to BS 3621, while uPVC and composite doors need a key-operated multipoint lock. Allianz, for example, describes TS007 3-star euro cylinders for uPVC and composite doors.',
+  },
+  {
+    q: 'Is a euro cylinder “insurance approved”?',
+    a: 'There is no single “insurance approved” mark. Insurers usually refer to British Standards. For euro cylinders the relevant standard is TS007; a 3-star cylinder (or 1-star with a 2-star handle) is what insurers such as Allianz describe for uPVC and composite doors.',
+  },
+  {
+    q: 'Can my insurer refuse a claim because of my locks?',
+    a: 'It can happen. Consumer guides such as MoneySuperMarket warn insurers may refuse a claim if door locks do not meet the standards in the policy, and leaving a door unlocked usually means no payout. Keeping an invoice that names the lock and its rating helps show what was fitted.',
+  },
+  {
+    q: 'Will a 3-star lock lower my premium?',
+    a: 'Usually not directly. The Master Locksmiths Association notes most insurers do not give a discount for British Standard locks because they are normally a standard policy condition rather than an extra.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="“British Standard locks” in a home insurance policy usually means one of two different standards, depending on your door. Here’s which is which and how to check."
+  sources={[
+    { label: 'Allianz — Stay insured with the right house locks', url: 'https://www.allianz.co.uk/insurance/magazine/home-magazine/stay-insured-with-the-right-house-locks.html' },
+    { label: 'MoneySuperMarket — House locks and home insurance', url: 'https://www.moneysupermarket.com/home-insurance/house-locks/' },
+    { label: 'The Crime Prevention Website — Typical insurance requirements', url: 'https://thecrimepreventionwebsite.com/improving-the-security-of-your-existing-doors/558/typical-insurance-requirements/' },
+    { label: 'Master Locksmiths Association — BS 3621 British Standard locks', url: 'https://www.locksmiths.co.uk/faq/what-are-bs3621-british-standard-locks/' },
+    { label: 'West Yorkshire Police — Euro cylinder advice', url: 'https://www.westyorkshire.police.uk/advice/home-security/home-security/euro-cylinder-advice' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      “Insurance-approved” locks usually means British Standard locks, and which standard depends on the door.
+      <strong>Timber doors</strong>: a 5-lever mortice deadlock to <strong>BS 3621</strong>. <strong>uPVC and composite
+      doors</strong>: a key-operated multipoint lock with a <strong>TS007 3-star</strong> euro cylinder (as Allianz
+      describes). Always check your own policy wording — it is the policy, not the label, that counts.
+    </p>
+  </QuickAnswer>
+
+  <h2>Two standards, two kinds of door</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Door</th><th>Typical lock</th><th>Standard to look for</th></tr></thead>
+      <tbody>
+        <tr><td>Timber front/back door</td><td>Mortice deadlock or sashlock (often with a nightlatch)</td><td>BS 3621 — Kitemark and “BS3621” stamped on the faceplate</td></tr>
+        <tr><td>uPVC or composite door</td><td>Multipoint lock driven by a euro cylinder</td><td>TS007 3-star cylinder, or 1-star cylinder + 2-star handle</td></tr>
+        <tr><td>Flat entrance door</td><td>Often a euro cylinder, sometimes with a mortice</td><td>Depends on the lock fitted — check each one</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    BS 3621 covers key-operated locks such as 5-lever mortice deadlocks and nightlatches. TS007 covers
+    euro-profile cylinders and the handles and guards that protect them. They are not interchangeable.
+    <a href="/guides/ts007-3-star-explained/">TS007 is explained here</a>.
+  </p>
+
+  <h2>What typical policy wording says</h2>
+  <ul>
+    <li>Final exit doors: a 5-lever mortice deadlock or a lock to BS 3621; key-operated multipoint locks are commonly accepted as an alternative.</li>
+    <li>Claims may be reduced or refused if the required locks were not fitted or not used.</li>
+    <li>Some attacks (such as lock bumping) can leave little sign of forced entry — another reason to have tested, rated cylinders.</li>
+  </ul>
+
+  <h2>How to check you’re covered</h2>
+  <ol>
+    <li>Find the “security” or “locks” condition in your policy booklet.</li>
+    <li>Match each final exit door to the standard it names.</li>
+    <li>Check the lock or cylinder face for the Kitemark and stars (or BS3621 on a mortice faceplate).</li>
+    <li>Keep an invoice that names the product and rating in case you need to show it.</li>
+  </ol>
+  <p>
+    Every kianlocks job comes with an itemised invoice naming the Avocet ABS cylinder and its TS007 3-star and
+    Sold Secure Diamond ratings. {SITE.price} flat — <a href="/3-star-lock-upgrade-london/">upgrade your cylinder</a>.
+    We fit euro cylinders only; if your policy needs a BS 3621 mortice lock, you will need a locksmith who fits those.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="Insurance and lock questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/ts007-3-star-explained/', title: 'TS007 3-star explained', blurb: 'What the stars mean.' },
+    { href: '/guides/best-anti-snap-euro-cylinders-uk/', title: 'Anti-snap cylinders compared', blurb: 'The Diamond-rated options.' },
+    { href: '/landlord-lock-change-london/', title: 'Landlord lock changes', blurb: 'Invoice for your insurer.' },
+  ]} />
+</ContentLayout>

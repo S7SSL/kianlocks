@@ -1,0 +1,73 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { SITE } from '../consts';
+
+const path = '/3-star-lock-upgrade-london';
+const faqs = [
+  {
+    q: 'What is a 3-star anti-snap lock?',
+    a: 'A euro cylinder Kitemarked to TS007 3-star, which means it has passed tests against drilling, picking, bumping, snapping and plug extraction on its own — without relying on a security handle.',
+  },
+  {
+    q: 'Do I need a new handle as well?',
+    a: 'No. A 3-star cylinder meets the standard on its own, whatever handle is fitted. We change the cylinder only, so your door looks the same.',
+  },
+  {
+    q: 'Will it fit my door?',
+    a: 'Almost always, if your door uses a euro-profile cylinder (most uPVC and composite doors, and many flat doors). We measure on site so the new cylinder sits flush with the handle.',
+  },
+  {
+    q: 'How much does a 3-star lock upgrade cost?',
+    a: `${SITE.price} flat per door for a planned booking: Avocet ABS cylinder, fitting, three keys and an itemised invoice. No callout fee.`,
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="If your euro cylinder isn’t 3-star, it’s the easiest way through your door. We replace it with an Avocet ABS — TS007 3-star, Sold Secure Diamond — for £149 fitted."
+  audience="Homeowners"
+  ctaHeading={`Upgrade to 3-star. ${SITE.price} fitted.`}
+>
+  <QuickAnswer>
+    <p>
+      A 3-star lock upgrade replaces your euro cylinder with one Kitemarked to <strong>TS007 3-star</strong>, which resists
+      snapping, bumping, picking and drilling on its own. kianlocks fits the Avocet ABS (also Sold Secure Diamond and
+      Secured by Design) across North &amp; Central London for <strong>{SITE.price} flat</strong>, including three keys.
+    </p>
+  </QuickAnswer>
+
+  <h2>Do you need it? A 30-second check</h2>
+  <ol>
+    <li>Look at the face of the cylinder by the keyhole for the Kitemark and stars.</li>
+    <li><strong>Three stars:</strong> you’re at the standard. <strong>One star:</strong> check the handle has two stars. <strong>Nothing:</strong> treat it as unrated.</li>
+    <li>Does the cylinder stick out past the handle? That overhang is what snap attacks grip.</li>
+  </ol>
+  <p>More in <a href="/guides/ts007-3-star-explained/">TS007 3-star explained</a> and <a href="/guides/lock-snapping-explained/">lock snapping explained</a>.</p>
+
+  <h2>Why an Avocet ABS</h2>
+  <ul>
+    <li>TS007 3-star — the ABS Master is listed to the 2024 version of the standard.</li>
+    <li>Sold Secure SS312 Diamond — the top Sold Secure cylinder grade.</li>
+    <li>Secured by Design (Police Preferred Specification).</li>
+    <li>Key registration card, and Avocet’s own snap guarantee on its terms.</li>
+  </ul>
+  <p>Other cylinders hold the same grades — <a href="/guides/best-anti-snap-euro-cylinders-uk/">see the honest comparison</a>. <a href="/why-abs/">Why we standardise on ABS</a>.</p>
+
+  <h2>What you get for {SITE.price}</h2>
+  <ul>
+    <li>The cylinder, sized to your door and fitted in one visit.</li>
+    <li>Three keys.</li>
+    <li>An itemised invoice naming the product and ratings — useful for your insurer (see <a href="/guides/insurance-approved-locks/">insurance-approved locks</a>).</li>
+  </ul>
+
+  <FaqBlock faqs={faqs} heading="Upgrade questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/best-anti-snap-euro-cylinders-uk/', title: 'Anti-snap cylinders compared', blurb: 'ABS vs Ultion, Yale and more.' },
+    { href: '/guides/lock-change-cost-london/', title: 'What it should cost', blurb: 'Typical London prices.' },
+    { href: '/areas/', title: 'Areas we cover', blurb: 'Nine boroughs.' },
+  ]} />
+</ContentLayout>

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaStrip from '../../components/CtaStrip.astro';
+import { SITE } from '../../consts';
+import { GUIDES, PAGES } from '../../data/pages';
+import { breadcrumbSchema, localBusinessSchema } from '../../lib/schema';
+
+const url = `${SITE.url}/guides/`;
+const schema = [
+  localBusinessSchema(),
+  breadcrumbSchema([{ name: 'Home', url: SITE.url }, { name: 'Guides', url }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    name: 'kianlocks guides',
+    url,
+    inLanguage: 'en-GB',
+    publisher: { '@id': `${SITE.url}/#business` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: GUIDES.map((g, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE.url}${g.path}`, name: g.h1 })),
+    },
+  },
+];
+const services = PAGES.filter((p) => p.kind === 'landing');
+---
+<BaseLayout
+  title="Lock Guides — Prices, TS007, Landlords, Tenants"
+  description="Plain-English, sourced guides on London lock change prices, TS007 3-star and anti-snap cylinders, insurance-approved locks, and landlord and tenant lock rules."
+  schema={schema}
+  canonical={url}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Guides' }]} />
+      <h1>Straight answers on locks.</h1>
+      <p class="lead">Sourced, dated guides to what people ask us most. No scare stories, no brand bashing — including about the cylinders we don’t fit.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="grid-3">
+        {GUIDES.map((g) => (
+          <a class="card" href={g.path}>
+            <h2 style="font-size:1.25rem;margin-bottom:0.5rem;">{g.h1}</h2>
+            <p>{g.summary}</p>
+          </a>
+        ))}
+      </div>
+      <h2 class="mt-5" style="font-size:1.5rem;margin-bottom:1rem;">Services</h2>
+      <div class="grid-2">
+        {services.map((p) => (
+          <a class="card" href={p.path}>
+            <h3 style="font-size:1.15rem;margin-bottom:0.4rem;">{p.h1}</h3>
+            <p>{p.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaStrip />
+</BaseLayout>

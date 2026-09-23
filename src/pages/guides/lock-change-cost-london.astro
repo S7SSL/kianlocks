@@ -1,0 +1,119 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/lock-change-cost-london';
+const faqs = [
+  {
+    q: 'How much does it cost to change a lock in London?',
+    a: 'Cost guides put a standard euro cylinder replacement at roughly £70–£150 fitted across the UK, with an anti-snap cylinder around £100–£150, and Checkatrade reports an average London locksmith job of £163.47 (May 2026). Out-of-hours work adds a callout fee, typically £50–£150. kianlocks charges £149 flat for a planned Avocet ABS 3-star lock change, including three keys.',
+  },
+  {
+    q: 'Why do some locksmiths quote £60 and others £200?',
+    a: 'The difference is usually the cylinder and the time of day. A basic unrated 6-pin cylinder can retail for about £14; a TS007 3-star, Sold Secure Diamond cylinder typically costs £40–£75 on its own before labour. Hourly labour, callout fees and out-of-hours rates then vary by firm. Always ask which cylinder, which rating, and the total price in writing before work starts.',
+  },
+  {
+    q: 'Is an emergency locksmith more expensive?',
+    a: 'Yes. Out-of-hours callout fees of £50–£150 and hourly rates of £80–£200 are typical in published cost guides, and some guides put a whole emergency job at £150–£250. Our 24/7 emergency service is quoted per job before we travel, so you know the price before anyone sets off.',
+  },
+  {
+    q: 'What should a lock change price include?',
+    a: 'At minimum: the new cylinder (named, with its rating), fitting, keys, and a written invoice. Ask whether there is a separate callout fee, whether labour is charged by the hour, and whether the price includes VAT. Our £149 includes the Avocet ABS cylinder, fitting, three keys and an itemised invoice, with no callout fee.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="Published prices, callout fees and what should be included — so you can tell a fair quote from a bad one. Figures are dated and sourced."
+  sources={[
+    { label: 'Checkatrade — Locksmith prices (updated May 2026)', url: 'https://www.checkatrade.com/blog/cost-guides/locksmith-prices/' },
+    { label: 'Checkatrade — uPVC door lock replacement cost (Jan 2025)', url: 'https://www.checkatrade.com/blog/cost-guides/upvc-door-lock-replacement-cost/' },
+    { label: 'MyJobQuote — Cost to change locks (updated 14 Sep 2026)', url: 'https://www.myjobquote.co.uk/costs/get-your-locks-changed' },
+    { label: 'MyBuilder — Locksmith cost guide (updated 21 Aug 2026)', url: 'https://www.mybuilder.com/locksmith/price-guides/locksmith-cost' },
+    { label: 'Screwfix — Union 6-pin euro cylinder 35-45 (£13.99, no TS007 rating listed)', url: 'https://www.screwfix.com/p/union-6-pin-euro-cylinder-lock-35-45-80mm-satin-nickel/1018g' },
+    { label: 'Lock & Key — Avocet ABS Quantum thumbturn retail price', url: 'https://www.lockandkey.co.uk/product/avocet-abs-quantum-anti-snap-bs-ts007-3-star-euro-thumb-turn' },
+    { label: 'Lockshop Warehouse — Ultion 3 Star Plus retail prices', url: 'https://www.lockshop-warehouse.co.uk/acatalog/Ultion-3-Star-TS7001-Euro-Cylinders.html' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Published cost guides put a fitted euro cylinder lock change at roughly <strong>£70–£150</strong> in normal
+      hours, with anti-snap cylinders around £100–£150, and Checkatrade reports the average London locksmith job at
+      <strong>£163.47</strong> (May 2026). Out-of-hours work adds a £50–£150 callout. kianlocks charges
+      <strong>{SITE.price} flat</strong> for a planned Avocet ABS 3-star lock change, three keys included.
+    </p>
+  </QuickAnswer>
+
+  <h2>Published lock change prices (2025–2026)</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Job</th><th>Typical price</th><th>Source (date)</th></tr></thead>
+      <tbody>
+        <tr><td>Euro or rim cylinder replacement</td><td>£70–£80</td><td>Checkatrade (May 2026)</td></tr>
+        <tr><td>Standard euro cylinder, fitted</td><td>£75–£125</td><td>Checkatrade uPVC guide (Jan 2025)</td></tr>
+        <tr><td>Euro cylinder, fitted</td><td>£100–£150</td><td>MyJobQuote (Sep 2026)</td></tr>
+        <tr><td>Anti-snap cylinder, fitted</td><td>£100–£150</td><td>Checkatrade uPVC guide (Jan 2025)</td></tr>
+        <tr><td>Anti-snap uPVC lock replacement</td><td>around £150</td><td>Checkatrade (May 2026)</td></tr>
+        <tr><td>Average London locksmith job</td><td>£163.47</td><td>Checkatrade customer data (May 2026)</td></tr>
+        <tr><td><strong>kianlocks planned ABS lock change</strong></td><td><strong>{SITE.price} flat</strong></td><td>This site ({SITE.factsReviewed.split('-').reverse().join('/')})</td></tr>
+      </tbody>
+      <caption>Prices are published averages and ranges, not quotes. Check each source for its method and date.</caption>
+    </table>
+  </div>
+
+  <h2>Callout and emergency fees</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Charge</th><th>Typical range</th><th>Source (date)</th></tr></thead>
+      <tbody>
+        <tr><td>Out-of-hours callout fee</td><td>£50–£150 (average £100)</td><td>Checkatrade (May 2026)</td></tr>
+        <tr><td>Out-of-hours hourly rate</td><td>£80–£200 (average £140)</td><td>Checkatrade (May 2026)</td></tr>
+        <tr><td>Emergency callout, whole job</td><td>£150–£250</td><td>MyBuilder (Aug 2026)</td></tr>
+        <tr><td>Out-of-hours surcharge</td><td>+£50–£100</td><td>MyJobQuote (Sep 2026)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Published guides note London prices can be higher than the UK average. Our own
+    <a href="/emergency-locksmith-london/">24/7 emergency service</a> is quoted per job,
+    before we travel.
+  </p>
+
+  <h2>Why the cylinder decides the price</h2>
+  <p>
+    The part itself ranges widely. A basic 6-pin euro cylinder with no TS007 rating listed sells for £13.99 at Screwfix. A cylinder with the
+    top UK ratings — <a href="/guides/ts007-3-star-explained/">TS007 3-star</a> and Sold Secure SS312
+    Diamond — typically retails at around £40–£75 before any labour: for example, an Avocet ABS Quantum
+    thumbturn was listed at £54.00 and an Ultion 3 Star Plus double at £54.00 at the time of writing. A
+    low quote often means a lower-rated cylinder, so ask which one you are getting.
+    See <a href="/guides/best-anti-snap-euro-cylinders-uk/">anti-snap cylinders compared</a>.
+  </p>
+
+  <h2>What a fair quote should include</h2>
+  <ul>
+    <li>The cylinder <strong>brand and model</strong>, and its <strong>rating</strong> (TS007 3-star or Sold Secure Diamond).</li>
+    <li>Fitting, sized to your door (a cylinder that sticks out is easier to snap).</li>
+    <li>How many <strong>keys</strong> are included.</li>
+    <li>Whether there is a <strong>callout fee</strong>, and whether labour is <strong>hourly</strong>.</li>
+    <li>A <strong>written invoice</strong> you can show an insurer, landlord or agent.</li>
+  </ul>
+
+  <h2>What kianlocks charges</h2>
+  <p>
+    <strong>{SITE.price} flat</strong> for a planned booking (Mon–Sat 9am–6pm) anywhere in our
+    <a href="/areas/">nine North &amp; Central London boroughs</a>: an Avocet ABS cylinder, fitting,
+    three keys and an itemised invoice. No callout fee, no hourly labour, no upsell. Each additional
+    door is another {SITE.price}. Emergencies are quoted per job.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="Lock change cost questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/landlord-lock-change-london/', title: 'Landlord lock changes', blurb: `${SITE.price} per door between tenancies.` },
+    { href: '/3-star-lock-upgrade-london/', title: 'Upgrade to 3-star', blurb: 'Avocet ABS fitted, three keys.' },
+    { href: '/guides/how-to-choose-a-locksmith-london/', title: 'Choosing a locksmith', blurb: 'Seven checks before you book.' },
+  ]} />
+</ContentLayout>

@@ -1,0 +1,103 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/ts007-3-star-explained';
+const faqs = [
+  {
+    q: 'What does TS007 3-star mean?',
+    a: 'TS007 is the BSI Kitemark scheme for euro cylinders and door hardware. A 3-star cylinder has passed tests against drilling, picking, bumping, snapping and plug extraction on its own. It is the grade police forces describe as the minimum to aim for when upgrading.',
+  },
+  {
+    q: 'Is a 1-star cylinder with a 2-star handle as good as a 3-star cylinder?',
+    a: 'On paper the combination reaches the same 3-star level. The weakness is practical: if the 2-star handle or cylinder guard is ever replaced with an unrated one, the door silently drops back to 1-star. A 3-star cylinder keeps its rating whatever handle is fitted.',
+  },
+  {
+    q: 'How do I check what my lock is?',
+    a: 'Look at the face of the cylinder, next to the keyhole, for the Kitemark symbol and stars (and sometimes “TS007” or a Sold Secure mark). Three stars on the cylinder means it is 3-star on its own. One star means it needs a 2-star handle to reach the standard. No mark usually means an unrated cylinder.',
+  },
+  {
+    q: 'Is TS007 the same as BS 3621?',
+    a: 'No. BS 3621 covers key-operated locks such as 5-lever mortice deadlocks and nightlatches. TS007 covers euro-profile cylinders and the handles and guards that protect them. Timber doors with a mortice lock are usually judged against BS 3621; uPVC and composite doors with a euro cylinder against TS007.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="What the Kitemark stars on your euro cylinder and handle actually mean, why 1-star + 2-star is fragile, and what changed in 2024."
+  sources={[
+    { label: 'SD Hardware — TS007 euro cylinder ratings: what do the stars mean', url: 'https://www.sdhardware.co.uk/resources/technical-useful-information/ts007-euro-cylinder-ratings-what-do-the-stars-really-mean' },
+    { label: 'West Yorkshire Police — Euro cylinder advice', url: 'https://www.westyorkshire.police.uk/advice/home-security/home-security/euro-cylinder-advice' },
+    { label: 'Door Industry Journal — evolving standards and why they matter (Dec 2025)', url: 'https://blog.doorindustryjournal.co.uk/2025/12/evolving-standards-and-why-they-matter.html' },
+    { label: 'UAP — BSI Kitemark TS007-1:2024', url: 'https://uaplimited.com/bsi_kitemark_ts007-12024/' },
+    { label: 'Master Locksmiths Association — SS312 Diamond', url: 'https://www.locksmiths.co.uk/faq/ss312-diamond-approved-standard/' },
+    { label: 'Master Locksmiths Association — BS 3621 British Standard locks', url: 'https://www.locksmiths.co.uk/faq/what-are-bs3621-british-standard-locks/' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      TS007 is the BSI Kitemark star rating for euro cylinder locks. A <strong>3-star cylinder</strong> resists
+      drilling, picking, bumping, snapping and plug extraction on its own. A <strong>1-star cylinder</strong> only reaches
+      the same level when paired with a <strong>2-star handle</strong> or guard (1 + 2 = 3). If that handle is ever
+      swapped, the protection drops — which is why a 3-star cylinder is the safer choice.
+    </p>
+  </QuickAnswer>
+
+  <h2>The three ratings</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Marking</th><th>Where you see it</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td>1 star</td><td>Cylinder</td><td>Meets the basic TS007 tests. Needs 2-star hardware to reach the full standard.</td></tr>
+        <tr><td>2 stars</td><td>Handle, escutcheon or cylinder guard</td><td>Security hardware that protects a 1-star cylinder. Together = 3-star equivalent.</td></tr>
+        <tr><td>3 stars</td><td>Cylinder</td><td>Meets the full standard on its own — including snap resistance — whatever handle is fitted.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Why “1 + 2 = 3” is fragile</h2>
+  <p>
+    The combination works on the day it is fitted. But handles get replaced — after damage, during a
+    refurbishment, or for looks — and a replacement handle is rarely a 2-star security handle. The door
+    then drops back to 1-star with nothing visible to tell you. A 3-star cylinder avoids that dependency.
+    It is also the grade West Yorkshire Police describe as “the minimum to achieve if you are upgrading your cylinders”.
+  </p>
+
+  <h2>Where Sold Secure Diamond fits in</h2>
+  <p>
+    Sold Secure SS312 is a separate cylinder test, now administered by the Master Locksmiths Association.
+    Its top grade, <strong>Diamond</strong>, is treated as equivalent to TS007 3-star for Building Regulations
+    purposes. Many of the best cylinders hold both. See <a href="/guides/best-anti-snap-euro-cylinders-uk/">which cylinders hold both</a>.
+  </p>
+
+  <h2>The 2024 update</h2>
+  <p>
+    TS007 was revised in 2024 (TS007-1:2024) and Sold Secure introduced Diamond 2024, adding attacks such as
+    freezing and gluing. Industry reporting says the new versions take full effect from January 2027. Products
+    certified to the older version (marked TS007:2014) are not suddenly unsafe, but when buying new it is worth
+    choosing one listed to the 2024 version — Avocet lists its ABS Master against TS007-1:2024.
+  </p>
+
+  <h2>How to check your own door in 30 seconds</h2>
+  <ol>
+    <li>Open the door and look at the end of the cylinder around the keyhole.</li>
+    <li>Look for the Kitemark and a number of stars (sometimes a Sold Secure logo too).</li>
+    <li>Three stars on the cylinder: you are at the standard. One star: check the handle for two stars. Nothing: treat it as unrated.</li>
+    <li>Check the cylinder does not stick out more than a few millimetres past the handle — overhang is what snap attacks grip.</li>
+  </ol>
+  <p>
+    If yours falls short, we fit an Avocet ABS 3-star for <strong>{SITE.price} flat</strong> across North &amp; Central London —
+    <a href="/3-star-lock-upgrade-london/">book an upgrade</a>.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="TS007 questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/lock-snapping-explained/', title: 'Lock snapping explained', blurb: 'Why the cylinder is the weak point.' },
+    { href: '/guides/insurance-approved-locks/', title: 'Insurance-approved locks', blurb: 'BS 3621 vs TS007.' },
+    { href: '/why-abs/', title: 'Why we fit Avocet ABS', blurb: 'Our product choice, explained.' },
+  ]} />
+</ContentLayout>

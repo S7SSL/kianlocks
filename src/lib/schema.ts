@@ -39,7 +39,7 @@ export function plannedOffer(areaName?: string) {
       unitText: 'per door (one euro cylinder)',
     },
     availability: 'https://schema.org/InStock',
-    url: `${SITE.url}/contact`,
+    url: `${SITE.url}/contact/`,
     seller: { '@id': BUSINESS_ID },
     areaServed: areaName
       ? { '@type': 'AdministrativeArea', name: areaName }
@@ -185,7 +185,7 @@ export function boroughServiceSchema(borough: Borough) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': `${SITE.url}/locksmith/${borough.slug}#service`,
+    '@id': `${SITE.url}/locksmith/${borough.slug}/#service`,
     name: `ABS lock change in ${borough.name}`,
     description: borough.metaDescription,
     provider: { '@id': BUSINESS_ID },

@@ -1,0 +1,89 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/lock-snapping-explained';
+const faqs = [
+  {
+    q: 'What is lock snapping?',
+    a: 'Lock snapping is a forced-entry method where a euro cylinder is broken at its weakest point so the lock mechanism can be operated. The Master Locksmiths Association says it can take 5–10 seconds on a vulnerable cylinder and needs no specialist tools.',
+  },
+  {
+    q: 'Which doors are at risk of lock snapping?',
+    a: 'Any door locked by a euro-profile cylinder — most uPVC and composite doors, and many flat entrance doors — especially where the cylinder is unrated or sticks out past the handle. On a multipoint door every locking point is driven by the cylinder, so the cylinder is the weak point.',
+  },
+  {
+    q: 'How do I stop my lock being snapped?',
+    a: 'Fit a cylinder rated TS007 3-star (or Sold Secure SS312 Diamond), sized so it sits flush with the handle, or protect a 1-star cylinder with a 2-star security handle or guard. A 3-star cylinder is the simpler option because it does not rely on the handle.',
+  },
+  {
+    q: 'Is lock snapping still common?',
+    a: 'Figures the Master Locksmiths Association obtained from West Yorkshire Police showed snapping used in 15.87% of burglaries at its 2011 peak and 8.32% in 2019. That is one police force, and there is no current national figure, but police forces still advise upgrading to 3-star cylinders.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="How the attack works, what the evidence actually shows, and the one change that stops it on most London doors."
+  sources={[
+    { label: 'Master Locksmiths Association — Lock snapping', url: 'https://www.locksmiths.co.uk/faq/lock-snapping/' },
+    { label: 'Master Locksmiths Association — Lock snapping burglary statistics (West Yorkshire Police FOI)', url: 'https://www.locksmiths.co.uk/lock-snapping-burglary-statistics/' },
+    { label: 'West Yorkshire Police — Euro cylinder advice', url: 'https://www.westyorkshire.police.uk/advice/home-security/home-security/euro-cylinder-advice' },
+    { label: 'Avocet Group — ABS Master (snap mechanism)', url: 'https://avocetgroup.co.uk/products/abs-master-3-star-cylinder' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Lock snapping breaks a euro cylinder at its weak point so the lock can be turned — the Master Locksmiths
+      Association says it can take <strong>5–10 seconds</strong> with no specialist tools. It targets uPVC, composite
+      and flat doors with unrated cylinders. The fix is a <strong>TS007 3-star</strong> (or Sold Secure Diamond)
+      cylinder sized to sit flush with the handle.
+    </p>
+  </QuickAnswer>
+
+  <h2>How the attack works</h2>
+  <p>
+    A euro cylinder is a single brass body with a cam in the middle that drives the lock. On most uPVC and
+    composite doors, that cam operates the whole multipoint locking strip. If the cylinder sticks out past the
+    handle, it can be gripped and forced until it breaks at its thinnest point, exposing the cam. Once the cam
+    is turned, every locking point on the door opens with it.
+  </p>
+
+  <h2>What the evidence says</h2>
+  <ul>
+    <li>The MLA obtained West Yorkshire Police data showing snapping in <strong>15.87%</strong> of burglaries at the 2011 peak, falling to <strong>8.32%</strong> by 2019, as better cylinders spread.</li>
+    <li>Attempted snapping in the same data fell from 6.04% to 2.67%.</li>
+    <li>This is <strong>one force’s data</strong>, and we have not found a current national or London-wide figure. Treat it as evidence that snapping was — and remains — a real method, not as a London statistic.</li>
+    <li>West Yorkshire Police notes that “some offenders have developed a way of overcoming” older anti-snap designs, which is why tested ratings matter more than “anti-snap” labels.</li>
+  </ul>
+
+  <h2>How anti-snap cylinders resist it</h2>
+  <p>
+    A 3-star cylinder is tested against snapping as part of TS007. Designs differ: some use a sacrificial front
+    section that breaks away while the core stays intact; Avocet describes a cam that locks down inside a hardened
+    core when the ABS is attacked, so the door stays locked. What matters to you is the tested rating on the
+    cylinder face — see <a href="/guides/ts007-3-star-explained/">TS007 3-star explained</a>.
+  </p>
+
+  <h2>What to do now</h2>
+  <ol>
+    <li>Check the cylinder face for three stars (or one star plus a 2-star handle).</li>
+    <li>Check the cylinder doesn’t stick out past the handle by more than a few millimetres.</li>
+    <li>Don’t forget back and side doors — they often have the cheapest cylinder in the house.</li>
+  </ol>
+  <p>
+    We replace euro cylinders with an Avocet ABS 3-star for <strong>{SITE.price} flat</strong> per door
+    across North &amp; Central London. <a href="/3-star-lock-upgrade-london/">Book an upgrade</a>.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="Lock snapping questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/best-anti-snap-euro-cylinders-uk/', title: 'Anti-snap cylinders compared', blurb: 'The 3-star, Diamond options.' },
+    { href: '/3-star-lock-upgrade-london/', title: 'Upgrade to 3-star', blurb: `${SITE.price} fitted.` },
+    { href: '/emergency-locksmith-london/', title: 'Snapped lock? 24/7', blurb: 'Emergency callout, quoted per job.' },
+  ]} />
+</ContentLayout>

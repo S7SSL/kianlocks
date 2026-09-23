@@ -10,7 +10,7 @@ const schema = [
   localBusinessSchema(),
   breadcrumbSchema([
     { name: 'Home', url: SITE.url },
-    { name: 'Areas', url: `${SITE.url}/areas` },
+    { name: 'Areas', url: `${SITE.url}/areas/` },
   ]),
 ];
 ---
@@ -35,7 +35,7 @@ const schema = [
       <h2 style="font-size:1.75rem;margin-bottom:1.5rem;">North London</h2>
       <div class="grid-3">
         {NORTH_LONDON.map((b) => (
-          <a href={`/locksmith/${b.slug}`} class="card borough-card">
+          <a href={`/locksmith/${b.slug}/`} class="card borough-card">
             <div class="meta">{b.region}</div>
             <h3>{b.name}</h3>
             <p>{b.lead.split('.')[0]}.</p>
@@ -47,7 +47,7 @@ const schema = [
       <h2 style="font-size:1.75rem;margin-top:3rem;margin-bottom:1.5rem;">Central London</h2>
       <div class="grid-3">
         {CENTRAL_LONDON.map((b) => (
-          <a href={`/locksmith/${b.slug}`} class="card borough-card">
+          <a href={`/locksmith/${b.slug}/`} class="card borough-card">
             <div class="meta">{b.region}</div>
             <h3>{b.name}</h3>
             <p>{b.lead.split('.')[0]}.</p>

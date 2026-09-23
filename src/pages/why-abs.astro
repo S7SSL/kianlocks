@@ -12,7 +12,7 @@ const schema = [
   coreServiceSchema(),
   breadcrumbSchema([
     { name: 'Home', url: SITE.url },
-    { name: 'Why ABS', url: `${SITE.url}/why-abs` },
+    { name: 'Why ABS', url: `${SITE.url}/why-abs/` },
   ]),
 ];
 ---
@@ -61,7 +61,7 @@ const schema = [
           — needs no specialist tools and, on a vulnerable cylinder, can take
           seconds. Police forces and the Master Locksmiths Association have
           warned about it for over a decade. Read more in
-          <a href="/guides/lock-snapping-explained">lock snapping explained</a>.
+          <a href="/guides/lock-snapping-explained/">lock snapping explained</a>.
         </p>
 
         <h2>What 3-star actually means</h2>
@@ -88,7 +88,7 @@ const schema = [
         <h2>Why Avocet ABS specifically</h2>
         <p>
           There are several 3-star cylinders on the UK market — we compare
-          them honestly in <a href="/guides/best-anti-snap-euro-cylinders-uk">anti-snap
+          them honestly in <a href="/guides/best-anti-snap-euro-cylinders-uk/">anti-snap
           cylinders compared</a>. We chose Avocet ABS because:
         </p>
         <ul>
@@ -125,9 +125,9 @@ const schema = [
         <p class="meta-line">Product facts checked against Avocet and Sold Secure listings on {SITE.factsReviewed.split('-').reverse().join('/')}.</p>
 
         <RelatedLinks links={[
-          { href: '/guides/ts007-3-star-explained', title: 'TS007 3-star explained', blurb: 'What the stars mean and how to check your door.' },
-          { href: '/guides/best-anti-snap-euro-cylinders-uk', title: 'Anti-snap cylinders compared', blurb: 'ABS, Ultion, Yale, Mul-T-Lock and more.' },
-          { href: '/3-star-lock-upgrade-london', title: 'Upgrade to a 3-star lock', blurb: `${SITE.price} flat, fitted across North & Central London.` },
+          { href: '/guides/ts007-3-star-explained/', title: 'TS007 3-star explained', blurb: 'What the stars mean and how to check your door.' },
+          { href: '/guides/best-anti-snap-euro-cylinders-uk/', title: 'Anti-snap cylinders compared', blurb: 'ABS, Ultion, Yale, Mul-T-Lock and more.' },
+          { href: '/3-star-lock-upgrade-london/', title: 'Upgrade to a 3-star lock', blurb: `${SITE.price} flat, fitted across North & Central London.` },
         ]} />
       </article>
     </div>

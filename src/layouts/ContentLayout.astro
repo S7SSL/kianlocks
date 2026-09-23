@@ -1,0 +1,92 @@
+---
+/**
+ * Layout for guides and audience landing pages. Pulls title/description/dates
+ * from src/data/pages.ts so the hub, sitemap lastmod, llms.txt and the page
+ * itself can never disagree.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import { SITE } from '../consts';
+import { pageByPath } from '../data/pages';
+import { articleSchema, breadcrumbSchema, localBusinessSchema, landingServiceSchema } from '../lib/schema';
+
+interface Props {
+  path: string;
+  lead: string;
+  /** Extra JSON-LD (e.g. a Service block). */
+  schema?: object[];
+  audience?: string;
+  sources?: { label: string; url: string }[];
+  ctaHeading?: string;
+  ctaBody?: string;
+}
+const { path: rawPath, lead, schema = [], audience, sources = [], ctaHeading, ctaBody } = Astro.props;
+const page = pageByPath(rawPath);
+const path = page.path;
+const url = `${SITE.url}${page.path}`;
+const fmt = (d: string) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const isGuide = page.kind === 'guide';
+
+const crumbs = isGuide
+  ? [{ name: 'Home', url: SITE.url }, { name: 'Guides', url: `${SITE.url}/guides/` }, { name: page.h1, url }]
+  : [{ name: 'Home', url: SITE.url }, { name: page.h1, url }];
+
+const blocks: object[] = [
+  localBusinessSchema(),
+  breadcrumbSchema(crumbs),
+  ...(isGuide
+    ? [articleSchema({ path, headline: page.h1, description: page.description, datePublished: page.published, dateModified: page.updated })]
+    : [landingServiceSchema({ path, name: page.h1, description: page.description, audience: audience ?? 'Landlords, tenants and homeowners', offer: path !== '/emergency-locksmith-london/' })]),
+  ...schema,
+];
+---
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  canonical={url}
+  schema={blocks}
+  ogType={isGuide ? 'article' : 'website'}
+  datePublished={page.published}
+  dateModified={page.updated}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={isGuide
+        ? [{ name: 'Home', href: '/' }, { name: 'Guides', href: '/guides/' }, { name: page.h1 }]
+        : [{ name: 'Home', href: '/' }, { name: page.h1 }]} />
+      <h1>{page.h1}</h1>
+      <p class="lead">{lead}</p>
+      {isGuide && (
+        <p class="meta-line">
+          By kianlocks · Updated <time datetime={page.updated}>{fmt(page.updated)}</time>
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <article class="prose">
+        <slot />
+
+        {sources.length > 0 && (
+          <>
+            <h2>Sources</h2>
+            <ol class="source-list">
+              {sources.map((s) => <li><a href={s.url} rel="noopener nofollow">{s.label}</a></li>)}
+            </ol>
+          </>
+        )}
+        {isGuide && (
+          <p class="meta-line">
+            This guide is general information, not legal or insurance advice. Figures and
+            product ratings were checked on {fmt(page.updated)}; check the source before relying on them.
+          </p>
+        )}
+      </article>
+    </div>
+  </section>
+
+  <CtaStrip heading={ctaHeading} body={ctaBody} />
+</BaseLayout>

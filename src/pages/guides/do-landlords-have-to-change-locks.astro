@@ -1,0 +1,100 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/do-landlords-have-to-change-locks';
+const faqs = [
+  {
+    q: 'Is a landlord legally required to change the locks between tenants in England?',
+    a: 'We have not found any specific legal requirement for landlords in England to change locks between tenancies, and landlord insurer CIA Landlords states there is none. Most landlords do it anyway because of their duty of care, insurance conditions and the risk of an old key being used.',
+  },
+  {
+    q: 'Who pays for changing the locks between tenancies?',
+    a: 'Normally the landlord, as part of preparing the property for the next tenancy. If a tenant has lost keys or changed a lock without agreement, the tenancy agreement usually says who pays. Get an itemised invoice either way for your records.',
+  },
+  {
+    q: 'Did the Renters’ Rights Act 2025 change anything about locks?',
+    a: 'Most of the Renters’ Rights Act came into force on 1 May 2026: existing assured shorthold tenancies became periodic assured tenancies and section 21 was abolished. We have not found any provision specifically about changing locks. Check current guidance from gov.uk, Shelter or the NRLA for your situation.',
+  },
+  {
+    q: 'Can a landlord keep a key to the property?',
+    a: 'Landlords commonly keep a key for emergencies and agreed access, but they cannot let themselves in whenever they like. Where the statutory repairing covenant applies, the Landlord and Tenant Act 1985 lets a landlord enter to inspect condition and repair at reasonable times on 24 hours’ written notice.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="Short answer: in England there’s no specific legal duty — but there are good reasons most landlords do it anyway. Here’s the detail, including what the Renters’ Rights Act did and didn’t change."
+  audience="Landlords and letting agents"
+  sources={[
+    { label: 'CIA Landlords — Should a landlord change locks for new tenants?', url: 'https://www.cia-landlords.co.uk/advice/should-a-landlord-change-locks-for-new-tenants/' },
+    { label: 'legislation.gov.uk — Landlord and Tenant Act 1985, s.11', url: 'https://www.legislation.gov.uk/ukpga/1985/70/section/11' },
+    { label: 'NRLA — Existing tenancies and the Renters’ Rights Act', url: 'https://www.nrla.org.uk/resources/renters-rights/existing-tenancies-renters-rights-act' },
+    { label: 'Shelter — Renters’ Rights Act changes for private renters', url: 'https://england.shelter.org.uk/housing_advice/private_renting/renters_rights_act_changes_for_private_renters' },
+    { label: 'legislation.gov.uk — Renters’ Rights Act commencement regulations (SI 2026/421)', url: 'https://www.legislation.gov.uk/uksi/2026/421/made' },
+    { label: 'Allianz — Stay insured with the right house locks', url: 'https://www.allianz.co.uk/insurance/magazine/home-magazine/stay-insured-with-the-right-house-locks.html' },
+  ]}
+  ctaHeading={`Tenancy change? ${SITE.price} per door.`}
+  ctaBody="Avocet ABS 3-star cylinder, three keys and an itemised invoice for your property file. Email the address, door type and the date you need it done by."
+>
+  <QuickAnswer>
+    <p>
+      In England there is <strong>no specific legal requirement</strong> for a landlord to change the locks
+      between tenants. Most landlords still do it: previous tenants, their friends and past contractors may
+      hold keys, landlords owe a duty of care, and some insurance policies set lock standards. Changing the
+      euro cylinder is usually the quickest fix — kianlocks does it for {SITE.price} per door.
+    </p>
+  </QuickAnswer>
+
+  <h2>What the law says (and doesn’t)</h2>
+  <p>
+    We have not found a statute or regulation in England that requires locks to be changed between tenancies,
+    and landlord insurer CIA Landlords states plainly that there is no such legal requirement. What does exist
+    is a general duty of care, contractual obligations in your tenancy agreement, and your insurer’s policy terms.
+  </p>
+
+  <h2>Why most landlords change the locks anyway</h2>
+  <ul>
+    <li><strong>Unknown key holders.</strong> Previous tenants may have cut copies, lent keys or lost them.</li>
+    <li><strong>Liability.</strong> If a burglary happens using an old key, you do not want to explain why the lock was never changed.</li>
+    <li><strong>Insurance.</strong> Policies often specify lock standards for final exit doors — for uPVC and composite doors insurers such as Allianz describe TS007 3-star euro cylinders. See <a href="/guides/insurance-approved-locks/">insurance-approved locks</a>.</li>
+    <li><strong>Tenant confidence.</strong> A new tenant who knows the lock was changed is less likely to change it themselves.</li>
+  </ul>
+
+  <h2>The Renters’ Rights Act 2025</h2>
+  <p>
+    Most of the Act came into force on <strong>1 May 2026</strong>. Existing assured shorthold tenancies became
+    assured periodic tenancies, section 21 “no-fault” evictions were abolished, and landlords had to give existing
+    tenants the government information sheet by 31 May 2026. We have not found anything in the Act specifically
+    about changing locks — but the move to periodic tenancies makes it more important to keep a clear record of
+    what was fitted and who holds keys.
+  </p>
+
+  <h2>Access after the lock is changed</h2>
+  <p>
+    Keep a key for emergencies and agreed access, but remember it does not give a general right to let yourself
+    in. Where the statutory repairing covenant applies, section 11(6) of the Landlord and Tenant Act 1985 lets you
+    (or someone you authorise in writing) enter to view the condition and state of repair, at reasonable times and
+    on <strong>24 hours’ written notice</strong>.
+  </p>
+
+  <h2>A simple tenancy-change routine</h2>
+  <ol>
+    <li>Collect all keys at check-out and note how many were issued.</li>
+    <li>Change the euro cylinder on each entrance door the tenant could open.</li>
+    <li>Keep the invoice naming the cylinder and rating in the property file.</li>
+    <li>Record on the new tenancy check-in how many keys you issued.</li>
+  </ol>
+  <p><a href="/landlord-lock-change-london/">See our landlord lock change service</a> — {SITE.price} per door, across nine North &amp; Central London boroughs.</p>
+
+  <FaqBlock faqs={faqs} heading="Landlord lock questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/landlord-lock-change-london/', title: 'Landlord lock changes', blurb: `${SITE.price} per door, invoice included.` },
+    { href: '/guides/can-tenants-change-locks/', title: 'Can tenants change locks?', blurb: 'The tenant’s side of the question.' },
+    { href: '/guides/insurance-approved-locks/', title: 'Insurance-approved locks', blurb: 'What policies usually ask for.' },
+  ]} />
+</ContentLayout>

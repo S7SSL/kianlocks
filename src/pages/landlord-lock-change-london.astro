@@ -1,0 +1,81 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { SITE } from '../consts';
+
+const path = '/landlord-lock-change-london';
+const faqs = [
+  {
+    q: 'How much is a landlord lock change?',
+    a: `${SITE.price} per door (one euro cylinder) for a planned booking, Mon–Sat 9am–6pm: Avocet ABS 3-star cylinder, fitting, three keys and an itemised invoice. No callout fee. A property with a front and back door on euro cylinders is two doors.`,
+  },
+  {
+    q: 'Can you do the change between check-out and check-in?',
+    a: 'Yes — that is the usual window. Email the address, the doors and the date you need it done by. Planned bookings are usually within 2–5 working days, so give us as much notice as you can.',
+  },
+  {
+    q: 'Do I need to be there?',
+    a: 'Someone needs to let us in and receive the keys. That can be you, your agent, the outgoing or incoming tenant, or a concierge — tell us who when you book.',
+  },
+  {
+    q: 'What paperwork do I get?',
+    a: 'An itemised invoice naming the property, the door, the cylinder (Avocet ABS) and its ratings (TS007 3-star, Sold Secure Diamond), and the number of keys handed over. Keep it with your tenancy records and insurance file.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="Change the cylinder between tenancies so previous keys stop working. Avocet ABS 3-star, three keys and an itemised invoice for your records — £149 per door."
+  audience="Landlords and letting agents"
+  ctaHeading={`Tenancy change? ${SITE.price} per door.`}
+  ctaBody="Email the property address, which doors, and the date you need it done by. We reply within 2 hours during office hours."
+>
+  <QuickAnswer>
+    <p>
+      kianlocks changes locks between tenancies across North &amp; Central London for <strong>{SITE.price} per door</strong>:
+      an Avocet ABS euro cylinder (TS007 3-star, Sold Secure Diamond), three keys and an itemised invoice for your
+      property file. Planned bookings Mon–Sat 9am–6pm, usually within 2–5 working days. Email {SITE.email} to book.
+    </p>
+  </QuickAnswer>
+
+  <h2>Why change locks between tenants</h2>
+  <p>
+    There’s no specific legal requirement in England, but previous tenants (and anyone they gave keys to) can
+    still open the door until the cylinder changes. Changing it protects the new tenant, your property and your
+    position with your insurer. We explain the detail in
+    <a href="/guides/do-landlords-have-to-change-locks/">do landlords have to change the locks?</a>
+  </p>
+
+  <h2>What you get for {SITE.price}</h2>
+  <ul>
+    <li>An Avocet ABS cylinder sized to the door — TS007 3-star on its own, so it doesn’t depend on the handle.</li>
+    <li>Three keys, handed to whoever you nominate.</li>
+    <li>An itemised invoice naming the property, door, product and ratings.</li>
+    <li>No callout fee, no hourly labour, no upsell.</li>
+  </ul>
+
+  <h2>Portfolio landlords and agents</h2>
+  <p>
+    Send a list of addresses and doors with the dates you need them done by, and who will give access at each.
+    Each door is {SITE.price}; we group visits where the dates allow. Tell us who the invoice should be addressed to.
+  </p>
+
+  <h2>Where we work</h2>
+  <p>
+    <a href="/locksmith/camden/">Camden</a>, <a href="/locksmith/islington/">Islington</a>,
+    <a href="/locksmith/haringey/">Haringey</a>, <a href="/locksmith/barnet/">Barnet</a>,
+    <a href="/locksmith/enfield/">Enfield</a>, <a href="/locksmith/hackney/">Hackney</a>,
+    <a href="/locksmith/westminster/">Westminster</a>, the <a href="/locksmith/city-of-london/">City of London</a> and
+    <a href="/locksmith/kensington-and-chelsea/">Kensington &amp; Chelsea</a>.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="Landlord questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/do-landlords-have-to-change-locks/', title: 'Do landlords have to change locks?', blurb: 'The law in England, explained.' },
+    { href: '/guides/insurance-approved-locks/', title: 'Insurance-approved locks', blurb: 'What your landlord policy may ask for.' },
+    { href: '/guides/can-tenants-change-locks/', title: 'Can tenants change locks?', blurb: 'The tenant’s side.' },
+  ]} />
+</ContentLayout>
