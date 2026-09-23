@@ -1,0 +1,87 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { SITE } from '../../consts';
+
+const path = '/guides/how-to-measure-a-euro-cylinder';
+const faqs = [
+  {
+    q: 'How do you measure a euro cylinder?',
+    a: 'Measure from the centre of the fixing screw hole to each end of the cylinder, in millimetres. You get two numbers — for example 35/45 — which together make the total length (80mm). Measuring the cylinder out of the door is more accurate than measuring it in place.',
+  },
+  {
+    q: 'What does 35/45 mean on a euro cylinder?',
+    a: 'It is the length of each half, measured from the centre of the fixing screw: 35mm on one side and 45mm on the other, 80mm in total. The first figure is usually the outside and the second the inside, but check the listing, because retailers differ.',
+  },
+  {
+    q: 'How far should a euro cylinder stick out?',
+    a: 'Ideally it sits flush with the handle or escutcheon. Guidance from lock retailers is a maximum of about 3mm — any more gives a snap attack something to grip.',
+  },
+  {
+    q: 'Do I need to measure before booking kianlocks?',
+    a: 'No. We measure on site and carry the common Avocet ABS sizes, so you don’t need to know your size to book. If you have measured, include it in your email — it helps us bring the right length.',
+  },
+];
+---
+<ContentLayout
+  path={path}
+  lead="Two measurements, one screwdriver, two minutes. Here’s how to get the size right — and why a cylinder that’s a few millimetres too long is a security problem, not just a cosmetic one."
+  sources={[
+    { label: 'Lock & Key — How to measure a euro cylinder', url: 'https://www.lockandkey.co.uk/euro-locks/how-to-measure-a-euro-cylinder' },
+    { label: 'Lockshop Warehouse — Measuring and installing euro cylinders', url: 'https://www.lockshop-warehouse.co.uk/info/installing-your-locks/installing-euro-cylinders/' },
+    { label: 'Master Locksmiths Association — Lock snapping', url: 'https://www.locksmiths.co.uk/faq/lock-snapping/' },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Measure a euro cylinder from the <strong>centre of the fixing screw hole to each end</strong>, in millimetres.
+      The two numbers are written like <strong>35/45</strong> (outside/inside) and add up to the total length. Measure it
+      out of the door for accuracy. The right size sits flush with the handle — no more than about <strong>3mm</strong>
+      proud — because overhang is what snap attacks grip.
+    </p>
+  </QuickAnswer>
+
+  <h2>Step by step</h2>
+  <ol>
+    <li><strong>Open the door</strong> and find the fixing screw on the door edge, in line with the cylinder (usually below the latch).</li>
+    <li><strong>Undo the screw</strong>, then turn the key slightly until the cam lines up with the cylinder body.</li>
+    <li><strong>Slide the cylinder out</strong>, pulling on the key.</li>
+    <li><strong>Measure from the centre of the screw hole</strong> in the cylinder body to the outside end. That’s side A.</li>
+    <li><strong>Measure from the same point to the inside end.</strong> That’s side B.</li>
+    <li>Write it as <strong>A/B</strong> — e.g. 35/45 = 80mm overall. Note if it has a thumbturn on the inside.</li>
+  </ol>
+  <p>Can’t remove it? Measure from the centre of the screw hole visible on the door edge to each face of the cylinder — but treat that as approximate.</p>
+
+  <h2>Why size is a security issue</h2>
+  <p>
+    A euro cylinder is attacked by gripping the part that sticks out past the handle and forcing it until it breaks —
+    see <a href="/guides/lock-snapping-explained/">lock snapping explained</a>. Lock retailers advise that a cylinder should
+    ideally sit flush and protrude no more than about 3mm. Many replacement cylinders are bought one size too long to
+    “be safe”, which does the opposite.
+  </p>
+
+  <h2>Common mistakes</h2>
+  <ul>
+    <li>Measuring the overall length only — you need each side, because many doors take offset sizes (e.g. 40/50).</li>
+    <li>Measuring from the cam instead of the fixing screw.</li>
+    <li>Measuring to the handle instead of to the end of the cylinder.</li>
+    <li>Forgetting that a thumbturn cylinder is sized the same way, turn side inside.</li>
+  </ul>
+
+  <h2>Or let us do it</h2>
+  <p>
+    We measure on site and fit an Avocet ABS 3-star sized to sit flush, for <strong>{SITE.price} flat</strong> —
+    cylinder, fitting, three keys and an itemised invoice.
+    <a href="/contact/">Book a fitting</a>.
+  </p>
+
+  <FaqBlock faqs={faqs} heading="Measuring questions" bare />
+
+  <RelatedLinks links={[
+    { href: '/guides/ts007-3-star-explained/', title: 'TS007 3-star explained', blurb: 'Check the rating while it’s out.' },
+    { href: '/guides/best-anti-snap-euro-cylinders-uk/', title: 'Anti-snap cylinders compared', blurb: 'What to buy.' },
+    { href: '/3-star-lock-upgrade-london/', title: 'Have it fitted', blurb: `${SITE.price} flat.` },
+  ]} />
+</ContentLayout>

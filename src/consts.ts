@@ -14,9 +14,9 @@ export const SITE = {
   tradingSince: '2020',
   domain: 'kianlocks.com',
   url: 'https://kianlocks.com',
-  tagline: 'ABS lock change · £149 flat · North London',
+  tagline: 'ABS lock change · £149 flat · London & Herts',
   description:
-    'North & Central London ABS lock specialists. £149 flat for planned bookings, 24/7 emergency by quote. Email hi@kianlocks.com to book.',
+    'ABS lock specialists for North & Central London and Hertfordshire. £149 flat for planned bookings, 24/7 emergency by quote. Email hi@kianlocks.com to book.',
 
   /** Primary contact: email */
   email: 'hi@kianlocks.com',

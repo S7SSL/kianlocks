@@ -25,6 +25,7 @@ The ClearLegacy SEO/AIO playbook, applied to kianlocks. What shipped in code, an
 - IndexNow key + post-deploy job pings Bing/Yandex with every sitemap URL (Bing feeds Copilot and ChatGPT search).
 
 **New pages (13)** — citation-engine content, all sourced and dated:
+- Hertfordshire area pages (added later the same day): Hertsmere (Potters Bar/Borehamwood), Broxbourne (Cheshunt), Welwyn Hatfield, St Albans & Harpenden — coverage is now 13 areas; `/guides/how-to-measure-a-euro-cylinder/` added.
 - Guides hub `/guides/`
 - `/guides/lock-change-cost-london/` (the CL cost-guide equivalent)
 - `/guides/best-anti-snap-euro-cylinders-uk/` (the CL "top providers" comparison equivalent — honest, includes brands we don't fit)
@@ -49,7 +50,7 @@ The ClearLegacy SEO/AIO playbook, applied to kianlocks. What shipped in code, an
 3. **Bing Webmaster Tools** — already verified; submit the sitemap there too.
 4. **Google Business Profile** — the single biggest local lever. Category "Locksmith", service-area business (hide address), the 9 boroughs, hours Mon–Sat 9–6, phone 07707 071984, website https://kianlocks.com. Then put the GBP URL in `SITE.social.google` (it flows into `sameAs`).
 5. **Reviews** — send every past customer the GBP review link. When real reviews exist, set `SITE.rating` (with source) and build with `ALLOW_RATING=1`. Never before.
-6. **Apple Business Connect + Bing Places** — same NAP: `kianlocks` · 07707 071984 · https://kianlocks.com.
+6. **Apple Business Connect + Bing Places** (full copy pack: `GBP-AND-CITATIONS.md`) — same NAP: `kianlocks` · 07707 071984 · https://kianlocks.com.
 7. **Insurance** — confirm the public liability policy is live; the site says "certificate on request".
 8. **MLA approval** — the site says we do not claim it. If you pursue it and get it, update `CLAIMS-REGISTER.md`, `llms.txt` and the choosing-a-locksmith guide.
 9. **Re-verify** the competitor cylinder table and cost figures by March 2027 (and before Jan 2027, when the 2024 standards take full effect).

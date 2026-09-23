@@ -16,10 +16,17 @@ import { SITE } from '../consts';
 import type { Borough } from '../data/boroughs';
 import type { FAQ } from '../data/faqs';
 
-const ALL_BOROUGH_NAMES = [
-  'Camden', 'Islington', 'Haringey', 'Barnet', 'Enfield', 'Hackney',
-  'Westminster', 'City of London', 'Kensington and Chelsea',
-];
+import { BOROUGHS } from '../data/boroughs';
+
+const areaName = (b: { name: string; slug: string }) =>
+  b.slug === 'kensington-and-chelsea' ? 'Kensington and Chelsea' : b.name;
+const ALL_BOROUGH_NAMES = BOROUGHS.map(areaName);
+/** Areas with the right parent (Greater London vs Hertfordshire) for areaServed. */
+const AREAS_SERVED = BOROUGHS.map((b) => ({
+  '@type': 'AdministrativeArea',
+  name: areaName(b),
+  containedInPlace: { '@type': 'AdministrativeArea', name: b.region === 'Hertfordshire' ? 'Hertfordshire' : 'Greater London' },
+}));
 
 const BUSINESS_ID = `${SITE.url}/#business`;
 const SERVICE_ID = `${SITE.url}/#abs-lock-change`;
@@ -43,7 +50,7 @@ export function plannedOffer(areaName?: string) {
     seller: { '@id': BUSINESS_ID },
     areaServed: areaName
       ? { '@type': 'AdministrativeArea', name: areaName }
-      : ALL_BOROUGH_NAMES.map((name) => ({ '@type': 'AdministrativeArea', name })),
+      : AREAS_SERVED,
   };
 }
 
@@ -80,11 +87,7 @@ export function localBusinessSchema() {
       latitude: SITE.geo.latitude,
       longitude: SITE.geo.longitude,
     },
-    areaServed: ALL_BOROUGH_NAMES.map((name) => ({
-      '@type': 'AdministrativeArea',
-      name,
-      containedInPlace: { '@type': 'City', name: 'London' },
-    })),
+    areaServed: AREAS_SERVED,
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -174,7 +177,7 @@ export function coreServiceSchema() {
     description:
       'Replacement of an existing euro-profile cylinder with an Avocet ABS cylinder (TS007 3-star Kitemarked, Sold Secure SS312 Diamond), sized to the door, with three keys and an itemised invoice naming the product and rating.',
     provider: { '@id': BUSINESS_ID },
-    areaServed: ALL_BOROUGH_NAMES.map((name) => ({ '@type': 'AdministrativeArea', name })),
+    areaServed: AREAS_SERVED,
     audience: { '@type': 'Audience', audienceType: 'Landlords, tenants and homeowners' },
     offers: plannedOffer(),
   };
@@ -193,7 +196,7 @@ export function boroughServiceSchema(borough: Borough) {
     areaServed: {
       '@type': 'AdministrativeArea',
       name: borough.name,
-      containedInPlace: { '@type': 'AdministrativeArea', name: 'Greater London' },
+      containedInPlace: { '@type': 'AdministrativeArea', name: borough.region === 'Hertfordshire' ? 'Hertfordshire' : 'Greater London' },
     },
     serviceType: 'Euro cylinder lock replacement',
     audience: { '@type': 'Audience', audienceType: 'Landlords, tenants and homeowners' },
@@ -211,7 +214,7 @@ export function landingServiceSchema(opts: { path: string; name: string; descrip
     description: opts.description,
     provider: { '@id': BUSINESS_ID },
     isRelatedTo: { '@id': SERVICE_ID },
-    areaServed: ALL_BOROUGH_NAMES.map((name) => ({ '@type': 'AdministrativeArea', name })),
+    areaServed: AREAS_SERVED,
     audience: { '@type': 'Audience', audienceType: opts.audience },
   };
   if (opts.offer !== false) block.offers = plannedOffer();

@@ -29,8 +29,8 @@ export const FAQS: FAQ[] = [
     a: 'Email hi@kianlocks.com with your postcode, door type (uPVC, composite, timber), and the reason for the change. We reply within 2 hours with a slot and confirm the £149 price. No phone calls required, but you can call 07707 071984 if you prefer.',
   },
   {
-    q: 'Do you cover all of London?',
-    a: 'We cover North & Central London — the boroughs of Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, the City of London, and Kensington & Chelsea. If you are in or close to those areas we can almost certainly attend.',
+    q: 'Which areas do you cover?',
+    a: 'We cover North & Central London — Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, the City of London and Kensington & Chelsea — and Hertfordshire: Hertsmere (Potters Bar, Borehamwood, Bushey, Radlett), Broxbourne (Cheshunt, Waltham Cross, Hoddesdon), Welwyn Hatfield (Hatfield, Welwyn Garden City) and St Albans (including Harpenden). If you are close to those areas, email your postcode and we will confirm.',
   },
   {
     q: 'Will an ABS cylinder fit my existing door?',

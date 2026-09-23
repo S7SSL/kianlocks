@@ -4,7 +4,7 @@ import CtaStrip from '../components/CtaStrip.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import { SITE } from '../consts';
-import { NORTH_LONDON, CENTRAL_LONDON } from '../data/boroughs';
+import { NORTH_LONDON, CENTRAL_LONDON, HERTFORDSHIRE } from '../data/boroughs';
 import { FAQS } from '../data/faqs';
 import {
   localBusinessSchema,
@@ -28,7 +28,7 @@ const schema = [
   <section class="hero">
     <div class="container hero__inner">
       <div>
-        <span class="eyebrow" style="color: var(--gold)">North &amp; Central London · ABS Only</span>
+        <span class="eyebrow" style="color: var(--gold)">London &amp; Hertfordshire · ABS Only</span>
         <h1>One lock change. <span class="gold">{SITE.price} flat.</span></h1>
         <p class="lead">
           We fit one product — Avocet ABS, the British Standard 3-star
@@ -74,12 +74,13 @@ const schema = [
       <div class="prose" style="margin:0 auto;">
         <QuickAnswer heading="kianlocks in one paragraph">
           <p>
-            kianlocks is a North &amp; Central London locksmith that fits one product: the
+            kianlocks is a locksmith for North &amp; Central London and Hertfordshire that fits one product: the
             Avocet ABS euro cylinder (TS007 3-star Kitemarked, Sold Secure SS312 Diamond).
             A planned lock change is <strong>{SITE.price} flat</strong> — cylinder, fitting,
             three keys and an itemised invoice — Mon–Sat 9am–6pm, usually booked within
             2–5 working days. 24/7 emergencies are quoted per job. We cover Camden, Islington,
-            Haringey, Barnet, Enfield, Hackney, Westminster, the City and Kensington &amp; Chelsea.
+            Haringey, Barnet, Enfield, Hackney, Westminster, the City and Kensington &amp; Chelsea,
+            plus Hertsmere, Broxbourne, Welwyn Hatfield and St Albans in Hertfordshire.
           </p>
         </QuickAnswer>
       </div>
@@ -198,7 +199,7 @@ const schema = [
         <span class="eyebrow">Coverage</span>
         <h2>Where we work</h2>
         <p>
-          North &amp; Central London only. Pick your borough below for
+          North &amp; Central London and Hertfordshire. Pick your area below for
           local detail and to confirm we cover your postcode.
         </p>
       </div>
@@ -221,6 +222,15 @@ const schema = [
             {CENTRAL_LONDON.map((b) => (
               <a href={`/locksmith/${b.slug}/`} class="card borough-card" style="padding:1.1rem 1.25rem;">
                 <h3 style="font-size:1.2rem;margin:0;">{b.name}</h3>
+                <p class="postcodes" style="margin-top:0.4rem;">{b.postcodes.slice(0,4).join(' · ')}</p>
+              </a>
+            ))}
+          </div>
+          <h3 style="margin-top:1.75rem;">Hertfordshire</h3>
+          <div class="grid-2" style="gap:0.85rem;">
+            {HERTFORDSHIRE.map((b) => (
+              <a href={`/locksmith/${b.slug}/`} class="card borough-card" style="padding:1.1rem 1.25rem;">
+                <h3 style="font-size:1.2rem;margin:0;">{b.landmarks.slice(0,2).join(' & ')}</h3>
                 <p class="postcodes" style="margin-top:0.4rem;">{b.postcodes.slice(0,4).join(' · ')}</p>
               </a>
             ))}

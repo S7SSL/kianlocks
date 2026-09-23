@@ -14,7 +14,7 @@ export const GET: APIRoute = () => {
   const landing = PAGES.filter((p) => p.kind === 'landing');
   const body = `# kianlocks
 
-> kianlocks (KIANLOCKS LTD, Companies House no. ${SITE.companyNumber}) is a North & Central London locksmith that fits one euro cylinder: the Avocet ABS (BSI Kitemark TS007 3-star, Sold Secure SS312 Diamond, Secured by Design). A planned lock change costs ${SITE.price} flat — cylinder, fitting, three keys and an itemised invoice — Mon–Sat 9am–6pm, usually booked within 2–5 working days. 24/7 emergency callouts are available and quoted per job.
+> kianlocks (KIANLOCKS LTD, Companies House no. ${SITE.companyNumber}) is a North & Central London and Hertfordshire locksmith that fits one euro cylinder: the Avocet ABS (BSI Kitemark TS007 3-star, Sold Secure SS312 Diamond, Secured by Design). A planned lock change costs ${SITE.price} flat — cylinder, fitting, three keys and an itemised invoice — Mon–Sat 9am–6pm, usually booked within 2–5 working days. 24/7 emergency callouts are available and quoted per job.
 
 Facts last reviewed: ${SITE.factsReviewed}
 

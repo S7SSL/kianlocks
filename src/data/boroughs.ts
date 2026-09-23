@@ -13,7 +13,7 @@
 export interface Borough {
   slug: string;
   name: string;
-  region: 'North London' | 'Central London';
+  region: 'North London' | 'Central London' | 'Hertfordshire';
   /** Page <title> body (site name is appended). Keep ≤ 52 chars. */
   title: string;
   /** Meta description, ≤ 160 chars. */
@@ -112,7 +112,7 @@ export const BOROUGHS: Borough[] = [
     ],
     commonIssue:
       'Composite doors are often supplied with a 1-star cylinder and a standard handle — so the door is below the TS007 3-star level. A 3-star ABS meets the standard by itself.',
-    nearby: ['enfield', 'haringey', 'camden'],
+    nearby: ['enfield', 'haringey', 'camden', 'hertsmere'],
   },
   {
     slug: 'enfield',
@@ -133,7 +133,7 @@ export const BOROUGHS: Borough[] = [
     ],
     commonIssue:
       'A basic cylinder on a uPVC back door is easy to overlook. If you are changing the front, consider the back door too — each euro cylinder is £149.',
-    nearby: ['barnet', 'haringey', 'hackney'],
+    nearby: ['barnet', 'haringey', 'hackney', 'broxbourne'],
   },
   {
     slug: 'hackney',
@@ -219,8 +219,95 @@ export const BOROUGHS: Borough[] = [
       'Older flats often have a separate mortice deadlock alongside the cylinder. We leave a working mortice in place and upgrade the cylinder, so you keep both locks.',
     nearby: ['westminster', 'camden'],
   },
+  // ---------------- Hertfordshire (added 23 Sep 2026) ----------------
+  {
+    slug: 'hertsmere',
+    name: 'Hertsmere',
+    region: 'Hertfordshire',
+    title: 'Locksmith Potters Bar & Borehamwood — £149',
+    metaDescription:
+      'ABS lock change in Potters Bar, Borehamwood, Bushey and Radlett (EN6, WD6, WD23, WD7): Avocet 3-star anti-snap cylinder, 3 keys, £149 flat. Email to book.',
+    h1: 'ABS Locksmith in Potters Bar, Borehamwood & Hertsmere',
+    lead:
+      'Avocet ABS lock changes across Hertsmere — Potters Bar, Borehamwood, Elstree, Bushey and Radlett. One tested 3-star cylinder, one fixed price.',
+    postcodes: ['EN6', 'WD6', 'WD23', 'WD7'],
+    landmarks: ['Potters Bar', 'Borehamwood', 'Elstree', 'Bushey', 'Radlett', 'Shenley'],
+    geo: { latitude: 51.6980, longitude: -0.1830 },
+    bodyParagraphs: [
+      'Hertsmere sits just over the border from Barnet, so it is a short run from our North London base. Housing is mostly semi-detached and detached family homes, plus newer flats around Borehamwood and Potters Bar stations — typically uPVC or composite front doors where a euro cylinder drives the whole multipoint lock. That cylinder is what we upgrade.',
+      'Most Hertsmere jobs are lock changes after buying a house, landlord changes between tenancies, and homeowners replacing the unrated cylinder a door was supplied with. We fit an Avocet ABS — TS007 3-star and Sold Secure Diamond — sized to the door, with three keys and an itemised invoice.',
+    ],
+    commonIssue:
+      'Back and side doors on family homes often still have the original basic cylinder even when the front has been upgraded. Each euro cylinder is £149 — worth doing them together.',
+    nearby: ['barnet', 'welwyn-hatfield', 'st-albans', 'enfield'],
+  },
+  {
+    slug: 'broxbourne',
+    name: 'Broxbourne',
+    region: 'Hertfordshire',
+    title: 'Locksmith Cheshunt & Broxbourne — £149',
+    metaDescription:
+      'ABS lock change in Cheshunt, Waltham Cross, Hoddesdon and Broxbourne (EN7, EN8, EN10, EN11): Avocet 3-star anti-snap cylinder, 3 keys, £149 flat.',
+    h1: 'ABS Locksmith in Cheshunt, Waltham Cross & Broxbourne',
+    lead:
+      'Avocet ABS lock changes across the Borough of Broxbourne — Cheshunt, Waltham Cross, Goffs Oak, Hoddesdon and Broxbourne. Straight up the A10 from Enfield.',
+    postcodes: ['EN7', 'EN8', 'EN10', 'EN11'],
+    landmarks: ['Cheshunt', 'Waltham Cross', 'Goffs Oak', 'Turnford', 'Hoddesdon', 'Broxbourne'],
+    geo: { latitude: 51.7020, longitude: -0.0340 },
+    bodyParagraphs: [
+      'Broxbourne runs north from the Enfield border along the A10 and the Lea Valley. It is a mix of post-war family housing, newer estates and flats near Cheshunt and Waltham Cross stations — mostly uPVC and composite doors with a euro cylinder at the heart of the lock.',
+      'Typical Broxbourne work is tenancy-change lock changes for landlords, new owners who want the previous keys to stop working, and upgrades from an unrated or 1-star cylinder to a 3-star Avocet ABS. Planned bookings are usually within 2–5 working days.',
+    ],
+    commonIssue:
+      'A 1-star cylinder with an ordinary handle is below the TS007 3-star level, even if the door looks secure. A 3-star ABS meets the standard on its own, whatever handle is fitted.',
+    nearby: ['enfield', 'welwyn-hatfield', 'hertsmere'],
+  },
+  {
+    slug: 'welwyn-hatfield',
+    name: 'Welwyn Hatfield',
+    region: 'Hertfordshire',
+    title: 'Locksmith Hatfield & Welwyn Garden City — £149',
+    metaDescription:
+      'ABS lock change in Hatfield, Welwyn Garden City, Welwyn and Brookmans Park (AL6–AL10): Avocet 3-star anti-snap cylinder, 3 keys, £149 flat. Email to book.',
+    h1: 'ABS Locksmith in Hatfield & Welwyn Garden City',
+    lead:
+      'Avocet ABS lock changes across Welwyn Hatfield — Hatfield, Welwyn Garden City, Welwyn, Brookmans Park and Welham Green. Planned work at one fixed price.',
+    postcodes: ['AL6', 'AL7', 'AL8', 'AL9', 'AL10'],
+    landmarks: ['Hatfield', 'Welwyn Garden City', 'Welwyn', 'Brookmans Park', 'Welham Green', 'Cuffley'],
+    geo: { latitude: 51.7636, longitude: -0.2266 },
+    bodyParagraphs: [
+      'Hatfield has a large rental market around the University of Hertfordshire, so tenancy changes are a big share of the work here: every new tenancy is a reason to make the old keys useless. Welwyn Garden City adds planned garden-city housing and newer developments, with a wide mix of door types.',
+      'Wherever the door locks with a euro cylinder, we replace it with an Avocet ABS — TS007 3-star and Sold Secure Diamond — and hand over three keys and an itemised invoice naming the product and rating, ready for your landlord file or insurer.',
+    ],
+    commonIssue:
+      'Shared houses often have a street door plus lockable bedroom doors. Tell us which doors you mean when you book — we quote £149 per euro cylinder.',
+    nearby: ['hertsmere', 'st-albans', 'broxbourne'],
+  },
+  {
+    slug: 'st-albans',
+    name: 'St Albans',
+    region: 'Hertfordshire',
+    title: 'Locksmith St Albans & Harpenden — ABS £149',
+    metaDescription:
+      'ABS lock change in St Albans, Harpenden, London Colney and Wheathampstead (AL1–AL5): Avocet 3-star anti-snap cylinder, 3 keys, £149 flat. Email to book.',
+    h1: 'ABS Locksmith in St Albans & Harpenden',
+    lead:
+      'Avocet ABS lock changes across the St Albans district — St Albans city, Harpenden, London Colney, Wheathampstead and Park Street. A tested 3-star cylinder at one fixed price.',
+    postcodes: ['AL1', 'AL2', 'AL3', 'AL4', 'AL5'],
+    landmarks: ['St Albans', 'Harpenden', 'London Colney', 'Wheathampstead', 'Park Street', 'How Wood'],
+    geo: { latitude: 51.7527, longitude: -0.3394 },
+    bodyParagraphs: [
+      'St Albans mixes Victorian and Edwardian terraces near the city centre with inter-war and modern family homes further out, and Harpenden is largely family housing. Period timber doors often combine a mortice lock with a cylinder nightlatch; later uPVC and composite doors rely on a euro cylinder. Where there is a euro cylinder, we fit ABS.',
+      'Most St Albans and Harpenden jobs are lock changes after moving in, landlord changes between tenancies and homeowner upgrades to a 3-star cylinder. We change the cylinder only, so the look of the door stays the same.',
+    ],
+    commonIssue:
+      'On period doors we leave a working mortice deadlock in place and upgrade the euro cylinder, so you keep both locks. Mortice locks themselves are not something we replace.',
+    nearby: ['welwyn-hatfield', 'hertsmere'],
+  },
 ];
 
 export const NORTH_LONDON = BOROUGHS.filter((b) => b.region === 'North London');
 export const CENTRAL_LONDON = BOROUGHS.filter((b) => b.region === 'Central London');
+export const HERTFORDSHIRE = BOROUGHS.filter((b) => b.region === 'Hertfordshire');
+export const AREA_COUNT = BOROUGHS.length;
 export const boroughBySlug = (slug: string) => BOROUGHS.find((b) => b.slug === slug);
