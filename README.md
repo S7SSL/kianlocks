@@ -6,6 +6,12 @@ Built with [Astro](https://astro.build), styled with vanilla CSS, deployed to Gi
 
 ---
 
+## SEO / AI-visibility (Sep 2026)
+
+Read **SEO-AIO-HANDOVER-2026-09-23.md** first, then **CLAIMS-REGISTER.md**.
+`npm run build:check` builds and runs the SEO/truthfulness lint that CI also runs before every deploy.
+Content pages live in `src/data/pages.ts` (titles, metas, dates → hub, sitemap lastmod and `/llms.txt`).
+
 ## What's in the box
 
 | Page | Path | Purpose |
