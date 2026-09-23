@@ -38,7 +38,7 @@ function walk(dir) {
   });
 }
 const files = walk(DIST);
-const htmlFiles = files.filter((f) => f.endsWith('.html'));
+const htmlFiles = files.filter((f) => f.endsWith('.html') && !/\/google[0-9a-f]+\.html$/.test(f));
 const sitemap = files.filter((f) => /sitemap-\d+\.xml$/.test(f)).map((f) => readFileSync(f, 'utf8')).join('');
 const sitemapLocs = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
 
