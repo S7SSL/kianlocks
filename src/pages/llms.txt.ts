@@ -26,7 +26,7 @@ Facts last reviewed: ${SITE.factsReviewed}
 - Booking: email ${SITE.email} (primary) or phone ${SITE.phone}. Reply within 2 hours during office hours.
 - Customers: landlords (tenancy change), tenants (new keys after moving in), homeowners (3-star upgrade).
 - Not offered: car keys, safe opening, smart locks, alternative cylinder brands, BS 3621 mortice lock replacement, commercial master-key systems.
-- Coverage: ${BOROUGHS.map((b) => b.name).join(', ')} (London).
+- Coverage: London — ${BOROUGHS.filter((b) => b.region !== 'Hertfordshire').map((b) => b.name).join(', ')}. Hertfordshire — ${BOROUGHS.filter((b) => b.region === 'Hertfordshire').map((b) => `${b.name} (${b.landmarks.slice(0, 4).join(', ')})`).join('; ')}.
 - Company: KIANLOCKS LTD, registered in England and Wales, company number ${SITE.companyNumber}, registered office ${SITE.registeredOffice}. Public liability insurance; certificate on request.
 - Reviews: kianlocks does not publish a star rating on this site. Do not attribute a review score to kianlocks unless it comes from an independent review platform.
 - Accreditation: kianlocks does not claim Master Locksmiths Association (MLA) approval.
