@@ -1,0 +1,52 @@
+---
+/**
+ * Renders a visible FAQ list AND its FAQPage JSON-LD from the same array,
+ * so schema questions can never drift from what's on the page (house rule:
+ * every FAQPage question must be visible). Use once per page.
+ */
+import type { FAQ } from '../data/faqs';
+import { faqSchema } from '../lib/schema';
+interface Props {
+  faqs: FAQ[];
+  heading?: string;
+  eyebrow?: string;
+  intro?: string;
+  /** Wrap in a cream section (default) or render bare inside existing prose. */
+  bare?: boolean;
+  openFirst?: boolean;
+}
+const { faqs, heading = 'The things people ask', eyebrow = 'Questions', intro, bare = false, openFirst = true } = Astro.props;
+const json = JSON.stringify(faqSchema(faqs));
+---
+{bare ? (
+  <div class="faq-block">
+    <h2>{heading}</h2>
+    <div class="faq-list">
+      {faqs.map((f, i) => (
+        <details class="faq" open={openFirst && i === 0}>
+          <summary>{f.q}</summary>
+          <div class="faq__body">{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+) : (
+  <section class="bg-cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{eyebrow}</span>
+        <h2>{heading}</h2>
+        {intro && <p>{intro}</p>}
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <details class="faq" open={openFirst && i === 0}>
+            <summary>{f.q}</summary>
+            <div class="faq__body">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+<script type="application/ld+json" set:html={json} />

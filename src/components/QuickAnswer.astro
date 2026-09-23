@@ -1,0 +1,14 @@
+---
+/**
+ * "Quick answer" box — a short, self-contained, quotable answer placed near the
+ * top of a page. This is the pattern AI Overviews / ChatGPT / Perplexity lift
+ * verbatim (same house pattern as ClearLegacy's .quick-answer box).
+ * Keep it 40–70 words, factual, and consistent with the rest of the page.
+ */
+interface Props { heading?: string }
+const { heading = 'Quick answer' } = Astro.props;
+---
+<aside class="quick-answer" aria-label={heading}>
+  <h2 class="quick-answer__title">{heading}</h2>
+  <div class="quick-answer__body"><slot /></div>
+</aside>

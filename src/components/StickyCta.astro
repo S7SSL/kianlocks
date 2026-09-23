@@ -1,0 +1,8 @@
+---
+/** Mobile-only sticky booking bar (email-led, phone secondary). */
+import { SITE } from '../consts';
+---
+<div class="sticky-cta" role="region" aria-label="Book a fitting">
+  <a href={SITE.emailHref} class="sticky-cta__primary" data-cta="sticky-email">Book · {SITE.price} flat</a>
+  <a href={SITE.phoneHref} class="sticky-cta__secondary" data-cta="sticky-call" aria-label={`Call ${SITE.phone}`}>Call</a>
+</div>

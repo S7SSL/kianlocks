@@ -18,14 +18,14 @@ const year = new Date().getFullYear();
         <p>
           North &amp; Central London locksmith. We fit Avocet ABS 3-star
           high-security cylinders only — anti-snap, anti-bump, anti-pick,
-          anti-drill. Same-day callout, fully insured.
+          anti-drill. £149 flat for planned work; 24/7 emergencies by quote. Insured.
         </p>
       </div>
 
       <div>
         <h4>Areas</h4>
         <ul>
-          {BOROUGHS.slice(0, 6).map((b) => (
+          {BOROUGHS.map((b) => (
             <li><a href={`/locksmith/${b.slug}`}>{b.name}</a></li>
           ))}
           <li><a href="/areas">All areas</a></li>
@@ -36,6 +36,11 @@ const year = new Date().getFullYear();
         <h4>Site</h4>
         <ul>
           <li><a href="/why-abs">Why ABS</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/guides/lock-change-cost-london">Lock change prices</a></li>
+          <li><a href="/landlord-lock-change-london">For landlords</a></li>
+          <li><a href="/new-tenant-lock-change-london">For tenants</a></li>
+          <li><a href="/emergency-locksmith-london">24/7 emergency</a></li>
           <li><a href="/process">How it works</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
@@ -55,7 +60,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="footer-meta">
-      <span>&copy; {year} {SITE.legalName}. All rights reserved.</span>
+      <span>&copy; {year} {SITE.legalName} (KIANLOCKS LTD). Registered in England &amp; Wales, company no. <a href={SITE.companyHouseUrl} rel="noopener" style="color:inherit">{SITE.companyNumber}</a>. Registered office: {SITE.registeredOffice}.</span>
       <span>Built in London. ABS Kitemarked. TS007 3-star.</span>
     </div>
   </div>

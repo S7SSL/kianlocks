@@ -1,8 +1,15 @@
 /**
- * Helpers that build JSON-LD structured data objects.
- * Schema is the single biggest local-SEO lever for service-area businesses
- * — it powers the Google Knowledge Panel, the map pack listing, and FAQ
- * rich results in search.
+ * JSON-LD builders. One business entity (@id /#business) is defined once and
+ * everything else references it by @id, so Google and AI engines see a single
+ * consistent entity across the site.
+ *
+ * HOUSE RULES (mirrors the ClearLegacy rules):
+ *  - Every FAQPage question must also be VISIBLE on the page. Use the
+ *    <FaqBlock> component, which renders the visible list AND the schema from
+ *    the same array — never call faqSchema() on its own for a page.
+ *  - No AggregateRating unless SITE.rating mirrors a real independent source.
+ *  - No placeholder strings ("[STREET]" etc.) — scripts/seo-check.mjs fails the
+ *    build check if a "[" placeholder appears inside JSON-LD.
  */
 
 import { SITE } from '../consts';
@@ -14,27 +21,58 @@ const ALL_BOROUGH_NAMES = [
   'Westminster', 'City of London', 'Kensington and Chelsea',
 ];
 
-/** Top-level LocalBusiness schema — the most important block on the site. */
-export function localBusinessSchema() {
+const BUSINESS_ID = `${SITE.url}/#business`;
+const SERVICE_ID = `${SITE.url}/#abs-lock-change`;
+
+/** The £149 planned-booking offer — reused by the business, service and borough blocks. */
+export function plannedOffer(areaName?: string) {
   return {
+    '@type': 'Offer',
+    name: 'Planned Avocet ABS lock change',
+    description: `Fixed ${SITE.price}: ${SITE.priceIncludes}, itemised written invoice. Mon–Sat 9am–6pm. No callout fee.`,
+    price: SITE.priceValue,
+    priceCurrency: SITE.priceCurrency,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: SITE.priceValue,
+      priceCurrency: SITE.priceCurrency,
+      unitText: 'per door (one euro cylinder)',
+    },
+    availability: 'https://schema.org/InStock',
+    url: `${SITE.url}/contact`,
+    seller: { '@id': BUSINESS_ID },
+    areaServed: areaName
+      ? { '@type': 'AdministrativeArea', name: areaName }
+      : ALL_BOROUGH_NAMES.map((name) => ({ '@type': 'AdministrativeArea', name })),
+  };
+}
+
+/** Top-level Locksmith (LocalBusiness) entity. */
+export function localBusinessSchema() {
+  const block: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Locksmith',
-    '@id': `${SITE.url}/#business`,
-    name: SITE.legalName,
-    alternateName: SITE.name,
+    '@id': BUSINESS_ID,
+    name: SITE.name,
+    legalName: 'KIANLOCKS LTD',
+    alternateName: ['kianlocks Ltd', 'Kian Locks'],
+    identifier: {
+      '@type': 'PropertyValue',
+      propertyID: 'Companies House company number',
+      value: SITE.companyNumber,
+    },
     description: SITE.description,
     url: SITE.url,
-    telephone: SITE.phone,
+    telephone: '+447707071984',
     email: SITE.email,
     image: `${SITE.url}/og-default.png`,
-    logo: `${SITE.url}/logo.svg`,
-    priceRange: '££',
+    logo: `${SITE.url}/apple-touch-icon.png`,
+    priceRange: `${SITE.price} planned lock change; emergency by quote`,
+    currenciesAccepted: 'GBP',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: SITE.address.streetAddress,
       addressLocality: SITE.address.addressLocality,
       addressRegion: SITE.address.addressRegion,
-      postalCode: SITE.address.postalCode,
       addressCountry: SITE.address.addressCountry,
     },
     geo: {
@@ -45,44 +83,100 @@ export function localBusinessSchema() {
     areaServed: ALL_BOROUGH_NAMES.map((name) => ({
       '@type': 'AdministrativeArea',
       name,
+      containedInPlace: { '@type': 'City', name: 'London' },
     })),
-    serviceArea: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: SITE.geo.latitude,
-        longitude: SITE.geo.longitude,
-      },
-      geoRadius: '12000', // metres
-    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '00:00',
-        closes: '23:59',
+        dayOfWeek: SITE.openingHours.days,
+        opens: SITE.openingHours.opens,
+        closes: SITE.openingHours.closes,
       },
     ],
-    sameAs: Object.values(SITE.social).filter(Boolean),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: SITE.rating.value,
-      reviewCount: SITE.rating.count,
-    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'bookings',
+        email: SITE.email,
+        telephone: '+447707071984',
+        areaServed: 'GB',
+        availableLanguage: 'en-GB',
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'emergency',
+        telephone: '+447707071984',
+        description: '24/7 emergency callout, quoted per job',
+        hoursAvailable: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '00:00',
+          closes: '23:59',
+        },
+      },
+    ],
+    knowsAbout: [
+      'Euro cylinder lock replacement',
+      'Anti-snap locks',
+      'TS007 3-star cylinders',
+      'Sold Secure SS312 Diamond',
+      'Avocet ABS cylinders',
+      'Landlord lock changes between tenancies',
+      'Lock changes after moving home',
+    ],
+    makesOffer: plannedOffer(),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Locksmith services',
+      name: 'kianlocks services',
       itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: { '@id': SERVICE_ID },
+          price: SITE.priceValue,
+          priceCurrency: SITE.priceCurrency,
+        },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Avocet ABS cylinder lock change',
-            description: 'High-security TS007 3-star anti-snap, anti-bump, anti-pick, anti-drill euro cylinder fitted to existing door.',
+            name: '24/7 emergency locksmith callout',
+            description: 'Out-of-hours and urgent callouts (locked out, after a break-in or snap attempt). Quoted per job before attendance.',
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'GBP',
+            description: 'Quoted per job',
           },
         },
       ],
     },
+  };
+  const sameAs = [SITE.companyHouseUrl, ...Object.values(SITE.social).filter(Boolean)];
+  if (sameAs.length) block.sameAs = sameAs;
+  if (SITE.rating) {
+    block.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: SITE.rating.value,
+      reviewCount: SITE.rating.count,
+    };
+  }
+  return block;
+}
+
+/** The core service — Avocet ABS lock change — with its fixed-price Offer. */
+export function coreServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': SERVICE_ID,
+    name: 'Avocet ABS 3-star lock change',
+    serviceType: 'Euro cylinder lock replacement',
+    description:
+      'Replacement of an existing euro-profile cylinder with an Avocet ABS cylinder (TS007 3-star Kitemarked, Sold Secure SS312 Diamond), sized to the door, with three keys and an itemised invoice naming the product and rating.',
+    provider: { '@id': BUSINESS_ID },
+    areaServed: ALL_BOROUGH_NAMES.map((name) => ({ '@type': 'AdministrativeArea', name })),
+    audience: { '@type': 'Audience', audienceType: 'Landlords, tenants and homeowners' },
+    offers: plannedOffer(),
   };
 }
 
@@ -92,20 +186,66 @@ export function boroughServiceSchema(borough: Borough) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${SITE.url}/locksmith/${borough.slug}#service`,
-    name: `ABS Locksmith — ${borough.name}`,
+    name: `ABS lock change in ${borough.name}`,
     description: borough.metaDescription,
-    provider: { '@id': `${SITE.url}/#business` },
+    provider: { '@id': BUSINESS_ID },
+    isRelatedTo: { '@id': SERVICE_ID },
     areaServed: {
       '@type': 'AdministrativeArea',
       name: borough.name,
       containedInPlace: { '@type': 'AdministrativeArea', name: 'Greater London' },
     },
-    serviceType: 'Locksmith — high-security cylinder change',
-    audience: { '@type': 'Audience', audienceType: 'Homeowners and landlords' },
+    serviceType: 'Euro cylinder lock replacement',
+    audience: { '@type': 'Audience', audienceType: 'Landlords, tenants and homeowners' },
+    offers: plannedOffer(borough.name),
   };
 }
 
-/** FAQPage schema — qualifies for FAQ rich results (collapsible Q&A in SERPs). */
+/** Audience/landing-page Service block (landlords, tenants, homeowners, emergency). */
+export function landingServiceSchema(opts: { path: string; name: string; description: string; audience: string; offer?: boolean }) {
+  const block: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${SITE.url}${opts.path}#service`,
+    name: opts.name,
+    description: opts.description,
+    provider: { '@id': BUSINESS_ID },
+    isRelatedTo: { '@id': SERVICE_ID },
+    areaServed: ALL_BOROUGH_NAMES.map((name) => ({ '@type': 'AdministrativeArea', name })),
+    audience: { '@type': 'Audience', audienceType: opts.audience },
+  };
+  if (opts.offer !== false) block.offers = plannedOffer();
+  return block;
+}
+
+/** Article schema for guides — dates must only move when content really changes. */
+export function articleSchema(opts: {
+  path: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  const url = `${SITE.url}${opts.path}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url,
+    mainEntityOfPage: url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified,
+    inLanguage: 'en-GB',
+    image: `${SITE.url}/og-default.png`,
+    author: { '@id': BUSINESS_ID },
+    publisher: { '@id': BUSINESS_ID },
+    about: { '@id': SERVICE_ID },
+  };
+}
+
+/** FAQPage schema. Call ONLY via <FaqBlock> so the questions are also visible. */
 export function faqSchema(faqs: FAQ[]) {
   return {
     '@context': 'https://schema.org',
@@ -133,7 +273,7 @@ export function breadcrumbSchema(crumbs: Crumb[]) {
   };
 }
 
-/** WebSite schema with SearchAction (enables sitelinks searchbox eventually). */
+/** WebSite schema. */
 export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
@@ -141,7 +281,8 @@ export function websiteSchema() {
     '@id': `${SITE.url}/#website`,
     url: SITE.url,
     name: SITE.name,
-    publisher: { '@id': `${SITE.url}/#business` },
+    alternateName: 'Kian Locks',
+    publisher: { '@id': BUSINESS_ID },
     inLanguage: 'en-GB',
   };
 }

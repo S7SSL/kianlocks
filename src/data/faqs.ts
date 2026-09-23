@@ -14,15 +14,15 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'What is an ABS lock and why do you only fit them?',
-    a: 'ABS is a high-security euro-profile cylinder made by Avocet. It carries the British Standard TS007 3-star rating — the only rating that certifies a cylinder against all four real-world attack methods: snapping, bumping, picking and drilling. We fit ABS exclusively because anything less means leaving one of those four attacks open. There is no advantage to mixing brands when one product covers everything.',
+    a: 'ABS is a high-security euro-profile cylinder made by Avocet. It is Kitemarked to TS007 3-star — the top grade, which a cylinder can only reach on its own by resisting snapping, bumping, picking and drilling in testing — and it also holds Sold Secure SS312 Diamond. Other cylinders reach the same grades; we standardise on ABS so every door gets the same tested product, the same key-registration card and the same manufacturer guarantee.',
   },
   {
     q: 'How is a 3-star cylinder different from what came with my door?',
-    a: 'Most off-the-shelf doors and many new-builds ship with a 1-star cylinder, which relies on a 2-star handle to make up the rating. If the handle is replaced, the rating collapses. A 3-star cylinder — like the Avocet ABS — is rated independently and meets the British Standard on its own. It is the only safe assumption.',
+    a: 'Many doors are supplied with a 1-star cylinder, which only reaches the TS007 3-star level when it is paired with a 2-star handle or cylinder guard. If that handle is later swapped for an unrated one, the door quietly drops back to 1-star. A 3-star cylinder such as the Avocet ABS meets the standard on its own, whatever handle is fitted.',
   },
   {
     q: 'Are you the right locksmith for me?',
-    a: 'We fit ABS lock changes for landlords (tenancy change), tenants (wanting their own keys after moving in), and homeowners (upgrading to a 3-star cylinder). If you are locked out, need a key copy, want a smart lock, need a safe opened, or anything other than a planned ABS cylinder change — we are not the right locksmith. We will tell you that and recommend someone else.',
+    a: 'Our planned work is one job: replacing a euro cylinder with an Avocet ABS 3-star, for landlords (tenancy change), tenants (their own keys after moving in) and homeowners (security upgrade). We also take genuine emergencies 24/7 — locked out, a snapped or damaged cylinder, or a door left insecure after a break-in — quoted per job before we set off. We do not cut car keys, open safes or fit smart locks; if that is what you need, we will say so and point you elsewhere.',
   },
   {
     q: 'How do I book?',
@@ -38,14 +38,14 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'Will my insurance accept the new cylinder?',
-    a: 'Yes — every UK home insurer accepts a TS007 3-star Kitemarked cylinder as meeting the security clause of standard policies. We provide an itemised written invoice that names the product and its rating, which you can pass directly to your insurer if requested.',
+    a: 'Check your own policy wording, because lock clauses differ between insurers. Where a policy asks for British Standard locks on a uPVC or composite door, a TS007 3-star cylinder is what insurers such as Allianz describe as meeting it (wooden doors are usually covered by a separate BS 3621 mortice-lock requirement). Every job comes with an itemised invoice naming the cylinder and its rating, so you can show your insurer exactly what was fitted.',
   },
   {
     q: 'How quickly can you attend?',
-    a: 'Planned bookings are typically slotted within 2–5 working days of the email — that is the £149 flat-fee path. We also offer a 24/7 emergency callout for genuine urgencies (locked out, attempted snap attack, urgent tenancy access) — that is quoted per job because the price depends on the time of day, your location and what we find on arrival. Call 07707 071984 or email hi@kianlocks.com with EMERGENCY in the subject line and we will respond.',
+    a: 'Planned bookings are typically slotted within 2–5 working days of your email — that is the £149 flat-fee path. For genuine urgencies (locked out, attempted snap attack, urgent tenancy access) we offer a 24/7 emergency callout, quoted per job because the price depends on the time of day, your location and what we find. Call 07707 071984, or email hi@kianlocks.com with EMERGENCY in the subject line.',
   },
   {
     q: 'Are you insured?',
-    a: 'Yes. kianlocks Ltd carries full public liability insurance. Documentation available on request.',
+    a: 'Yes. kianlocks Ltd carries public liability insurance. The certificate is available on request before we book your job.',
   },
 ];

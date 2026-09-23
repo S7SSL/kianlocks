@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import StickyCta from '../components/StickyCta.astro';
 import { SITE } from '../consts';
 
 interface Props {
@@ -17,6 +18,10 @@ interface Props {
   schema?: object | object[];
   /** Disable indexing (e.g. for thin pages or 404). */
   noindex?: boolean;
+  /** 'article' for guides (adds article:published/modified_time). */
+  ogType?: 'website' | 'article';
+  datePublished?: string;
+  dateModified?: string;
 }
 
 const {
@@ -26,6 +31,9 @@ const {
   ogImage = `${SITE.url}/og-default.png`,
   schema,
   noindex = false,
+  ogType = 'website',
+  datePublished,
+  dateModified,
 } = Astro.props;
 
 const fullTitle = title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} | ${SITE.name}`;
@@ -43,7 +51,9 @@ const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
-  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  {noindex
+    ? <meta name="robots" content="noindex, nofollow" />
+    : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
   <meta name="theme-color" content="#0E1A3A" />
   <meta name="format-detection" content="telephone=yes" />
 
@@ -52,7 +62,9 @@ const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 
   <!-- Open Graph -->
   <meta property="og:site_name" content={SITE.name} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
+  {ogType === 'article' && datePublished && <meta property="article:published_time" content={datePublished} />}
+  {ogType === 'article' && dateModified && <meta property="article:modified_time" content={dateModified} />}
   <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
@@ -71,6 +83,9 @@ const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <!-- Plain-text summary for AI assistants (llmstxt.org) -->
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="kianlocks facts for AI assistants" />
+  <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
   <!-- Fonts: Inter (sans) + Fraunces (display serif). Self-hostable later for perf. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -92,5 +107,6 @@ const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <slot />
   </main>
   <Footer />
+  <StickyCta />
 </body>
 </html>

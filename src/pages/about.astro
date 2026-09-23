@@ -14,7 +14,7 @@ const schema = [
 ];
 ---
 <BaseLayout
-  title="About kianlocks"
+  title="About kianlocks — ABS-Only London Locksmith"
   description="kianlocks Ltd is a North & Central London locksmith fitting Avocet ABS 3-star high-security cylinders only. Independent, insured, accountable."
   schema={schema}
 >
@@ -41,11 +41,12 @@ const schema = [
           {SITE.priceIncludes} included. That is the entire service.
         </p>
         <p>
-          We don&rsquo;t do emergency lockouts. We don&rsquo;t cut
-          car keys. We don&rsquo;t open safes. We don&rsquo;t fit
-          smart locks. We don&rsquo;t carry alternate brands. We do
-          one thing, properly, and refer you elsewhere if your job
-          isn&rsquo;t that one thing.
+          When something goes wrong out of hours — locked out, a snapped
+          cylinder, a door left insecure after a break-in — we run a 24/7
+          emergency callout, quoted per job before we set off. We don&rsquo;t
+          cut car keys, open safes, fit smart locks or carry alternate
+          cylinder brands. If your job isn&rsquo;t ours, we&rsquo;ll say so
+          and point you elsewhere.
         </p>
 
         <h2>Who we work with</h2>
@@ -61,10 +62,10 @@ const schema = [
         <h2>Why this approach</h2>
         <p>
           The lock-change market in London is broken in a specific way.
-          Most callouts arrive unquoted, fit a 1-star cylinder, charge
-          for &lsquo;labour by the hour&rsquo;, and leave. Six months
-          later the cylinder snaps under attack — because it was always
-          going to.
+          Too many callouts arrive unquoted, charge labour by the hour,
+          and fit whatever cylinder is on the van — often one that only
+          meets the standard when paired with a security handle the door
+          doesn&rsquo;t have.
         </p>
         <p>
           The fix is not better marketing. It&rsquo;s a different product,
@@ -76,9 +77,16 @@ const schema = [
 
         <h2>Who we are</h2>
         <p>
-          kianlocks Ltd is registered in England and Wales. Our work is
-          covered by full public liability insurance. We have been
-          fitting locks across London since 2020.
+          kianlocks is the trading name of KIANLOCKS LTD, registered in
+          England and Wales, company number
+          <a href={SITE.companyHouseUrl} rel="noopener">{SITE.companyNumber}</a>,
+          registered office {SITE.registeredOffice}. The company has traded
+          as kianlocks since {SITE.tradingSince}. Our work is covered by
+          public liability insurance; the certificate
+          is available on request. Locksmithing is not a licensed trade in
+          the UK, so we think you should ask any locksmith for these
+          things — see <a href="/guides/how-to-choose-a-locksmith-london">how
+          to choose a locksmith in London</a>.
         </p>
 
         <h2>What we promise</h2>

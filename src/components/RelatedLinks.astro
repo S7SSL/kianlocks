@@ -1,0 +1,13 @@
+---
+/** Internal-link block: "Related" cards. Passes equity between clusters. */
+interface Props { heading?: string; links: { href: string; title: string; blurb?: string }[] }
+const { heading = 'Related', links } = Astro.props;
+---
+<nav class="related" aria-label={heading}>
+  <h2 class="related__title">{heading}</h2>
+  <ul class="related__list">
+    {links.map((l) => (
+      <li><a href={l.href}><strong>{l.title}</strong>{l.blurb && <span>{l.blurb}</span>}</a></li>
+    ))}
+  </ul>
+</nav>
