@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        uses: withastro/action@v6
       # SEO / truthfulness lint (titles, metas, JSON-LD, visible-FAQ rule,
       # banned claims, broken links). Fails the deploy if the site breaks a house rule.
       - name: SEO check
@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # Tell Bing (and so Copilot / ChatGPT search, which draw on Bing's index),
   # Yandex, Seznam and Naver that URLs changed. Never fails the workflow.
@@ -45,6 +45,6 @@ jobs:
     continue-on-error: true
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Ping IndexNow with every sitemap URL
         run: node scripts/indexnow.mjs

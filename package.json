@@ -13,7 +13,10 @@
     "build:check": "astro build && node scripts/seo-check.mjs"
   },
   "dependencies": {
-    "astro": "^4.16.18",
-    "@astrojs/sitemap": "3.2.0"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.4"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
