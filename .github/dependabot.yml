@@ -1,0 +1,33 @@
+# Dependabot — keeps the site's build tools and GitHub Actions up to date.
+# Opens at most one grouped pull request per ecosystem per week, so updates
+# arrive as a single reviewable PR rather than a stream of small ones.
+# Merging a PR triggers the normal deploy, which runs the build + SEO check first.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 3
+    groups:
+      astro-and-build-tools:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+    labels: ["dependencies"]
+    commit-message:
+      prefix: "deps"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      timezone: "Europe/London"
+    groups:
+      actions:
+        patterns: ["*"]
+    labels: ["dependencies"]
+    commit-message:
+      prefix: "ci"
