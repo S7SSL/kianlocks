@@ -6,7 +6,7 @@ Use **exactly** this NAP everywhere (Google string-matches it):
 - **Phone:** 07707 071984
 - **Website:** https://kianlocks.com
 - **Email:** hi@kianlocks.com
-- **Address:** hide it (service-area business). Registered office for forms that insist: 126 Osidge Lane, London N14 5DN.
+- **Address:** hide it (service-area business). Registered office for forms that insist: 3rd Floor, 86-90 Paul Street, London EC2A 4NE. Never use the old private address (126 Osidge Lane) on any listing.
 
 ## Google Business Profile (business.google.com)
 

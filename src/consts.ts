@@ -9,7 +9,7 @@ export const SITE = {
   /** Companies House record — required trading disclosures (Trading Disclosures Regs 2015). */
   companyNumber: '11163189',
   companyHouseUrl: 'https://find-and-update.company-information.service.gov.uk/company/11163189',
-  registeredOffice: '126 Osidge Lane, London N14 5DN',
+  registeredOffice: '3rd Floor, 86-90 Paul Street, London EC2A 4NE',
   /** Company renamed to KIANLOCKS LTD on 27 Oct 2020 (Companies House). */
   tradingSince: '2020',
   domain: 'kianlocks.com',

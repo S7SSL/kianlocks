@@ -14,7 +14,7 @@ _Last reviewed: 23 Sep 2026_
 | 24/7 emergency, quoted per job (no published price) | Sitewide | Sat (commit 15534e1) | — |
 | Planned bookings usually 2–5 working days; reply within 2 hours in office hours | Sitewide | Sat (original copy) | If lead times change |
 | Coverage: 9 London boroughs (Camden, Islington, Haringey, Barnet, Enfield, Hackney, Westminster, City, K&C) + Hertfordshire: Hertsmere, Broxbourne, Welwyn Hatfield, St Albans (13 areas) | Sitewide (`src/data/boroughs.ts`) | Sat (23 Sep 2026) | If coverage changes — edit boroughs.ts only |
-| KIANLOCKS LTD, no. 11163189, reg. office 126 Osidge Lane N14 5DN, renamed from DAXMASTERS LTD on 27 Oct 2020 | Footer, About, schema | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11163189) | Annually |
+| KIANLOCKS LTD, no. 11163189, reg. office 3rd Floor, 86-90 Paul Street, London EC2A 4NE (changed from a private address by AD01 filed 25 Sep 2026), renamed from DAXMASTERS LTD on 27 Oct 2020 | Footer, About, schema | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11163189) | Annually |
 | "Traded as kianlocks since 2020" | About | Companies House rename date | — |
 | Public liability insurance; certificate on request | FAQ, About | Sat | **Sat to confirm policy is live and send certificate on request** |
 | Typical visit 30–45 minutes | Home, tenant page | Sat (original copy) | — |
