@@ -156,6 +156,7 @@ export function localBusinessSchema() {
   };
   const sameAs = [SITE.companyHouseUrl, ...Object.values(SITE.social).filter(Boolean)];
   if (sameAs.length) block.sameAs = sameAs;
+  if (SITE.social.google) block.hasMap = SITE.social.google;
   if (SITE.rating) {
     block.aggregateRating = {
       '@type': 'AggregateRating',
