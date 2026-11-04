@@ -62,7 +62,7 @@ export function localBusinessSchema() {
     '@id': BUSINESS_ID,
     name: SITE.name,
     legalName: 'KIANLOCKS LTD',
-    alternateName: ['kianlocks Ltd', 'Kian Locks'],
+    alternateName: ['Kianlocks Ltd', 'Kian Locks'],
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'Companies House company number',
@@ -130,7 +130,7 @@ export function localBusinessSchema() {
     makesOffer: plannedOffer(),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'kianlocks services',
+      name: 'Kianlocks services',
       itemListElement: [
         {
           '@type': 'Offer',

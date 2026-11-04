@@ -10,7 +10,7 @@ export interface FAQ {
 export const FAQS: FAQ[] = [
   {
     q: 'How much does it cost?',
-    a: '£149 flat for a planned booking during standard hours (Mon–Sat 9am–6pm). That covers an Avocet ABS cylinder, fitting, three keys cut to the new cylinder, and a written invoice. No callout fee. No per-minute labour. No upsell ladder. Out-of-hours and 24/7 emergency callouts are available but quoted separately — email or call us with the details and we will price it on the spot.',
+    a: '£149 flat for a planned booking during standard hours (Mon–Sat 9am–6pm). That covers an Avocet ABS cylinder, fitting, three keys cut to the new cylinder and a written invoice. No callout fee. No per-minute labour. No upsell ladder. Out-of-hours and 24/7 emergency callouts are available but quoted separately — email or call us with the details and we will price it on the spot.',
   },
   {
     q: 'What is an ABS lock and why do you only fit them?',
@@ -26,7 +26,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'How do I book?',
-    a: 'Email hi@kianlocks.com with your postcode, door type (uPVC, composite, timber), and the reason for the change. We reply within 2 hours with a slot and confirm the £149 price. No phone calls required, but you can call 07707 071984 if you prefer.',
+    a: 'Email hi@kianlocks.com with your postcode, door type (uPVC, composite, timber) and the reason for the change. We reply within 2 hours with a slot and confirm the £149 price. No phone calls required, but you can call 07707 071984 if you prefer.',
   },
   {
     q: 'Which areas do you cover?',
@@ -46,6 +46,6 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'Are you insured?',
-    a: 'Yes. kianlocks Ltd carries public liability insurance. The certificate is available on request before we book your job.',
+    a: 'Yes. Kianlocks Ltd carries public liability insurance. The certificate is available on request before we book your job.',
   },
 ];
