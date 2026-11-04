@@ -1,6 +1,6 @@
 /* ---------- Design tokens (Stitch "Kian Sentinel" spec) ---------- */
 :root {
-  /* Brand palette — derived from the original kianlocks identity (deep navy + gold key)
+  /* Brand palette — derived from the original Kianlocks identity (deep navy + gold key)
      refined against Stitch design tokens for a quieter, more architectural premium feel. */
   --navy: #0E1A3A;            /* primary-container / hero / footer / headlines */
   --navy-deep: #070D24;

@@ -45,7 +45,7 @@ export const BOROUGHS: Borough[] = [
     geo: { latitude: 51.5413, longitude: -0.1426 },
     bodyParagraphs: [
       'Camden mixes Victorian and Edwardian terraces, converted flats and modern uPVC doors in Kentish Town and Chalk Farm. Whatever the door, if it locks with a euro cylinder, that cylinder is what a burglar attacks. We replace it with an Avocet ABS — Kitemarked TS007 3-star and Sold Secure Diamond.',
-      'Most Camden jobs are lock changes after buying or renting a flat (so the previous occupant\'s keys stop working), landlord changes between tenancies, and upgrades after a neighbour\'s break-in. We carry the common ABS lengths and thumbturn versions, and measure on site so the cylinder sits flush.',
+      'Most Camden jobs are lock changes after buying or renting a flat (so the previous occupant\'s keys stop working), landlord changes between tenancies and upgrades after a neighbour\'s break-in. We carry the common ABS lengths and thumbturn versions and measure on site so the cylinder sits flush.',
     ],
     commonIssue:
       'On older Camden flat doors the cylinder often sticks out past the handle plate. That overhang is what a snap attack grips. A correctly sized ABS sits flush, leaving nothing to grab.',
@@ -66,7 +66,7 @@ export const BOROUGHS: Borough[] = [
     geo: { latitude: 51.5362, longitude: -0.1033 },
     bodyParagraphs: [
       'Islington\'s Georgian terraces and the newer blocks around Angel and Old Street are two very different jobs. Heavy timber front doors often combine a mortice deadlock with a cylinder nightlatch; modern flat entrance doors usually depend entirely on a euro cylinder and multipoint strip. Where there is a euro cylinder, we fit ABS.',
-      'Typical Islington work is landlords changing locks between tenancies, tenants who have just moved in, and owners upgrading the cylinder a developer originally supplied. Every job comes with an itemised invoice naming the cylinder and its rating, for your insurer, landlord or managing agent.',
+      'Typical Islington work is landlords changing locks between tenancies, tenants who have just moved in and owners upgrading the cylinder a developer originally supplied. Every job comes with an itemised invoice naming the cylinder and its rating, for your insurer, landlord or managing agent.',
     ],
     commonIssue:
       'New-build flats are often handed over with a basic or 1-star cylinder. If the handle is not a 2-star security handle, the door is below the TS007 3-star level. Swapping in an ABS fixes that without touching the handle.',
@@ -86,7 +86,7 @@ export const BOROUGHS: Borough[] = [
     landmarks: ['Crouch End', 'Muswell Hill', 'Hornsey', 'Wood Green', 'Tottenham', 'Highgate'],
     geo: { latitude: 51.5906, longitude: -0.1110 },
     bodyParagraphs: [
-      'Haringey covers suburban semis in N10, period conversions in N8, and terraces and blocks in N15 and N17. The principle is the same everywhere: if your euro cylinder is not 3-star rated (or a 1-star cylinder protected by a 2-star handle), it is the easiest way through the door. We replace it with an Avocet ABS.',
+      'Haringey covers suburban semis in N10, period conversions in N8 and terraces and blocks in N15 and N17. The principle is the same everywhere: if your euro cylinder is not 3-star rated (or a 1-star cylinder protected by a 2-star handle), it is the easiest way through the door. We replace it with an Avocet ABS.',
       'Crouch End and Muswell Hill timber doors often have a mortice lock plus a cylinder nightlatch; Tottenham and Wood Green see more uPVC and composite doors, where the euro cylinder drives the whole multipoint lock. We change the cylinder without changing the look of the door.',
     ],
     commonIssue:
@@ -108,7 +108,7 @@ export const BOROUGHS: Borough[] = [
     geo: { latitude: 51.6252, longitude: -0.1517 },
     bodyParagraphs: [
       'Barnet is mostly suburban housing — semi-detached and detached homes with composite or uPVC front doors, typically a euro cylinder driving a multipoint locking strip. In that set-up the cylinder is the single point of failure. An ABS removes it.',
-      'We cover EN4 and EN5, the Finchley postcodes (N2, N3, N12), Hendon and Edgware (NW4, HA8) and Mill Hill (NW7). Planned bookings are usually within 2–5 working days, and we carry the common cylinder lengths so a return visit is rarely needed.',
+      'We cover EN4 and EN5, the Finchley postcodes (N2, N3, N12), Hendon and Edgware (NW4, HA8) and Mill Hill (NW7). Planned bookings are usually within 2–5 working days and we carry the common cylinder lengths so a return visit is rarely needed.',
     ],
     commonIssue:
       'Composite doors are often supplied with a 1-star cylinder and a standard handle — so the door is below the TS007 3-star level. A 3-star ABS meets the standard by itself.',
@@ -129,7 +129,7 @@ export const BOROUGHS: Borough[] = [
     geo: { latitude: 51.6523, longitude: -0.0807 },
     bodyParagraphs: [
       'Enfield\'s housing runs from inter-war semis to newer flats around Edmonton and Meridian Water. Across all of them, the euro cylinder is the lock that matters. We fit Avocet ABS, which holds TS007 3-star and Sold Secure SS312 Diamond.',
-      'Common Enfield jobs are lock changes after completing on a house in N13 or N21, landlord changes on Edmonton flats between tenancies, and replacements after an attempted break-in. The planned price is agreed in writing before we attend.',
+      'Common Enfield jobs are lock changes after completing on a house in N13 or N21, landlord changes on Edmonton flats between tenancies and replacements after an attempted break-in. The planned price is agreed in writing before we attend.',
     ],
     commonIssue:
       'A basic cylinder on a uPVC back door is easy to overlook. If you are changing the front, consider the back door too — each euro cylinder is £149.',
@@ -235,7 +235,7 @@ export const BOROUGHS: Borough[] = [
     geo: { latitude: 51.6980, longitude: -0.1830 },
     bodyParagraphs: [
       'Hertsmere sits just over the border from Barnet, so it is a short run from our North London base. Housing is mostly semi-detached and detached family homes, plus newer flats around Borehamwood and Potters Bar stations — typically uPVC or composite front doors where a euro cylinder drives the whole multipoint lock. That cylinder is what we upgrade.',
-      'Most Hertsmere jobs are lock changes after buying a house, landlord changes between tenancies, and homeowners replacing the unrated cylinder a door was supplied with. We fit an Avocet ABS — TS007 3-star and Sold Secure Diamond — sized to the door, with three keys and an itemised invoice.',
+      'Most Hertsmere jobs are lock changes after buying a house, landlord changes between tenancies and homeowners replacing the unrated cylinder a door was supplied with. We fit an Avocet ABS — TS007 3-star and Sold Secure Diamond — sized to the door, with three keys and an itemised invoice.',
     ],
     commonIssue:
       'Back and side doors on family homes often still have the original basic cylinder even when the front has been upgraded. Each euro cylinder is £149 — worth doing them together.',
@@ -256,7 +256,7 @@ export const BOROUGHS: Borough[] = [
     geo: { latitude: 51.7020, longitude: -0.0340 },
     bodyParagraphs: [
       'Broxbourne runs north from the Enfield border along the A10 and the Lea Valley. It is a mix of post-war family housing, newer estates and flats near Cheshunt and Waltham Cross stations — mostly uPVC and composite doors with a euro cylinder at the heart of the lock.',
-      'Typical Broxbourne work is tenancy-change lock changes for landlords, new owners who want the previous keys to stop working, and upgrades from an unrated or 1-star cylinder to a 3-star Avocet ABS. Planned bookings are usually within 2–5 working days.',
+      'Typical Broxbourne work is tenancy-change lock changes for landlords, new owners who want the previous keys to stop working and upgrades from an unrated or 1-star cylinder to a 3-star Avocet ABS. Planned bookings are usually within 2–5 working days.',
     ],
     commonIssue:
       'A 1-star cylinder with an ordinary handle is below the TS007 3-star level, even if the door looks secure. A 3-star ABS meets the standard on its own, whatever handle is fitted.',
@@ -297,7 +297,7 @@ export const BOROUGHS: Borough[] = [
     landmarks: ['St Albans', 'Harpenden', 'London Colney', 'Wheathampstead', 'Park Street', 'How Wood'],
     geo: { latitude: 51.7527, longitude: -0.3394 },
     bodyParagraphs: [
-      'St Albans mixes Victorian and Edwardian terraces near the city centre with inter-war and modern family homes further out, and Harpenden is largely family housing. Period timber doors often combine a mortice lock with a cylinder nightlatch; later uPVC and composite doors rely on a euro cylinder. Where there is a euro cylinder, we fit ABS.',
+      'St Albans mixes Victorian and Edwardian terraces near the city centre with inter-war and modern family homes further out and Harpenden is largely family housing. Period timber doors often combine a mortice lock with a cylinder nightlatch; later uPVC and composite doors rely on a euro cylinder. Where there is a euro cylinder, we fit ABS.',
       'Most St Albans and Harpenden jobs are lock changes after moving in, landlord changes between tenancies and homeowner upgrades to a 3-star cylinder. We change the cylinder only, so the look of the door stays the same.',
     ],
     commonIssue:

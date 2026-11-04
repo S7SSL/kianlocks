@@ -4,8 +4,8 @@
  */
 
 export const SITE = {
-  name: 'kianlocks',
-  legalName: 'kianlocks Ltd',
+  name: 'Kianlocks',
+  legalName: 'Kianlocks Ltd',
   /** Companies House record — required trading disclosures (Trading Disclosures Regs 2015). */
   companyNumber: '11163189',
   companyHouseUrl: 'https://find-and-update.company-information.service.gov.uk/company/11163189',

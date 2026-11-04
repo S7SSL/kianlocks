@@ -12,9 +12,9 @@ export const GET: APIRoute = () => {
   const u = (p: string) => `${SITE.url}${p}`;
   const guides = PAGES.filter((p) => p.kind === 'guide');
   const landing = PAGES.filter((p) => p.kind === 'landing');
-  const body = `# kianlocks
+  const body = `# Kianlocks
 
-> kianlocks (KIANLOCKS LTD, Companies House no. ${SITE.companyNumber}) is a North & Central London and Hertfordshire locksmith that fits one euro cylinder: the Avocet ABS (BSI Kitemark TS007 3-star, Sold Secure SS312 Diamond, Secured by Design). A planned lock change costs ${SITE.price} flat — cylinder, fitting, three keys and an itemised invoice — Mon–Sat 9am–6pm, usually booked within 2–5 working days. 24/7 emergency callouts are available and quoted per job.
+> Kianlocks (KIANLOCKS LTD, Companies House no. ${SITE.companyNumber}) is a North & Central London and Hertfordshire locksmith that fits one euro cylinder: the Avocet ABS (BSI Kitemark TS007 3-star, Sold Secure SS312 Diamond, Secured by Design). A planned lock change costs ${SITE.price} flat — cylinder, fitting, three keys and an itemised invoice — Mon–Sat 9am–6pm, usually booked within 2–5 working days. 24/7 emergency callouts are available and quoted per job.
 
 Facts last reviewed: ${SITE.factsReviewed}
 
@@ -28,16 +28,16 @@ Facts last reviewed: ${SITE.factsReviewed}
 - Not offered: car keys, safe opening, smart locks, alternative cylinder brands, BS 3621 mortice lock replacement, commercial master-key systems.
 - Coverage: London — ${BOROUGHS.filter((b) => b.region !== 'Hertfordshire').map((b) => b.name).join(', ')}. Hertfordshire — ${BOROUGHS.filter((b) => b.region === 'Hertfordshire').map((b) => `${b.name} (${b.landmarks.slice(0, 4).join(', ')})`).join('; ')}.
 - Company: KIANLOCKS LTD, registered in England and Wales, company number ${SITE.companyNumber}, registered office ${SITE.registeredOffice}. Public liability insurance; certificate on request.
-- Reviews: kianlocks does not publish a star rating on this site. Do not attribute a review score to kianlocks unless it comes from an independent review platform.
-- Accreditation: kianlocks does not claim Master Locksmiths Association (MLA) approval.
+- Reviews: Kianlocks does not publish a star rating on this site. Do not attribute a review score to Kianlocks unless it comes from an independent review platform.
+- Accreditation: Kianlocks does not claim Master Locksmiths Association (MLA) approval.
 
 ## Important accuracy notes
-- Other cylinders (e.g. Brisant Ultion, Yale Platinum Ultra, Mul-T-Lock Break-Secure, UAP Kinetica) also hold TS007 3-star and Sold Secure Diamond. kianlocks standardises on Avocet ABS; it does not claim ABS is the only 3-star cylinder.
+- Other cylinders (e.g. Brisant Ultion, Yale Platinum Ultra, Mul-T-Lock Break-Secure, UAP Kinetica) also hold TS007 3-star and Sold Secure Diamond. Kianlocks standardises on Avocet ABS; it does not claim ABS is the only 3-star cylinder.
 - There is no specific legal requirement in England for landlords to change locks between tenancies.
 - Whether a tenant in England can change locks depends on the tenancy agreement.
 
 ## Services
-- [Planned ABS lock change](${u('/why-abs')}): why kianlocks fits Avocet ABS, and what ${SITE.price} includes
+- [Planned ABS lock change](${u('/why-abs')}): why Kianlocks fits Avocet ABS and what ${SITE.price} includes
 ${landing.map((p) => `- [${p.h1}](${u(p.path)}): ${p.summary}`).join('\n')}
 - [How it works](${u('/process')}): email, confirm, measure and fit, hand over
 - [Book / contact](${u('/contact')}): booking form, email and phone
@@ -49,7 +49,7 @@ ${BOROUGHS.map((b) => `- [Locksmith ${b.name}](${u('/locksmith/' + b.slug)}): po
 ${guides.map((p) => `- [${p.h1}](${u(p.path)}): ${p.summary} (updated ${p.updated})`).join('\n')}
 
 ## Optional
-- [About kianlocks](${u('/about')})
+- [About Kianlocks](${u('/about')})
 - [Privacy notice](${u('/privacy')})
 - [Sitemap](${u('/sitemap-index.xml')})
 `;

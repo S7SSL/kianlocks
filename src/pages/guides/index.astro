@@ -14,7 +14,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': `${url}#collection`,
-    name: 'kianlocks guides',
+    name: 'Kianlocks guides',
     url,
     inLanguage: 'en-GB',
     publisher: { '@id': `${SITE.url}/#business` },
@@ -28,7 +28,7 @@ const services = PAGES.filter((p) => p.kind === 'landing');
 ---
 <BaseLayout
   title="Lock Guides — Prices, TS007, Landlords, Tenants"
-  description="Plain-English, sourced guides on London lock change prices, TS007 3-star and anti-snap cylinders, insurance-approved locks, and landlord and tenant lock rules."
+  description="Plain-English, sourced guides on London lock change prices, TS007 3-star and anti-snap cylinders, insurance-approved locks and landlord and tenant lock rules."
   schema={schema}
   canonical={url}
 >
