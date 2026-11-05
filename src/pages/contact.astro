@@ -146,6 +146,18 @@ const formAction = `https://formsubmit.co/${SITE.email}`;
             </p>
           </div>
 
+          {SITE.social.google && (
+            <div class="card mt-3">
+              <h3 style="font-size:1.25rem; margin-bottom:0.85rem;">Find us on Google</h3>
+              <p class="muted">See our Google Business Profile, or leave a review after your lock change.</p>
+              <p class="mt-2">
+                <a href={SITE.social.google} class="btn btn-outline" style="font-size:0.85rem;" target="_blank" rel="noopener">
+                  Kianlocks on Google Maps
+                </a>
+              </p>
+            </div>
+          )}
+
           <div class="card mt-3" style="background: var(--surface);">
             <h3 style="font-size:1.15rem; margin-bottom:0.85rem;">Two service paths</h3>
             <p style="font-size:0.9rem; color:var(--on-surface-variant); margin-bottom:0.85rem;">

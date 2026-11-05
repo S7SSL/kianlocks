@@ -67,7 +67,7 @@ export const SITE = {
   /** IndexNow key (Bing / Yandex / Seznam / Naver). File lives at /<key>.txt */
   indexNowKey: 'b7e3f1c94a2d4e0f8c6a5d3b2e1f0a97',
   social: {
-    google: '',
+    google: 'https://www.google.com/maps?cid=10968953248014867481',
     facebook: '',
     instagram: '',
     trustpilot: '',

@@ -7,6 +7,7 @@ import FaqBlock from '../../components/FaqBlock.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import { SITE } from '../../consts';
 import { BOROUGHS, boroughBySlug } from '../../data/boroughs';
+import { BOROUGH_LOCAL } from '../../data/boroughLocal';
 import type { FAQ } from '../../data/faqs';
 import {
   localBusinessSchema,
@@ -22,8 +23,10 @@ const { borough } = Astro.props;
 const url = `${SITE.url}/locksmith/${borough.slug}/`;
 const inName = borough.slug === 'city-of-london' ? 'the City of London' : borough.name;
 const nearby = borough.nearby.map(boroughBySlug).filter(Boolean);
+const local = BOROUGH_LOCAL[borough.slug];
 
 const faqs: FAQ[] = [
+  ...(local ? [local.faq] : []),
   {
     q: `How much does a lock change cost in ${inName}?`,
     a: `${SITE.price} flat for a planned booking (Mon–Sat 9am–6pm): an Avocet ABS 3-star cylinder sized to your door, fitting, three keys and an itemised invoice. No callout fee and no hourly labour. Out-of-hours emergencies in ${inName} are quoted per job before we set off.`,
@@ -35,10 +38,6 @@ const faqs: FAQ[] = [
   {
     q: `How soon can you change my lock in ${inName}?`,
     a: `Planned bookings are usually within 2–5 working days of your email and we reply within 2 hours during office hours. If you are locked out or the door is insecure after a break-in, call ${SITE.phone} for the 24/7 emergency service, which is quoted per job.`,
-  },
-  {
-    q: 'Do I need to be a homeowner to book?',
-    a: 'No. We work for landlords changing locks between tenancies, tenants who want their own keys after moving in and homeowners upgrading security. If you rent, check your tenancy agreement first and keep the old cylinder so it can be refitted at the end of the tenancy — just ask us to leave it with you.',
   },
 ];
 
@@ -90,10 +89,8 @@ const schema = [
       <article class="prose">
         <QuickAnswer>
           <p>
-            A planned lock change in {inName} with Kianlocks costs <strong>{SITE.price} flat</strong>:
-            an Avocet ABS cylinder (TS007 3-star, Sold Secure Diamond) sized to your door, fitting,
-            three keys and an itemised invoice. Bookings are usually within 2–5 working days;
-            24/7 emergencies are quoted per job. Email <a href={SITE.emailHref}>{SITE.email}</a> with your postcode to book.
+            A planned lock change in {inName} costs <strong>{SITE.price} flat</strong> with Kianlocks: an Avocet ABS
+            3-star cylinder, fitting and three keys. Email <a href={SITE.emailHref}>{SITE.email}</a> with your postcode to book.
           </p>
         </QuickAnswer>
 
@@ -109,45 +106,33 @@ const schema = [
           {borough.landmarks.map((l) => <span class="pill">{l}</span>)}
         </div>
 
-        <h2>Why ABS in {borough.name}</h2>
+        {local && (
+          <>
+            <h2>{local.guideHeading}</h2>
+            <p>{local.guide[0]}</p>
+            <p>{local.guide[1]}</p>
+          </>
+        )}
+
+        <h2>Why ABS and what it costs</h2>
         <p>
-          Snap attacks do not discriminate by postcode, but the housing stock
-          decides which doors are exposed. Whether you have a Victorian timber
-          door, a uPVC back door or a composite door on a new-build flat, the
-          euro cylinder is what holds it shut. We replace it with an
-          <a href="/why-abs/">Avocet ABS</a> — rated TS007 3-star on its own, so
-          the door meets the standard whatever handle is fitted. Not sure what
-          the stars mean? Read <a href="/guides/ts007-3-star-explained/">TS007 3-star explained</a>.
+          The euro cylinder is what holds most doors shut, so we replace it with an
+          <a href="/why-abs/">Avocet ABS</a> rated <a href="/guides/ts007-3-star-explained/">TS007 3-star</a> on its own.
+          <strong>{SITE.price} flat</strong> covers the cylinder, fitting, three keys and an invoice.
+          See the <a href="/guides/lock-change-cost-london/">lock change cost guide</a> for how that compares.
         </p>
 
-        <h2>What it costs</h2>
         <p>
-          <strong>{SITE.price} flat</strong> for a planned booking. Cylinder,
-          fitting, three keys, written invoice — all included. No callout fee,
-          no per-minute labour, no upsell on the doorstep. For how that compares
-          with typical London prices, see our
-          <a href="/guides/lock-change-cost-london/">lock change cost guide</a>.
+          We work for <a href="/landlord-lock-change-london/">landlords</a>, <a href="/new-tenant-lock-change-london/">tenants</a>
+          and <a href="/3-star-lock-upgrade-london/">homeowners</a> across {borough.name}.
         </p>
 
-        <h2>Who we work with in {borough.name}</h2>
-        <ul>
-          <li><a href="/landlord-lock-change-london/"><strong>Landlords</strong></a> changing locks between tenancies.</li>
-          <li><a href="/new-tenant-lock-change-london/"><strong>Tenants</strong></a> who want their own keys after moving in.</li>
-          <li><a href="/3-star-lock-upgrade-london/"><strong>Homeowners</strong></a> upgrading to a 3-star anti-snap cylinder.</li>
-        </ul>
-
-        <h2>How to book</h2>
-        <p>Email <a href={SITE.emailHref}>{SITE.email}</a> with:</p>
-        <ul>
-          <li>Your postcode</li>
-          <li>Door material (uPVC, composite, timber)</li>
-          <li>The reason for the change (new tenant, just moved in, security upgrade)</li>
-          <li>Preferred day or time window</li>
-        </ul>
+        <h2>How to book in {borough.name}</h2>
         <p>
-          We reply within 2 hours during office hours and usually book within
-          2–5 working days. Locked out or insecure after a break-in? Call
-          <a href={SITE.phoneHref}>{SITE.phone}</a> — see our
+          Email <a href={SITE.emailHref}>{SITE.email}</a> with your postcode, door type, the reason for the change
+          and a preferred time. We reply within 2 hours in office hours and usually book within 2–5 working days.
+          {local && <> {local.bookingNote}</>}
+          Locked out or insecure after a break-in? Call <a href={SITE.phoneHref}>{SITE.phone}</a> for our
           <a href="/emergency-locksmith-london/">24/7 emergency service</a>.
         </p>
 
